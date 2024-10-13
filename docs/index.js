@@ -7,7 +7,7 @@ function addLeadingZero(number) {
 }
 
 function updateCountdown() {
-  var targetDate = new Date('2024-10-24T00:00:00').getTime();
+  var targetDate = new Date('2024-10-31T00:00:00').getTime();
   var now = new Date().getTime();
   var timeLeft = targetDate - now;
   var days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));

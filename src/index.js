@@ -5,7 +5,7 @@ function addLeadingZero(number) {
 }
 
 function updateCountdown() {
-  const targetDate = new Date('2024-10-24T00:00:00').getTime()
+  const targetDate = new Date('2024-10-31T00:00:00').getTime()
   const now = new Date().getTime()
   const timeLeft = targetDate - now
 

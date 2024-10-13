@@ -1,4 +1,4 @@
-# Static Site Boilerplate
+# Polnaya Schiza
 
 ## How to start
 

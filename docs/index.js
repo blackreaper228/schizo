@@ -1,6 +1,13 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	"use strict";
 
+var hoverText = document.getElementById('hoverText');
+hoverText.addEventListener('mouseenter', function () {
+  hoverText.textContent = '[https://t.me/schizofiles]';
+});
+hoverText.addEventListener('mouseleave', function () {
+  hoverText.textContent = '[htt▓s://▓▓▓▓/sch▓zof▓▓es]';
+});
 
 function addLeadingZero(number) {
   return number < 10 ? "0".concat(number) : number;

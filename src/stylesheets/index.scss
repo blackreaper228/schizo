@@ -19,3 +19,18 @@ body.index {
   filter: blur(1px);
   text-shadow: 0px 0 50px rgba(255, 255, 255, 0.25);
 }
+
+.tg-link {
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 700;
+  color: white;
+  font-size: 1.406vw;
+  filter: blur(1px);
+  text-shadow: 0px 0 50px rgba(255, 255, 255, 0.25);
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.tg-link:hover {
+  color: gray;
+}

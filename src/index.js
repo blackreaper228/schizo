@@ -1,5 +1,15 @@
 import './index.css'
 
+const hoverText = document.getElementById('hoverText')
+
+hoverText.addEventListener('mouseenter', () => {
+  hoverText.textContent = '[https://t.me/schizofiles]'
+})
+
+hoverText.addEventListener('mouseleave', () => {
+  hoverText.textContent = '[htt▓s://▓▓▓▓/sch▓zof▓▓es]'
+})
+
 function addLeadingZero(number) {
   return number < 10 ? `0${number}` : number
 }

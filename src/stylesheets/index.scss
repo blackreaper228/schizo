@@ -54,3 +54,76 @@ body.soon {
     margin: 10px 0;
   }
 }
+
+body.schizo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url('./images/bg_s.jpg');
+  gap: 30px;
+  height: auto;
+
+  & > div,
+  & > a {
+    margin: 10px 0;
+  }
+  padding-bottom: 62px;
+}
+
+p.schizo {
+  background-color: yellow;
+  color: red;
+  text-align: center;
+  -webkit-text-stroke-width: 1.5px;
+  -webkit-text-stroke-color: yellow;
+  font-family: 'Inter', sans-serif;
+  font-size: 2.539vw;
+  font-style: italic;
+  font-weight: 700;
+  text-shadow: 3px 4px 4px #000;
+  max-width: 50vw;
+  cursor: pointer;
+}
+
+a.schizo {
+  background-color: yellow;
+  color: red;
+  text-align: center;
+  -webkit-text-stroke-width: 1.5px;
+  -webkit-text-stroke-color: yellow;
+  font-family: 'Inter', sans-serif;
+  font-size: 2.539vw;
+  font-style: italic;
+  font-weight: 700;
+  text-shadow: 3px 4px 4px #000;
+  max-width: 50vw;
+  cursor: pointer;
+}
+
+.text {
+  overflow: hidden; /* Скрывает излишний текст */
+  max-height: 0; /* По умолчанию высота нулевая */
+}
+
+.text.expanded {
+  max-height: fit-content; /* Увеличиваем высоту, чтобы текст показался */
+}
+
+p.toggle-button {
+  text-align: center;
+  -webkit-text-stroke-width: 1.5px;
+  -webkit-text-stroke-color: yellow;
+  font-family: 'Inter', sans-serif;
+  font-size: 65px;
+  font-style: italic;
+  font-weight: 700;
+  text-shadow: 3px 4px 4px #000;
+  max-width: 50vw;
+  cursor: pointer;
+  color: red;
+  text-decoration: underline;
+}
+
+p.toggle-button:hover {
+  color: blue;
+}

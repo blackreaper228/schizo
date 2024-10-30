@@ -1,7 +1,33 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	"use strict";
 
-var hoverText = document.getElementById('hoverText');
+var hoverText = document.getElementById('hoverText'); // window.onload = function () {
+//   document.getElementById('my_audio').play()
+// }
+// Функция для запуска аудио
+
+function playAudio() {
+  var audio = document.getElementById('my_audio');
+  audio.play()["catch"](function (error) {
+    console.log('Error playing audio:', error);
+  }); // Удаляем слушатель, чтобы он не вызывался повторно
+
+  document.removeEventListener('click', playAudio);
+} // Добавляем слушатель на первый клик по странице
+
+
+document.addEventListener('click', playAudio); // текст скрыть
+// function toggleText() {
+//   const textContainer = document.getElementById('text')
+//   textContainer.classList.toggle('expanded') // Переключаем класс для анимации
+//   // Изменяем текст кнопки в зависимости от состояния
+//   const toggleButton = document.querySelector('.toggle-button')
+//   toggleButton.textContent = textContainer.classList.contains('expanded')
+//     ? 'Скрыть текст'
+//     : 'Показать текст'
+// }
+// ссылка
+
 hoverText.addEventListener('mouseenter', function () {
   hoverText.textContent = '[https://t.me/schizofiles]';
 });

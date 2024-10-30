@@ -10,7 +10,8 @@ module.exports = {
   entry: {
     index: './src/index.js',
     page: './src/page.jsx',
-    soon: './src/index.js'
+    soon: './src/index.js',
+    twins: './src/index.js'
   },
   output: {
     filename: '[name].js',
@@ -100,6 +101,14 @@ module.exports = {
       template: './src/soon.html',
       filename: './soon.html',
       chunks: ['soon']
+    }),
+
+    new HtmlWebpackPlugin({
+      hash: true,
+      scriptLoading: 'blocking',
+      template: './src/who.html',
+      filename: './who.html',
+      chunks: ['twins']
     }),
 
     // Partials

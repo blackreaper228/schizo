@@ -10,7 +10,8 @@ module.exports = {
   entry: {
     index: './src/index.js',
     page: './src/page.jsx',
-    soon: './src/index.js'
+    soon: './src/index.js',
+    test: './src/javascript/camera.js'
   },
   output: {
     filename: '[name].js',
@@ -66,6 +67,13 @@ module.exports = {
         loader: 'file-loader',
         options: {
           name: 'fonts/[name].[ext]'
+        }
+      },
+      {
+        test: /\.(glb|gltf)$/i,
+        type: 'asset/resource',
+        generator: {
+          filename: 'models/[hash][ext][query]'
         }
       }
     ]
@@ -132,6 +140,14 @@ module.exports = {
       template: './src/bruh.html',
       filename: './bruh.html',
       chunks: ['index']
+    }),
+
+    new HtmlWebpackPlugin({
+      hash: true,
+      scriptLoading: 'blocking',
+      template: './src/test.html',
+      filename: './test.html',
+      chunks: ['test']
     }),
 
     // Partials

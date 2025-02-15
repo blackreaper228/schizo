@@ -1,0 +1,25 @@
+#info {
+  position: absolute;
+  top: 10px;
+  width: 100%;
+  text-align: center;
+  z-index: 100;
+  display: block;
+  color: white;
+}
+
+body.test {
+  cursor: url('./cursor.png') 10 10, auto;
+}
+
+.cursor {
+  width: 20px;
+  height: 20px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s linear;
+  mix-blend-mode: difference; /* Интересный эффект */
+}

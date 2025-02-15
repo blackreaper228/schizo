@@ -35,16 +35,17 @@ button {
 .special {
   position: absolute;
   display: inline-block;
-  padding: 15px 40px 15px 40px;
+  padding: 12px 36px 12px 36px;
   background: #cc2e2e;
   top: 20px;
   left: 20px;
+  user-select: none;
 }
 
 .special:hover {
   background: #891919;
 }
 
-.special:focus {
+.special:active {
   background: #501313;
 }

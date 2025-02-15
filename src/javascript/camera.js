@@ -66,6 +66,7 @@ loader.load(
   function (glb) {
     root = glb.scene
     root.scale.set(0.5, 0.5, 0.5)
+    root.position.set(0, 0, 0) // Центрируем модель
     scene.add(root)
   },
   function (xhr) {
@@ -88,16 +89,17 @@ const sizes = {
 }
 
 const camera = new THREE.PerspectiveCamera(
-  75,
+  50,
   sizes.width / sizes.height,
   0.1,
   100
 )
-camera.position.set(0, 1, 2)
+camera.position.set(0, 0, 3)
 scene.add(camera)
 
 const renderer = new THREE.WebGLRenderer({
-  canvas: canvas
+  canvas: canvas,
+  alpha: true
 })
 
 renderer.setSize(sizes.width, sizes.height)
@@ -115,7 +117,7 @@ let mouseY = 0
 document.addEventListener('mousemove', (event) => {
   // Пересчитываем координаты курсора от -1 до 1 (центр экрана = 0,0)
   mouseX = (event.clientX / sizes.width - 0.5) * 2
-  mouseY = (event.clientY / sizes.height - 0.5) * -2
+  mouseY = (event.clientY / sizes.height - 0.5) * 2
 })
 
 // Анимация модели с эффектом наклона

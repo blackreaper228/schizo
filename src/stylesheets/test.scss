@@ -9,17 +9,35 @@
 }
 
 body.test {
-  cursor: url('./cursor.png') 10 10, auto;
+  cursor: none;
+}
+
+.btn {
+  position: absolute;
+  left: 50%;
+  top: 50%;
 }
 
 .cursor {
-  width: 20px;
-  height: 20px;
-  background-color: rgba(255, 255, 255, 0.7);
-  border-radius: 50%;
+  z-index: 9999; /* Теперь курсор точно выше всех элементов */
+  width: 26px;
+  height: 30px;
+  background: url('./cursor.png') no-repeat center;
+  background-size: contain;
   position: fixed;
-  pointer-events: none;
-  transform: translate(-50%, -50%);
-  transition: transform 0.1s linear;
-  mix-blend-mode: difference; /* Интересный эффект */
+  pointer-events: none; /* Оставляем, чтобы курсор не мешал кликам */
+}
+
+button {
+  pointer-events: none; /* Оставляем кнопки кликабельными */
+}
+
+.cursor_hover {
+}
+
+.special {
+  display: inline-block;
+  padding: 20px;
+  background: lightblue;
+  margin: 20px;
 }

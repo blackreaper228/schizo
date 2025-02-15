@@ -2,11 +2,25 @@ import '../index.css'
 import * as THREE from 'three'
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js'
 import monkeyModel from '../models/monkey.glb'
+import cursorImg from '../cursor.png'
+import cursorHoverImg from '../cursor-hover.png'
 
 const cursor = document.querySelector('.cursor')
 
 document.addEventListener('mousemove', (e) => {
-  cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`
+  cursor.style.left = `${e.clientX}px`
+  cursor.style.top = `${e.clientY}px`
+})
+
+// Меняем курсор при наведении
+document.querySelectorAll('.cursor_hover').forEach((element) => {
+  element.addEventListener('mouseenter', () => {
+    cursor.style.backgroundImage = `url(${cursorHoverImg})`
+  })
+
+  element.addEventListener('mouseleave', () => {
+    cursor.style.backgroundImage = `url(${cursorImg})`
+  })
 })
 
 // // WebGL compatibility check

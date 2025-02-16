@@ -75,6 +75,13 @@ module.exports = {
         generator: {
           filename: 'models/[hash][ext][query]'
         }
+      },
+      {
+        test: /\.(hdr)$/i, // ✅ Поддержка HDR
+        type: 'asset/resource',
+        generator: {
+          filename: 'assets/[hash][ext][query]'
+        }
       }
     ]
   },

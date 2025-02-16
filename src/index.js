@@ -1,4 +1,9 @@
 import './index.css'
+import { initCursor } from './javascript/cursor.js'
+
+document.addEventListener('DOMContentLoaded', () => {
+  initCursor()
+})
 
 const hoverText = document.getElementById('hoverText')
 

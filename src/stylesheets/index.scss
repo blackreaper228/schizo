@@ -27,7 +27,6 @@ body.index {
   font-size: 1.406vw;
   filter: blur(1px);
   text-shadow: 0px 0 50px rgba(255, 255, 255, 0.25);
-  cursor: pointer;
   text-decoration: underline;
 }
 
@@ -82,7 +81,6 @@ p.schizo {
   font-weight: 700;
   text-shadow: 3px 4px 4px #000;
   max-width: 50vw;
-  cursor: pointer;
 }
 
 a.schizo {
@@ -97,7 +95,6 @@ a.schizo {
   font-weight: 700;
   text-shadow: 3px 4px 4px #000;
   max-width: 50vw;
-  cursor: pointer;
 }
 
 .text {
@@ -119,7 +116,6 @@ p.toggle-button {
   font-weight: 700;
   text-shadow: 3px 4px 4px #000;
   max-width: 50vw;
-  cursor: pointer;
   color: red;
   text-decoration: underline;
 }

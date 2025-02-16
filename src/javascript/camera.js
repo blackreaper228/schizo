@@ -1,136 +1,111 @@
 import '../index.css'
+import { initCursor } from '../javascript/cursor.js'
+
 import * as THREE from 'three'
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js'
+
+import HDRI from '../assets/HDR_blue_nebulae-1.hdr'
 import monkeyModel from '../models/monkey.glb'
-import cursorImg from '../cursor.png'
-import cursorHoverImg from '../cursor-hover.png'
-import cursorPressedImg from '../cursor-pressed.png'
+import schizoLogo from '../models/schizo_logo.glb'
 
 // cursor
-const cursor = document.querySelector('.cursor')
 
-document.addEventListener('mousemove', (e) => {
-  cursor.style.left = `${e.clientX}px`
-  cursor.style.top = `${e.clientY}px`
+document.addEventListener('DOMContentLoaded', () => {
+  initCursor()
 })
-
-let isHovering = false
-
-document.querySelectorAll('.cursorHover').forEach((element) => {
-  element.addEventListener('mouseenter', () => {
-    isHovering = true
-    cursor.style.backgroundImage = `url(${cursorHoverImg})`
-  })
-
-  element.addEventListener('mouseleave', () => {
-    isHovering = false
-    cursor.style.backgroundImage = `url(${cursorImg})`
-  })
-})
-
-// Состояние "pressed"
-document.addEventListener('mousedown', () => {
-  cursor.style.backgroundImage = `url(${cursorPressedImg})` // Меняем на нажатый курсор
-})
-
-document.addEventListener('mouseup', () => {
-  if (isHovering) {
-    cursor.style.backgroundImage = `url(${cursorHoverImg})` // Если курсор над элементом — вернуть hover
-  } else {
-    cursor.style.backgroundImage = `url(${cursorImg})` // Иначе вернуть стандартный
-  }
-})
-
-// // WebGL compatibility check
-
-// import WebGL from 'three/addons/capabilities/WebGL.js'
-
-// if (WebGL.isWebGL2Available()) {
-//   // Initiate function or other initializations here
-//   console.log('WebGL2 работает))')
-// } else {
-//   const warning = WebGL.getWebGL2ErrorMessage()
-//   document.getElementById('container').appendChild(warning)
-// }
 
 // three.js
-const canvas = document.querySelector('.webgl')
-const scene = new THREE.Scene()
+const raycaster = new THREE.Raycaster()
+const mouse = new THREE.Vector2()
+const target = new THREE.Vector3()
 
-let root
+let scene, camera, renderer, model
+let mouseX = 0,
+  mouseY = 0
 
-// model loader
-const loader = new GLTFLoader()
-loader.load(
-  monkeyModel,
-  function (glb) {
-    root = glb.scene
-    root.scale.set(0.5, 0.5, 0.5)
-    root.position.set(0, 0, 0) // Центрируем модель
-    scene.add(root)
-  },
-  function (xhr) {
-    console.log((xhr.loaded / xhr.total) * 100 + '% loaded')
-  },
-  function (error) {
-    console.log('An error')
-  }
-)
+const renderWidth = 1348
+const renderHeight = 266
 
-// lighting
-const light = new THREE.DirectionalLight(0xff0004, 2)
-light.position.set(2, 2, 5)
-scene.add(light)
+// Инициализация сцены
 
-// boilerplate code
-const sizes = {
-  width: window.innerWidth,
-  height: window.innerHeight
+function init() {
+  scene = new THREE.Scene()
+  // scene.background = 0xffffff
+
+  camera = new THREE.PerspectiveCamera(40, renderWidth / renderHeight, 0.1, 100)
+  camera.position.set(0, 0, 5)
+
+  renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true })
+  renderer.setSize(renderWidth, renderHeight)
+  document.body.appendChild(renderer.domElement)
+
+  // Свет
+  const light = new THREE.DirectionalLight(0xffffff, 1)
+  light.position.set(2, 2, 5)
+  scene.add(light)
+
+  const redLight = new THREE.DirectionalLight(0xff0000, 2)
+  redLight.position.set(-2, -2, 3)
+  scene.add(redLight)
+
+  // Загрузка модели
+  const loader = new GLTFLoader()
+  loader.load(schizoLogo, (gltf) => {
+    model = gltf.scene
+    model.scale.set(0.5, 0.5, 0.5)
+    model.position.set(0, 0, 0) // Центрируем модель
+    scene.add(model)
+  })
+
+  // Отслеживание мыши
+  document.addEventListener('mousemove', onMouseMove)
+
+  // Обработка изменения размеров окна
+  window.addEventListener('resize', onWindowResize)
+
+  animate()
 }
 
-const camera = new THREE.PerspectiveCamera(
-  50,
-  sizes.width / sizes.height,
-  0.1,
-  100
-)
-camera.position.set(0, 0, 3)
-scene.add(camera)
+// Функция обработки движения мыши
+function onMouseMove(event) {
+  const rect = renderer.domElement.getBoundingClientRect()
 
-const renderer = new THREE.WebGLRenderer({
-  canvas: canvas,
-  alpha: true
-})
+  // Нормализуем координаты курсора (от -1 до 1)
+  mouse.x = ((event.clientX - rect.left) / renderWidth) * 2 - 1
+  mouse.y = -((event.clientY - rect.top) / renderHeight) * 2 + 1
 
-renderer.setSize(sizes.width, sizes.height)
-renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
-renderer.shadowMap.enabled = true
-renderer.gammaOutput = true
+  // Уменьшаем амплитуду поворота (коэффициент 0.5 - можно подстроить)
+  mouse.x *= 0.05
+  mouse.y *= 0.1
 
-renderer.render(scene, camera)
+  // Создаём луч от камеры в направлении курсора
+  raycaster.setFromCamera(mouse, camera)
 
-// Переменные для хранения положения курсора
-let mouseX = 0
-let mouseY = 0
+  // Вычисляем точку пересечения с плоскостью перед моделью
+  const plane = new THREE.Plane(new THREE.Vector3(0, 0, 1), -2)
+  raycaster.ray.intersectPlane(plane, target)
+}
 
-// Обработчик движения мыши
-document.addEventListener('mousemove', (event) => {
-  // Пересчитываем координаты курсора от -1 до 1 (центр экрана = 0,0)
-  mouseX = (event.clientX / sizes.width - 0.5) * 2
-  mouseY = (event.clientY / sizes.height - 0.5) * 2
-})
-
-// Анимация модели с эффектом наклона
+// Анимация
 function animate() {
   requestAnimationFrame(animate)
 
-  if (root) {
-    // Наклоняем модель в сторону движения мыши
-    root.rotation.x = mouseY * 0.3
-    root.rotation.y = mouseX * 0.3
+  if (model) {
+    model.lookAt(target) // 🔹 Теперь модель смотрит точно в точку перед ней
   }
 
   renderer.render(scene, camera)
 }
 
-animate()
+// Обновление размеров окна
+function onWindowResize() {
+  const aspectRatio = renderWidth / renderHeight
+
+  camera.aspect = aspectRatio
+  camera.updateProjectionMatrix()
+
+  // Вместо window.innerWidth / window.innerHeight используем фиксированный размер
+  renderer.setSize(renderWidth, renderHeight)
+}
+
+init()

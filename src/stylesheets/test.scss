@@ -8,8 +8,12 @@
   color: white;
 }
 
-body.test {
+body {
   cursor: none;
+}
+
+body.test {
+  background-image: url('./images/bg_s.jpg');
 }
 
 .btn {
@@ -48,4 +52,10 @@ button {
 
 .special:active {
   background: #501313;
+}
+
+canvas {
+  position: absolute;
+  top: 0;
+  left: calc(50% - 1348px / 2);
 }

@@ -1,41 +1,27 @@
-#info {
-  position: absolute;
-  top: 10px;
-  width: 100%;
-  text-align: center;
-  z-index: 100;
-  display: block;
-  color: white;
+* {
+  cursor: url('./images/cursor/cursor.png'), auto;
 }
 
-body {
-  cursor: none;
+*:active {
+  cursor: url('./images/cursor/cursor-pressed.png'), auto;
 }
 
 body.test {
-  background-image: url('./images/bg_s.jpg');
+  background-image: url('./images/bg-01.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  width: auto;
+  flex-direction: column;
 }
 
-.btn {
-  position: absolute;
-  left: 50%;
-  top: 50%;
+canvas {
+  margin-top: 190px;
+  position: relative;
 }
 
-.cursor {
-  z-index: 9999; /* Теперь курсор точно выше всех элементов */
-  width: 26px;
-  height: 30px;
-  background: url('./cursor.png') no-repeat center;
-  background-size: contain;
-  position: fixed;
-  pointer-events: none; /* Оставляем, чтобы курсор не мешал кликам */
-}
-
-button {
-  pointer-events: none; /* Оставляем кнопки кликабельными */
-}
-
+// тестовая кнопка
 .special {
   position: absolute;
   display: inline-block;
@@ -54,8 +40,24 @@ button {
   background: #501313;
 }
 
-canvas {
-  position: absolute;
-  top: 0;
-  left: calc(50% - 1348px / 2);
+@keyframes marquee {
+  0% {
+    transform: translateZ(0);
+  }
+  100% {
+    transform: translate3D(-100%, 0, 0);
+  }
+}
+
+.test_padd {
+  display: flex;
+  width: 1761px;
+  height: 78px;
+  padding: 15px;
+  align-items: flex-start;
+  gap: 60px;
+  flex-shrink: 0;
+
+  border: 15px solid var(--schizo-yellow, #fff200);
+  background: var(--schizo-red, #f00);
 }

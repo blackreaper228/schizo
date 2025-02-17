@@ -9,9 +9,9 @@ const path = require('path')
 module.exports = {
   entry: {
     index: './src/index.js',
-    page: './src/page.jsx',
     soon: './src/index.js',
-    test: './src/javascript/camera.js'
+    test: './src/javascript/test.js',
+    empty: './src/javascript/empty.js'
   },
   output: {
     filename: '[name].js',
@@ -104,15 +104,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       hash: true,
       scriptLoading: 'blocking',
-      template: './src/pages/page.html',
-      filename: './pages/page.html',
-      chunks: ['page']
-    }),
-
-    new HtmlWebpackPlugin({
-      hash: true,
-      scriptLoading: 'blocking',
-      template: './src/soon.html',
+      template: './src/pages/soon.html',
       filename: './soon.html',
       chunks: ['soon']
     }),
@@ -120,31 +112,31 @@ module.exports = {
     new HtmlWebpackPlugin({
       hash: true,
       scriptLoading: 'blocking',
-      template: './src/who.html',
+      template: './src/pages/who.html',
       filename: './who.html',
-      chunks: ['index']
+      chunks: ['empty']
     }),
 
     new HtmlWebpackPlugin({
       hash: true,
       scriptLoading: 'blocking',
-      template: './src/sickness.html',
+      template: './src/pages/sickness.html',
       filename: './sickness.html',
-      chunks: ['index']
+      chunks: ['empty']
     }),
 
     new HtmlWebpackPlugin({
       hash: true,
       scriptLoading: 'blocking',
-      template: './src/servant.html',
+      template: './src/pages/servant.html',
       filename: './servant.html',
-      chunks: ['index']
+      chunks: ['empty']
     }),
 
     new HtmlWebpackPlugin({
       hash: true,
       scriptLoading: 'blocking',
-      template: './src/bruh.html',
+      template: './src/pages/bruh.html',
       filename: './bruh.html',
       chunks: ['index']
     }),
@@ -152,7 +144,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       hash: true,
       scriptLoading: 'blocking',
-      template: './src/test.html',
+      template: './src/pages/test.html',
       filename: './test.html',
       chunks: ['test']
     }),

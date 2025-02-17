@@ -4,3 +4,10 @@
 @import 'stylesheets/basics.scss';
 @import 'stylesheets/index.scss';
 @import 'stylesheets/test.scss';
+
+@import 'stylesheets/components/atoms.scss';
+@import 'stylesheets/components/molecules.scss';
+@import 'stylesheets/components/organisms.scss';
+@import 'stylesheets/components/quarks.scss';
+@import 'stylesheets/components/superorganisms.scss';
+@import 'stylesheets/components/wrappers.scss';

@@ -8,7 +8,7 @@ body {
 }
 
 body {
-  font-family: 'Inter';
+  font-family: 'InterVariable', sans-serif;
   font-weight: 400;
 }
 
@@ -24,4 +24,33 @@ body {
 
 a {
   text-decoration: none;
+}
+
+// курсор
+
+* {
+  cursor: url('./images/cursor/cursor.png'), auto;
+}
+
+*:active {
+  cursor: url('./images/cursor/cursor-pressed.png'), auto;
+}
+
+// 3D-logo
+
+canvas {
+  // z-index: 999;
+  // margin-top: 190px;
+  // position: relative;
+}
+
+// анимация для бегущей строки
+
+@keyframes marquee {
+  0% {
+    transform: translateZ(0);
+  }
+  100% {
+    transform: translate3D(-100%, 0, 0);
+  }
 }

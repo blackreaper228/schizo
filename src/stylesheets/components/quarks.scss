@@ -2,3 +2,29 @@
   width: 39px;
   height: 32px;
 }
+
+.Q_Shadow {
+  position: absolute;
+  top: 190px;
+  width: 1745px;
+  height: 368px;
+  background-image: url('./images/shadow.png');
+  opacity: 0.7;
+}
+
+.Q_LandingSecContentPic {
+  display: flex;
+  height: 550px;
+}
+
+.Q_3DLogo {
+  flex-shrink: 1;
+  width: 100%;
+  height: 300px;
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  margin-top: 236px;
+  margin-bottom: -48px;
+}

@@ -17,12 +17,16 @@
 }
 
 .A_NewsLink {
-  font-family: 'Inter';
+  font-family: 'InterVariable', sans-serif;
   font-size: 40px;
   font-weight: 600;
   font-style: italic;
-  text-decoration-line: underline;
   color: var(--schizo-yellow);
+}
+
+.A_NewsLink:hover {
+  cursor: url('./images/cursor/cursor-hover.png'), auto;
+  text-decoration-line: underline;
 }
 
 .A_HeaderNavbarBtn {
@@ -70,4 +74,92 @@ a:has(.A_HeaderNavbarBtn) {
   font-weight: 700;
   line-height: normal;
   text-transform: uppercase;
+}
+
+.A_LandingTitle {
+  margin-bottom: -15px;
+  position: relative;
+  display: flex;
+  height: 78px;
+  padding: 0px 36px 21px 36px;
+  align-items: flex-end;
+  gap: 60px;
+  flex-shrink: 0;
+
+  border: 15px solid var(--schizo-yellow);
+  background: var(--schizo-red);
+  color: transparent;
+  text-shadow: var(--schizo-shadow-text); /* Тень */
+
+  font-family: 'InterVariable', sans-serif;
+  font-size: 72px;
+  font-style: italic;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+.A_LandingTitle::after {
+  color: var(--schizo-red);
+
+  -webkit-text-stroke-width: 14px;
+  -webkit-text-stroke-color: var(--schizo-yellow);
+  paint-order: stroke fill;
+  content: attr(data-text); /* Дублируем текст */
+  position: absolute;
+  text-align: center;
+  text-shadow: 0px 0px 0px var(--schizo-red); /* Тень */
+
+  font-size: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+  font-family: inherit;
+  text-transform: inherit;
+  line-height: inherit;
+}
+
+.A_LandingText {
+  display: flex;
+
+  color: var(--schizo-yellow);
+  font-family: 'InterVariable';
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%; /* 52px */
+}
+
+.A_Tag {
+  width: fit-content;
+  display: flex;
+  padding: 4px 20px;
+  justify-content: center;
+  align-items: center;
+
+  color: var(--schizo-red);
+  font-family: 'Times New Roman';
+  font-size: 48px;
+  font-style: italic;
+  font-weight: 700;
+  line-height: normal;
+  background: var(--schizo-yellow);
+
+  &.invert {
+    color: var(--schizo-yellow);
+    background: var(--schizo-red);
+  }
+}
+
+.A_LandingLink {
+  display: flex;
+  width: fit-content;
+
+  color: var(--schizo-yellow);
+  text-align: center;
+  font-family: 'InterVariable';
+  font-size: 40px;
+  font-style: italic;
+  font-weight: 700;
+  line-height: normal;
+  text-decoration-line: underline;
 }

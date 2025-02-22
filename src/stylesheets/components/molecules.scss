@@ -1,7 +1,8 @@
 .M_HeaderNavbar {
   display: flex;
-  padding: 16px 16px 32px 16px;
+  width: 1760px;
+  justify-content: space-between;
+  padding: 16px 16px 28px 16px;
   align-items: center;
-  gap: 16px;
   background: var(--schizo-yellow);
 }

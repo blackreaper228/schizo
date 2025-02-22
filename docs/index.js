@@ -60810,15 +60810,9 @@ function addPrimitiveAttributes( geometry, primitiveDef, parser ) {
 
 
 
-;// CONCATENATED MODULE: ./src/assets/HDR_blue_nebulae-1.hdr
-const HDR_blue_nebulae_1_namespaceObject = __webpack_require__.p + "assets/a46e9027b096aeefc43a.hdr";
-;// CONCATENATED MODULE: ./src/models/monkey.glb
-const monkey_namespaceObject = __webpack_require__.p + "models/387dc51f9cfe041d68fd.glb";
-;// CONCATENATED MODULE: ./src/models/schizo_logo.glb
-const schizo_logo_namespaceObject = __webpack_require__.p + "models/c8cd60ca8dc5d945896a.glb";
+;// CONCATENATED MODULE: ./src/models/schizo_logo2.glb
+const schizo_logo2_namespaceObject = __webpack_require__.p + "models/55afd45942a8076fdedb.glb";
 ;// CONCATENATED MODULE: ./src/javascript/logo-3D.js
-
-
 
 
 
@@ -60829,18 +60823,13 @@ var logo3D = function logo3D() {
   var raycaster = new Raycaster();
   var mouse = new Vector2();
   var target = new three_core_Vector3();
-  var scene, camera, renderer, model;
+  var scene, camera, renderer, model, outline;
   var mouseX = 0,
     mouseY = 0;
   var renderWidth = 1600;
   var renderHeight = 300;
-
-  // Инициализация сцены
-
   function init() {
     scene = new Scene();
-    // scene.background = 0xffffff
-
     camera = new PerspectiveCamera(5, renderWidth / renderHeight, 0.1, 100);
     camera.position.set(0, 0, 18);
     renderer = new WebGLRenderer({
@@ -60852,20 +60841,43 @@ var logo3D = function logo3D() {
     container.prepend(renderer.domElement);
 
     // Свет
-    var light = new DirectionalLight(0xffffff, 1);
+    var light = new DirectionalLight(0xFFF200, 1);
     light.position.set(2, 2, 5);
     scene.add(light);
     var redLight = new DirectionalLight(0xff0000, 2);
     redLight.position.set(-2, -2, 3);
     scene.add(redLight);
 
+    // Обводка
+    var solidify = function solidify(mesh) {
+      var THICKNESS = 0.0015;
+      var geometry = mesh.geometry;
+      var material = new ShaderMaterial({
+        vertexShader: /* glsl */"\n        void main() {\n          vec3 newPosition = position + normal * ".concat(THICKNESS, ";\n          gl_Position = projectionMatrix * viewMatrix * modelMatrix * vec4(newPosition, 1.0);\n        }"),
+        fragmentShader: /* glsl */" \n        void main() {\n          gl_FragColor = vec4(255.0, 242.0, 0.0, 1.0); // \u0416\u0435\u043B\u0442\u044B\u0439 \u0446\u0432\u0435\u0442\n        }",
+        side: BackSide
+      });
+      var outline = new Mesh(geometry, material);
+      outline.scale.copy(mesh.scale);
+      outline.position.copy(mesh.position);
+      outline.rotation.copy(mesh.rotation);
+      mesh.parent.add(outline);
+    };
+
     // Загрузка модели
     var loader = new GLTFLoader();
-    loader.load(schizo_logo_namespaceObject, function (gltf) {
+    loader.load(schizo_logo2_namespaceObject, function (gltf) {
       model = gltf.scene;
       model.scale.set(0.5, 0.5, 0.5);
-      model.position.set(0, 0, 0);
+      model.position.set(-0.3, 0, 0);
       scene.add(model);
+
+      // Обводка
+      model.traverse(function (child) {
+        if (child.isMesh) {
+          solidify(child);
+        }
+      });
     });
 
     // Отслеживание мыши
@@ -60875,43 +60887,29 @@ var logo3D = function logo3D() {
     window.addEventListener('resize', onWindowResize);
     animate();
   }
-
-  // Функция обработки движения мыши
   function onMouseMove(event) {
     var rect = renderer.domElement.getBoundingClientRect();
-
-    // Нормализуем координаты курсора (от -1 до 1)
     mouse.x = (event.clientX - rect.left) / renderWidth * 2 - 1;
     mouse.y = -((event.clientY - rect.top) / renderHeight) * 2 + 1;
-
-    // Уменьшаем амплитуду поворота
     mouse.x *= 0.05;
     mouse.y *= 0.1;
-
-    // Создаём луч от камеры в направлении курсора
     raycaster.setFromCamera(mouse, camera);
-
-    // Вычисляем точку пересечения с плоскостью перед моделью
     var plane = new Plane(new three_core_Vector3(0, 0, 2), -2);
     raycaster.ray.intersectPlane(plane, target);
+    // компенсация смещения модели
+    target.x -= 0.3;
   }
-
-  // Анимация
   function animate() {
     requestAnimationFrame(animate);
     if (model) {
-      model.lookAt(target); // 🔹 Теперь модель смотрит точно в точку перед ней
+      model.lookAt(target);
     }
     renderer.render(scene, camera);
   }
-
-  // Обновление размеров окна
   function onWindowResize() {
     var aspectRatio = renderWidth / renderHeight;
     camera.aspect = aspectRatio;
     camera.updateProjectionMatrix();
-
-    // Вместо window.innerWidth / window.innerHeight используем фиксированный размер
     renderer.setSize(renderWidth, renderHeight);
   }
   init();

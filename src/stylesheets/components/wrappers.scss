@@ -1,0 +1,10 @@
+.W_LandingSecContent {
+  display: flex;
+  padding: 15px;
+  align-items: flex-start;
+  gap: 60px;
+  align-self: stretch;
+
+  border: 15px solid var(--schizo-yellow);
+  background: var(--schizo-red);
+}

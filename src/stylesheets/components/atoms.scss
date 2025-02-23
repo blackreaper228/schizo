@@ -165,6 +165,7 @@ a:has(.A_HeaderNavbarBtn) {
   margin-bottom: -15px;
   position: relative;
   display: flex;
+  // flex-direction: column;
   height: 78px;
   padding: 0px 36px 21px 36px;
   align-items: flex-end;
@@ -208,7 +209,7 @@ a:has(.A_HeaderNavbarBtn) {
   }
 
   br {
-    content: '';
+    // content: '';
     margin: -20px 0;
   }
 
@@ -228,7 +229,7 @@ a:has(.A_HeaderNavbarBtn) {
 
 .A_LandingTitle::after {
   color: var(--schizo-red);
-
+  white-space: pre-line;
   -webkit-text-stroke-width: 14px;
   -webkit-text-stroke-color: var(--schizo-yellow);
   paint-order: stroke fill;
@@ -305,6 +306,10 @@ a:has(.A_HeaderNavbarBtn) {
 
   &.invert {
     color: var(--schizo-red);
+  }
+
+  &.outLink:hover {
+    padding-left: 0px;
   }
 }
 

@@ -9,8 +9,81 @@
 }
 
 .O_LandingSec {
+  position: relative;
   width: 1760px;
   display: flex;
   flex-direction: column;
+  box-shadow: var(--schizo-shadow);
+
+  &.sec03 {
+    margin-top: 266px;
+  }
+}
+
+.O_LandingSec02 {
+  width: 1760px;
+  object-fit: cover;
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  height: 695px;
+
+  &::before {
+    content: '';
+    width: 100vw;
+    height: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+
+    border-top: 15px solid var(--schizo-red);
+    border-bottom: 15px solid var(--schizo-red);
+    box-shadow: var(--schizo-shadow);
+    background-image: url('./images/landing/sec02.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+  }
+
+  video {
+    border-top: 15px solid var(--schizo-red);
+    border-bottom: 15px solid var(--schizo-red);
+    position: absolute;
+    width: 100vw;
+    left: 50%;
+    transform: translateX(-50%);
+    object-fit: cover;
+    opacity: 0;
+    z-index: 0;
+    transition: opacity 0.3s ease;
+    height: 725px;
+  }
+
+  // Ховер эффекты
+  &:hover {
+    &::before {
+      opacity: 1;
+    }
+
+    video {
+      opacity: 1;
+    }
+  }
+}
+
+.O_LandingCards {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+}
+
+.O_FinalSec {
+  background: var(--schizo-red);
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+
   box-shadow: var(--schizo-shadow);
 }

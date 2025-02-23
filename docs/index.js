@@ -60841,7 +60841,7 @@ var logo3D = function logo3D() {
     container.prepend(renderer.domElement);
 
     // Свет
-    var light = new DirectionalLight(0xFFF200, 1);
+    var light = new DirectionalLight(0xff0000, 1);
     light.position.set(2, 2, 5);
     scene.add(light);
     var redLight = new DirectionalLight(0xff0000, 2);
@@ -60875,6 +60875,7 @@ var logo3D = function logo3D() {
       // Обводка
       model.traverse(function (child) {
         if (child.isMesh) {
+          // child.material.color.setHex(0xff0000)
           solidify(child);
         }
       });

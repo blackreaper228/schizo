@@ -1,3 +1,76 @@
+.A_GoUp {
+  width: 112px;
+  height: 112px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 0px;
+
+  position: fixed;
+  right: 72px;
+  bottom: 128px;
+
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+
+  border: 15px solid var(--schizo-yellow);
+  background: var(--schizo-red);
+
+  color: var(--schizo-yellow);
+  font-family: 'InterVariable';
+  font-size: 46px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+
+  padding-bottom: 0px;
+  transition: padding-bottom 0.1s ease;
+
+  box-shadow: var(--schizo-shadow);
+
+  &:hover {
+    cursor: var(--cursor-hover);
+    padding-bottom: 16px;
+    transition: padding-bottom 0.1s ease;
+  }
+
+  &:active {
+    cursor: var(--cursor-pressed);
+  }
+}
+
+.A_MuteSound {
+  opacity: 0.7;
+  background-image: url('./svg/A_MuteSoundOff.svg');
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 15px solid var(--schizo-yellow);
+  box-shadow: var(--schizo-shadow);
+
+  width: 112px;
+  height: 112px;
+
+  position: fixed;
+  left: 72px;
+  bottom: 128px;
+
+  &:hover {
+    opacity: 1;
+    cursor: var(--cursor-hover);
+  }
+
+  &:active {
+    cursor: var(--cursor-pressed);
+  }
+
+  &.playing {
+    background-image: url('./svg/A_MuteSound.svg');
+  }
+}
+
 .A_HeaderNews {
   width: 100%;
   padding-top: 20px;
@@ -22,11 +95,15 @@
   font-weight: 600;
   font-style: italic;
   color: var(--schizo-yellow);
-}
 
-.A_NewsLink:hover {
-  cursor: url('./images/cursor/cursor-hover.png'), auto;
-  text-decoration-line: underline;
+  &:hover {
+    cursor: var(--cursor-hover);
+    text-decoration-line: underline;
+  }
+
+  &:active {
+    cursor: var(--cursor-pressed);
+  }
 }
 
 .A_HeaderNavbarBtn {
@@ -46,11 +123,18 @@
   line-height: normal;
   text-transform: uppercase;
   text-decoration: none;
-}
+  transition: transform 0.1s ease;
 
-.A_HeaderNavbarBtn:hover {
-  text-decoration: underline;
-  cursor: url('./images/cursor/cursor-hover.png'), auto;
+  &:hover {
+    cursor: var(--cursor-hover);
+    text-decoration-line: underline;
+    transition: transform 0.1s ease;
+    transform: rotate(5deg);
+  }
+
+  &:active {
+    cursor: var(--cursor-pressed);
+  }
 }
 
 a:has(.A_HeaderNavbarBtn) {
@@ -77,6 +161,7 @@ a:has(.A_HeaderNavbarBtn) {
 }
 
 .A_LandingTitle {
+  z-index: 1;
   margin-bottom: -15px;
   position: relative;
   display: flex;
@@ -95,8 +180,50 @@ a:has(.A_HeaderNavbarBtn) {
   font-size: 72px;
   font-style: italic;
   font-weight: 700;
-  line-height: normal;
+  line-height: 100%;
+  letter-spacing: 4px;
+
   text-transform: uppercase;
+
+  &.shadowed {
+    border: 0px;
+
+    color: var(--schizo-red);
+    width: fit-content;
+    height: 78px;
+
+    position: absolute;
+  }
+
+  &.final {
+    margin-bottom: 0;
+    padding: 0;
+    padding-bottom: 28px;
+
+    border: 0px;
+
+    color: var(--schizo-red);
+    width: 1760px;
+    height: 78px;
+  }
+
+  br {
+    content: '';
+    margin: -20px 0;
+  }
+
+  &.invert {
+    width: 100%;
+
+    border: 15px solid var(--schizo-red);
+    background: var(--schizo-yellow);
+
+    color: var(--schizo-red);
+    height: 162px;
+
+    position: absolute;
+    top: -148px;
+  }
 }
 
 .A_LandingTitle::after {
@@ -107,15 +234,15 @@ a:has(.A_HeaderNavbarBtn) {
   paint-order: stroke fill;
   content: attr(data-text); /* Дублируем текст */
   position: absolute;
-  text-align: center;
   text-shadow: 0px 0px 0px var(--schizo-red); /* Тень */
 
+  gap: 0px;
   font-size: inherit;
   font-style: inherit;
   font-weight: inherit;
   font-family: inherit;
   text-transform: inherit;
-  line-height: inherit;
+  line-height: 100%;
 }
 
 .A_LandingText {
@@ -127,9 +254,15 @@ a:has(.A_HeaderNavbarBtn) {
   font-style: normal;
   font-weight: 600;
   line-height: 130%; /* 52px */
+
+  &.invert {
+    color: var(--schizo-red);
+  }
 }
 
 .A_Tag {
+  transition: 0.1s ease;
+
   width: fit-content;
   display: flex;
   padding: 4px 20px;
@@ -144,6 +277,12 @@ a:has(.A_HeaderNavbarBtn) {
   line-height: normal;
   background: var(--schizo-yellow);
 
+  &:hover {
+    text-decoration: underline;
+    transition: 0.1s ease;
+    cursor: var(--cursor-hover);
+  }
+
   &.invert {
     color: var(--schizo-yellow);
     background: var(--schizo-red);
@@ -153,6 +292,7 @@ a:has(.A_HeaderNavbarBtn) {
 .A_LandingLink {
   display: flex;
   width: fit-content;
+  flex-shrink: 0;
 
   color: var(--schizo-yellow);
   text-align: center;
@@ -161,5 +301,78 @@ a:has(.A_HeaderNavbarBtn) {
   font-style: italic;
   font-weight: 700;
   line-height: normal;
+  transition: 0.1s ease;
+
+  &.invert {
+    color: var(--schizo-red);
+  }
+}
+
+.A_LandingLink:hover {
+  transition: 0.1s ease;
+  padding-left: 12px;
   text-decoration-line: underline;
+  cursor: var(--cursor-hover);
+}
+
+.A_LandingCardsItemContentText {
+  display: flex;
+  height: 196px;
+  justify-content: center;
+  align-items: center;
+  align-self: stretch;
+
+  color: var(--schizo-yellow);
+  font-family: 'InterVariable';
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 140%; /* 39.2px */
+}
+
+.A_LandingCardsItemContentLink {
+  display: flex;
+  height: 34px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  color: var(--schizo-yellow);
+  font-family: 'InterVariable';
+  font-size: 28px;
+  font-style: italic;
+  font-weight: 700;
+  transition: 0.1s ease;
+
+  &:hover {
+    padding-left: 8px;
+    transition: 0.1s ease;
+  }
+}
+
+.A_LandingCardsItemTitle {
+  display: flex;
+  z-index: 99;
+  position: absolute;
+  left: 20px;
+  top: 500px;
+
+  font-family: 'InterVariable';
+  font-size: 40px;
+  font-style: italic;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-shadow: var(--schizo-shadow-text-small);
+  color: transparent;
+}
+.A_LandingCardsItemTitle::after {
+  color: var(--schizo-red);
+
+  -webkit-text-stroke-width: 7px;
+  -webkit-text-stroke-color: var(--schizo-yellow);
+  paint-order: stroke fill;
+  content: attr(data-text); /* Дублируем текст */
+
+  text-shadow: 0px 0px 0px var(--schizo-red); /* Тень */
+  position: absolute;
 }

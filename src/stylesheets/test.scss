@@ -1,11 +1,3 @@
-* {
-  cursor: url('./images/cursor/cursor.png'), auto;
-}
-
-*:active {
-  cursor: url('./images/cursor/cursor-pressed.png'), auto;
-}
-
 body.test {
   background-image: url('./images/bg-01.jpg');
   background-size: cover;
@@ -20,25 +12,6 @@ canvas {
   // z-index: 999;
   // margin-top: 190px;
   // position: relative;
-}
-
-// тестовая кнопка
-.special {
-  position: absolute;
-  display: inline-block;
-  padding: 12px 36px 12px 36px;
-  background: #cc2e2e;
-  top: 20px;
-  left: 20px;
-  user-select: none;
-}
-
-.special:hover {
-  background: #891919;
-}
-
-.special:active {
-  background: #501313;
 }
 
 @keyframes marquee {

@@ -1,8 +1,10 @@
 import '../index.css'
-// import audioMain from './audio.js'
+import audioNew from './audio_new.js'
 import logo3D from './logo-3D.js'
+import goUp from './LandingGoUp.js'
 
 document.addEventListener('DOMContentLoaded', () => {
-  // audioMain()
+  audioNew()
   logo3D()
+  goUp()
 })

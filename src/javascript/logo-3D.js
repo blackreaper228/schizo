@@ -12,7 +12,8 @@ const logo3D = () => {
   const target = new THREE.Vector3()
 
   let scene, camera, renderer, model, outline
-  let mouseX = 0, mouseY = 0
+  let mouseX = 0,
+    mouseY = 0
 
   const renderWidth = 1600
   const renderHeight = 300
@@ -34,7 +35,7 @@ const logo3D = () => {
     container.prepend(renderer.domElement)
 
     // Свет
-    const light = new THREE.DirectionalLight(0xFFF200, 1)
+    const light = new THREE.DirectionalLight(0xff0000, 1)
     light.position.set(2, 2, 5)
     scene.add(light)
 
@@ -44,7 +45,7 @@ const logo3D = () => {
 
     // Обводка
     const solidify = (mesh) => {
-      const THICKNESS = 0.0015 
+      const THICKNESS = 0.0015
       const geometry = mesh.geometry
       const material = new THREE.ShaderMaterial({
         vertexShader: /* glsl */ `
@@ -65,7 +66,6 @@ const logo3D = () => {
       outline.position.copy(mesh.position)
       outline.rotation.copy(mesh.rotation)
       mesh.parent.add(outline)
-      
     }
 
     // Загрузка модели
@@ -75,10 +75,11 @@ const logo3D = () => {
       model.scale.set(0.5, 0.5, 0.5)
       model.position.set(-0.3, 0, 0)
       scene.add(model)
-      
+
       // Обводка
       model.traverse((child) => {
         if (child.isMesh) {
+          // child.material.color.setHex(0xff0000)
           solidify(child)
         }
       })
@@ -107,7 +108,7 @@ const logo3D = () => {
     const plane = new THREE.Plane(new THREE.Vector3(0, 0, 2), -2)
     raycaster.ray.intersectPlane(plane, target)
     // компенсация смещения модели
-    target.x -= 0.3 
+    target.x -= 0.3
   }
 
   function animate() {

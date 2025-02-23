@@ -1,11 +1,18 @@
 :root {
+  // cursors
+  --cursor-hover: url('./images/cursor/cursor-hover.png'), auto;
+  --cursor-pressed: url('./images/cursor/cursor-pressed.png'), auto;
+
   // colors
   --white: white;
   --black: black;
   --schizo-yellow: #fff200;
-  --schizo-red: #ff0000;
-
+  --schizo-red: #d20000;
+  --schizo-red-hover: #951111;
+  --schizo-yellow-hover: #ccc200;
   //effects
   --schizo-shadow-text: 0px 14px 8px #000;
+  --schizo-shadow-text-small: 0px 7px 10px #000;
+
   --schizo-shadow: 0px 20px 30px 0px #000;
 }

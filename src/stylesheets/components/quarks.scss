@@ -27,4 +27,22 @@
   justify-content: center;
   margin-top: 236px;
   margin-bottom: -48px;
+
+  filter: drop-shadow(0px 10px 12px rgba(0, 0, 0, 1));
+}
+
+.Q_LandingCardsItemPic {
+  width: 100%;
+  display: flex;
+  padding: 16px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.Q_TgIcon {
+  display: flex;
+  align-items: flex-start;
+  width: 168px;
+  height: 168px;
 }

@@ -6,3 +6,49 @@
   align-items: center;
   background: var(--schizo-yellow);
 }
+
+.M_Footer {
+  position: relative;
+  bottom: 0;
+  display: flex;
+  width: 100%;
+  padding: 19px 72px;
+  justify-content: space-between;
+  align-items: center;
+
+  border-top: 15px solid var(--schizo-yellow);
+  background: var(--schizo-red);
+}
+
+.M_LandingCardsItem {
+  position: relative;
+  width: 564px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border: 15px solid var(--schizo-yellow);
+  background: var(--schizo-red);
+
+  /* schizo-shadow */
+  box-shadow: var(--schizo-shadow);
+
+  &.invert {
+    background: var(--schizo-yellow);
+    border: 15px solid var(--schizo-red);
+
+    .A_LandingCardsItemContentText {
+      color: var(--schizo-red);
+    }
+
+    .A_LandingCardsItemContentLink {
+      color: var(--schizo-red);
+    }
+  }
+
+  &:hover {
+    .A_LandingCardsItemContentLink {
+      cursor: var(--cursor-hover);
+      text-decoration-line: underline;
+    }
+  }
+}

@@ -33,7 +33,7 @@ a {
 }
 
 *:active {
-  cursor: url('./images/cursor/cursor-pressed.png'), auto;
+  cursor: var(--cursor-pressed);
 }
 
 // 3D-logo
@@ -53,4 +53,8 @@ canvas {
   100% {
     transform: translate3D(-100%, 0, 0);
   }
+}
+
+[data-text] {
+  white-space: pre-line; // Это сохранит переносы строк
 }

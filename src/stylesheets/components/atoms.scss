@@ -236,7 +236,7 @@ a:has(.A_HeaderNavbarBtn) {
     line-height: 100%;
   }
   br {
-    content: ''; // отрубать при бандле
+    // content: ''; // отрубать при бандле
     margin: -20px 0;
   }
 }

@@ -60817,77 +60817,85 @@ const schizo_logo2_namespaceObject = __webpack_require__.p + "models/55afd45942a
 
 
 
-
-// three.js
 var logo3D = function logo3D() {
   var raycaster = new Raycaster();
   var mouse = new Vector2();
-  var target = new three_core_Vector3();
-  var scene, camera, renderer, model, outline;
-  var mouseX = 0,
-    mouseY = 0;
-  var renderWidth = 1600;
-  var renderHeight = 300;
-  function init() {
-    scene = new Scene();
-    camera = new PerspectiveCamera(5, renderWidth / renderHeight, 0.1, 100);
-    camera.position.set(0, 0, 18);
-    renderer = new WebGLRenderer({
-      antialias: true,
-      alpha: true
-    });
-    renderer.setSize(renderWidth, renderHeight);
-    var container = document.getElementById('root');
-    container.prepend(renderer.domElement);
+  var target = new three_core_Vector3(-0.3, 0, 0); // Устанавливаем начальную точку, куда смотрит модель
 
-    // Свет
-    var light = new DirectionalLight(0xff0000, 1);
-    light.position.set(2, 2, 5);
-    scene.add(light);
-    var redLight = new DirectionalLight(0xff0000, 2);
-    redLight.position.set(-2, -2, 3);
-    scene.add(redLight);
+  // Создаем сцену, камеру и рендерер сразу
+  var scene = new Scene();
+  var container = document.querySelector('.Q_3DLogo');
+
+  // Объявляем переменные в более широкой области видимости
+  var renderWidth, renderHeight;
+  function updateSize() {
+    var styles = getComputedStyle(container);
+    renderHeight = parseInt(styles.getPropertyValue('--render-height'));
+    renderWidth = window.innerWidth;
+    renderer.setSize(renderWidth, renderHeight);
+    camera.aspect = renderWidth / renderHeight;
+    camera.updateProjectionMatrix();
+  }
+  var camera = new PerspectiveCamera(5, 1, 0.1, 100); // временный aspect ratio
+  camera.position.set(0, 0, 18);
+  var renderer = new WebGLRenderer({
+    antialias: true,
+    alpha: true
+  });
+  container.appendChild(renderer.domElement);
+  var model;
+
+  // Вызываем при загрузке
+  updateSize();
+
+  // Обновляем при изменении размера окна
+  window.addEventListener('resize', updateSize);
+
+  // Свет
+  var light = new DirectionalLight(0xff0000, 1);
+  light.position.set(2, 2, 5);
+  scene.add(light);
+  var redLight = new DirectionalLight(0xff0000, 2);
+  redLight.position.set(-2, -2, 3);
+  scene.add(redLight);
+
+  // Обводка
+  var solidify = function solidify(mesh) {
+    var THICKNESS = 0.0015;
+    var geometry = mesh.geometry;
+    var material = new ShaderMaterial({
+      vertexShader: /* glsl */"\n      void main() {\n        vec3 newPosition = position + normal * ".concat(THICKNESS, ";\n        gl_Position = projectionMatrix * viewMatrix * modelMatrix * vec4(newPosition, 1.0);\n      }"),
+      fragmentShader: /* glsl */" \n      void main() {\n        gl_FragColor = vec4(255.0, 242.0, 0.0, 1.0); // \u0416\u0435\u043B\u0442\u044B\u0439 \u0446\u0432\u0435\u0442\n      }",
+      side: BackSide
+    });
+    var outline = new Mesh(geometry, material);
+    outline.scale.copy(mesh.scale);
+    outline.position.copy(mesh.position);
+    outline.rotation.copy(mesh.rotation);
+    mesh.parent.add(outline);
+  };
+
+  // Загрузка модели
+  var loader = new GLTFLoader();
+  loader.load(schizo_logo2_namespaceObject, function (gltf) {
+    model = gltf.scene;
+    model.scale.set(0.5, 0.5, 0.5);
+    model.position.set(-0.3, 0, 0);
+    scene.add(model);
+
+    // Сразу устанавливаем направление взгляда
+    model.lookAt(target);
 
     // Обводка
-    var solidify = function solidify(mesh) {
-      var THICKNESS = 0.0015;
-      var geometry = mesh.geometry;
-      var material = new ShaderMaterial({
-        vertexShader: /* glsl */"\n        void main() {\n          vec3 newPosition = position + normal * ".concat(THICKNESS, ";\n          gl_Position = projectionMatrix * viewMatrix * modelMatrix * vec4(newPosition, 1.0);\n        }"),
-        fragmentShader: /* glsl */" \n        void main() {\n          gl_FragColor = vec4(255.0, 242.0, 0.0, 1.0); // \u0416\u0435\u043B\u0442\u044B\u0439 \u0446\u0432\u0435\u0442\n        }",
-        side: BackSide
-      });
-      var outline = new Mesh(geometry, material);
-      outline.scale.copy(mesh.scale);
-      outline.position.copy(mesh.position);
-      outline.rotation.copy(mesh.rotation);
-      mesh.parent.add(outline);
-    };
-
-    // Загрузка модели
-    var loader = new GLTFLoader();
-    loader.load(schizo_logo2_namespaceObject, function (gltf) {
-      model = gltf.scene;
-      model.scale.set(0.5, 0.5, 0.5);
-      model.position.set(-0.3, 0, 0);
-      scene.add(model);
-
-      // Обводка
-      model.traverse(function (child) {
-        if (child.isMesh) {
-          // child.material.color.setHex(0xff0000)
-          solidify(child);
-        }
-      });
+    model.traverse(function (child) {
+      if (child.isMesh) {
+        solidify(child);
+      }
     });
+  });
 
-    // Отслеживание мыши
-    document.addEventListener('mousemove', onMouseMove);
-
-    // Обработка изменения размеров окна
-    window.addEventListener('resize', onWindowResize);
-    animate();
-  }
+  // Отслеживание мыши
+  document.addEventListener('mousemove', onMouseMove);
   function onMouseMove(event) {
     var rect = renderer.domElement.getBoundingClientRect();
     mouse.x = (event.clientX - rect.left) / renderWidth * 2 - 1;
@@ -60897,7 +60905,6 @@ var logo3D = function logo3D() {
     raycaster.setFromCamera(mouse, camera);
     var plane = new Plane(new three_core_Vector3(0, 0, 2), -2);
     raycaster.ray.intersectPlane(plane, target);
-    // компенсация смещения модели
     target.x -= 0.3;
   }
   function animate() {
@@ -60907,13 +60914,7 @@ var logo3D = function logo3D() {
     }
     renderer.render(scene, camera);
   }
-  function onWindowResize() {
-    var aspectRatio = renderWidth / renderHeight;
-    camera.aspect = aspectRatio;
-    camera.updateProjectionMatrix();
-    renderer.setSize(renderWidth, renderHeight);
-  }
-  init();
+  animate();
 };
 /* harmony default export */ const logo_3D = (logo3D);
 ;// CONCATENATED MODULE: ./src/index.js

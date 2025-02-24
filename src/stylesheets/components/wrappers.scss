@@ -3,22 +3,22 @@
   align-items: center;
   width: 100%;
   flex-direction: column;
-  gap: 170px;
-  margin-bottom: 170px;
+  gap: var(--wrap-gap);
+  margin-bottom: var(--wrap-padding);
 }
 
 .W_LandingSecContent {
   display: flex;
-  padding: 15px;
+  padding: 10px;
   align-items: flex-start;
   gap: 60px;
   align-self: stretch;
 
-  border: 15px solid var(--schizo-yellow);
+  border: var(--yellow-border);
   background: var(--schizo-red);
 
   &.invert {
-    border: 15px solid var(--schizo-red);
+    border: var(--red-border);
     background: var(--schizo-yellow);
   }
 }
@@ -28,14 +28,14 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 12px 0px 12px 0px;
+  padding: 6px 0px 6px 0px;
 }
 
 .W_LandingSecContentTypeUpside {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 48px;
+  gap: 30px;
 }
 
 .W_FooterText {
@@ -46,7 +46,7 @@
   div {
     color: var(--schizo-yellow);
     font-family: 'InterVariable';
-    font-size: 36px;
+    font-size: var(--body-font-size);
     font-style: italic;
     font-weight: 600;
     line-height: normal;
@@ -67,11 +67,11 @@
 
 .W_LandingSec02Content {
   position: absolute;
-  bottom: -117px;
+  bottom: -85px;
 
   display: flex;
-  width: 1760px;
-  padding: 24px 26px;
+  width: var(--center-container);
+  padding: 16px 22px;
   justify-content: space-between;
   align-items: flex-end;
 
@@ -81,10 +81,10 @@
 
 .W_LandingCardsItemContent {
   display: flex;
-  padding: 76px 26px 26px 26px;
+  padding: 58px 16px 16px 16px;
   flex-direction: column;
   align-items: flex-start;
-  gap: 68px;
+  gap: var(--W_LandingCardsItemContent-Gap);
   align-self: stretch;
 }
 
@@ -98,7 +98,7 @@
 }
 
 .W_FinalSecContentText {
-  width: 1532px;
+  width: var(--W_FinalSecContentText-Width);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -106,8 +106,26 @@
 
   color: var(--schizo-yellow);
   font-family: 'InterVariable';
-  font-size: 40px;
+  font-size: var(--body-font-size);
   font-style: normal;
   font-weight: 600;
   line-height: 130%; /* 52px */
+}
+
+@media only screen and (min-device-width: 463px) and (max-device-width: 768px) {
+  .wrap {
+    margin-top: var(--wrap-padding-top);
+  }
+}
+
+@media only screen and (min-device-width: 361px) and (max-device-width: 462px) {
+  .wrap {
+    margin-top: var(--wrap-padding-top);
+  }
+}
+
+@media only screen and (max-device-width: 360px) {
+  .wrap {
+    margin-top: var(--wrap-padding-top);
+  }
 }

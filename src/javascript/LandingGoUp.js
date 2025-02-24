@@ -5,10 +5,10 @@ const goUp = () => {
 
     if (window.scrollY > halfPageHeight) {
       goUpButton.style.opacity = '1'
-      goUpButton.style.pointerEvents = 'auto' // Делаем кнопку кликабельной
+      goUpButton.style.pointerEvents = 'auto'
     } else {
       goUpButton.style.opacity = '0'
-      goUpButton.style.pointerEvents = 'none' // Убираем возможность клика
+      goUpButton.style.pointerEvents = 'none'
     }
   })
 

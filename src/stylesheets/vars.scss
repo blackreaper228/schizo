@@ -22,11 +22,10 @@
 
   //typography
   --title-font-stroke: 10px;
-  --cards-font-stroke: 5px;
-
   --title-word-spacing: 10px;
-
   --title-font-size: 46px;
+
+  --cards-font-stroke: 5px;
   --tag-font-size: 30px;
   --body-font-size: 26px;
   --smaller-font-size: 18px;
@@ -54,43 +53,3 @@
   --wrap-padding-top: 100px;
 }
 
-// адаптивы
-
-@media only screen and (min-width: 2221px) {
-}
-
-@media only screen and (min-width: 1741px) and (max-width: 2220px) {
-  :root {
-    --center-container: 1176px;
-  }
-}
-
-@media only screen and (min-width: 1025px) and (max-width: 1740px) {
-  :root {
-    --center-container: 1176px;
-  }
-}
-
-@media only screen and (min-width: 769px) and (max-width: 1024px) {
-}
-
-@media only screen and (min-device-width: 463px) and (max-device-width: 768px) {
-  :root {
-    --center-container: 100%;
-    --wrap-padding-top: 200px;
-  }
-}
-
-@media only screen and (min-device-width: 361px) and (max-device-width: 462px) {
-  :root {
-    --center-container: 100%;
-    --wrap-padding-top: 200px;
-  }
-}
-
-@media only screen and (max-device-width: 360px) {
-  :root {
-    --center-container: 100%;
-    --wrap-padding-top: 200px;
-  }
-}

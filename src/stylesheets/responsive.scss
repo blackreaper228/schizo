@@ -70,6 +70,8 @@
 
     --W_FinalSecContentText-Width: 100%;
     --M_LandingCardsItem-Width: 100%;
+
+    --wrap-padding-top: 128px;
   }
 
   .A_MuteSound {
@@ -142,6 +144,13 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 16px;
+  }
+
+  .preLoader {
+    img {
+      width: 250px;
+      height: 96px;
+    }
   }
 }
 

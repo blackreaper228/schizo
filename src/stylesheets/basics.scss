@@ -36,14 +36,6 @@ a {
   cursor: var(--cursor-pressed);
 }
 
-// 3D-logo
-
-canvas {
-  // z-index: 999;
-  // margin-top: 190px;
-  // position: relative;
-}
-
 // анимация для бегущей строки
 
 @keyframes marquee {

@@ -99,6 +99,7 @@
 }
 
 .W_FinalSecContentText {
+  position: relative;
   width: var(--W_FinalSecContentText-Width);
   display: flex;
   flex-direction: column;

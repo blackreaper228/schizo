@@ -96,6 +96,10 @@
     --Fixed-Button-Side: 8px;
   }
 
+  .W_FinalSecContentText {
+    width: 100%;
+  }
+
   .W_FinalSecContent {
     padding: 0px 16px 16px 16px;
     flex-direction: row-reverse;
@@ -157,6 +161,10 @@
 
   .A_GoUp {
     font-size: 24px;
+
+    &:hover {
+      padding-bottom: 0px;
+    }
   }
 
   .O_LandingCards {

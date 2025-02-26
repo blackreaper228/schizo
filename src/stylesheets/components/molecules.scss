@@ -1,10 +1,11 @@
 .M_HeaderNavbar {
   display: flex;
+  height: var(--A_Header-Height);
   width: var(--center-container);
+  background: var(--schizo-yellow);
   justify-content: space-between;
   padding: 10px 10px 18px 10px;
   align-items: center;
-  background: var(--schizo-yellow);
 }
 
 .M_Footer {

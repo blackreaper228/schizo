@@ -51,8 +51,7 @@
   }
 
   .Q_LogoMobile {
-    max-width: 342px;
-    min-width: 212px;
+    height: 100%;
     display: flex;
   }
 
@@ -69,7 +68,7 @@
     --wrap-padding: 68px;
     --wrap-gap: 68px;
 
-    --title-font-stroke: 6px;
+    --title-font-stroke: 5px;
     --title-word-spacing: 4px;
     --title-font-size: 24px;
     --body-font-size: 16px;
@@ -94,10 +93,17 @@
 
     --Fixed-Button-Bottom: 152px;
     --Fixed-Button-Side: 8px;
+
+    --A_Header-Height: 44px;
+  }
+
+  .A_HeaderNews {
+    border-bottom: none;
   }
 
   .W_FinalSecContentText {
     width: fit-content;
+    gap: 32px;
   }
 
   .W_FinalSecContent {
@@ -112,6 +118,7 @@
   }
 
   .O_LandingSec {
+    padding: 0px 16px;
     &.sec03 {
       margin-top: 200px;
     }
@@ -168,11 +175,8 @@
   }
 
   .O_LandingCards {
-    flex-direction: column;
-  }
-
-  .S_Landing {
     padding: 0px 16px;
+    flex-direction: column;
   }
 
   .Q_3DLogo {
@@ -188,12 +192,12 @@
   }
 
   .Q_LogoMobile {
-    width: 212px;
+    height: 100%;
     display: flex;
   }
 
   .M_HeaderNavbar {
-    padding: 0px 16px 6px 16px;
+    padding: 6px 16px 6px 16px;
   }
 
   .M_HeaderNavbar a,
@@ -218,10 +222,7 @@
 
     &.final {
       width: 100%;
-    }
-
-    &.invert {
-      top: calc((var(--A_LandingTitleSec03-Height) - var(--border-width)) * -1);
+      padding-left: 16px;
     }
 
     &::after {
@@ -231,6 +232,7 @@
     &.shadowed {
       width: min-content;
       padding: 0px 20px 12px 16px;
+      margin-left: 16px;
     }
   }
 
@@ -261,6 +263,7 @@
   }
 
   .Q_LogoMobile {
+    height: 100%;
     display: flex;
   }
 

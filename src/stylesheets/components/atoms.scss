@@ -246,6 +246,8 @@ a:has(.A_HeaderNavbarBtn) {
 }
 
 .A_LandingText {
+  overflow: hidden;
+  width: 100%;
   display: flex;
 
   color: var(--schizo-yellow);

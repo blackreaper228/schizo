@@ -208,7 +208,7 @@ a:has(.A_HeaderNavbarBtn) {
   }
 
   br {
-    content: ''; // отрубать при бандле
+    // content: ''; // отрубать при бандле
     margin: -20px 0;
   }
 

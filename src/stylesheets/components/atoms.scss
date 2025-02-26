@@ -246,6 +246,9 @@ a:has(.A_HeaderNavbarBtn) {
 }
 
 .A_LandingText {
+  -webkit-text-size-adjust: none;
+  -webkit-touch-callout: none;
+
   overflow: hidden;
   width: 100%;
   display: flex;

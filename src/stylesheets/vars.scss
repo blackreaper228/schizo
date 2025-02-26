@@ -31,6 +31,10 @@
   --smaller-font-size: 18px;
 
   //sizes
+  --Fixed-Button-Size: 72px;
+  --Fixed-Button-Bottom: 128px;
+  --Fixed-Button-Side: 72px;
+
   --center-container: 1176px;
   --Q_LandingSecContentPic: 354px;
   --A_LandingTitle-Height: 56px;
@@ -41,7 +45,10 @@
   --O_LandingSec02-Height: 695px;
 
   --A_LandingCardsItemTitle-Top: 336px;
-  --A_LandingCardsItemTitle-Left: 16px;
+  --A_LandingCardsItemTitle-Left: calc(
+    var(--border-width) + (calc(var(--border-width) / 2))
+  );
+
   --W_LandingCardsItemContent-Gap: 44px;
 
   --W_FinalSecContentText-Width: 1016px;
@@ -49,7 +56,6 @@
   --Q_TgIcon-Size: 100px;
 
   --wrap-padding: 100px;
+  --wrap-padding-top: 140px;
   --wrap-gap: 100px;
-  --wrap-padding-top: 100px;
 }
-

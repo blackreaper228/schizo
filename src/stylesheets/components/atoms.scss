@@ -1,15 +1,16 @@
 .A_GoUp {
   z-index: 999;
-  width: 72px;
-  height: 72px;
+  width: var(--Fixed-Button-Size);
+
+  aspect-ratio: 1;
   display: flex;
   justify-content: center;
   align-items: center;
   padding-bottom: 0px;
 
   position: fixed;
-  right: 72px;
-  bottom: 128px;
+  right: var(--Fixed-Button-Side);
+  bottom: var(--Fixed-Button-Bottom);
 
   opacity: 0;
   transition: 0.2s ease;
@@ -41,6 +42,9 @@
 }
 
 .A_MuteSound {
+  width: var(--Fixed-Button-Size);
+  aspect-ratio: 1;
+
   z-index: 999;
   opacity: 0.7;
   background-image: url('./svg/A_MuteSoundOff.svg');
@@ -51,12 +55,9 @@
   border: var(--yellow-border);
   box-shadow: var(--schizo-shadow);
 
-  width: 72px;
-  height: 72px;
-
   position: fixed;
-  left: 72px;
-  bottom: 128px;
+  left: var(--Fixed-Button-Side);
+  bottom: var(--Fixed-Button-Bottom);
 
   &:hover {
     opacity: 1;
@@ -164,14 +165,12 @@ a:has(.A_HeaderNavbarBtn) {
 
 .A_LandingTitle {
   z-index: 1;
-  margin-bottom: -10px;
   position: relative;
   display: flex;
   height: var(--A_LandingTitle-Height);
   padding: 0px 16px 18px 16px;
   align-items: flex-end;
   gap: 60px;
-  flex-shrink: 0;
 
   border: var(--yellow-border);
   background: var(--schizo-red);
@@ -187,13 +186,38 @@ a:has(.A_HeaderNavbarBtn) {
 
   text-transform: uppercase;
 
+  &::after {
+    color: var(--schizo-red);
+    white-space: pre-line;
+    -webkit-text-stroke-width: var(--title-font-stroke);
+    -webkit-text-stroke-color: var(--schizo-yellow);
+    paint-order: stroke fill;
+    content: attr(data-text);
+    position: absolute;
+    text-shadow: 0px 0px 0px;
+
+    gap: 0px;
+    font-size: inherit;
+    font-style: inherit;
+    font-weight: inherit;
+    font-family: inherit;
+    text-transform: inherit;
+    line-height: inherit;
+  }
+
+  br {
+    content: ''; // отрубать при бандле
+    margin: -20px 0;
+  }
+
   &.shadowed {
+    transform: translateY(calc((50% - var(--border-width)) * -1));
+
     border: 0px;
+    box-shadow: var(--schizo-shadow);
 
     color: var(--schizo-red);
     width: fit-content;
-
-    position: absolute;
   }
 
   &.final {
@@ -218,29 +242,6 @@ a:has(.A_HeaderNavbarBtn) {
 
     position: absolute;
     top: -90px;
-  }
-
-  &::after {
-    color: var(--schizo-red);
-    white-space: pre-line;
-    -webkit-text-stroke-width: var(--title-font-stroke);
-    -webkit-text-stroke-color: var(--schizo-yellow);
-    paint-order: stroke fill;
-    content: attr(data-text); /* Дублируем текст */
-    position: absolute;
-    text-shadow: 0px 0px 0px var(--schizo-red); /* Тень */
-
-    gap: 0px;
-    font-size: inherit;
-    font-style: inherit;
-    font-weight: inherit;
-    font-family: inherit;
-    text-transform: inherit;
-    line-height: 100%;
-  }
-  br {
-    // content: ''; // отрубать при бандле
-    margin: -20px 0;
   }
 }
 
@@ -334,7 +335,7 @@ a:has(.A_HeaderNavbarBtn) {
 
 .A_LandingCardsItemContentLink {
   display: flex;
-  height: 34px;
+  // height: 34px;
   justify-content: center;
   align-items: center;
   gap: 10px;
@@ -357,7 +358,7 @@ a:has(.A_HeaderNavbarBtn) {
   z-index: 1;
   position: absolute;
   left: var(--A_LandingCardsItemTitle-Left);
-  top: var(--A_LandingCardsItemTitle-Top);
+  bottom: -3px;
 
   font-family: 'InterVariable';
   font-size: var(--body-font-size);
@@ -367,6 +368,7 @@ a:has(.A_HeaderNavbarBtn) {
   text-shadow: var(--schizo-shadow-text-small);
   color: transparent;
 }
+
 .A_LandingCardsItemTitle::after {
   color: var(--schizo-red);
 
@@ -376,5 +378,5 @@ a:has(.A_HeaderNavbarBtn) {
   content: attr(data-text); /* Дублируем текст */
 
   text-shadow: 0px 0px 0px var(--schizo-red); /* Тень */
-  position: absolute;
+  position: inherit;
 }

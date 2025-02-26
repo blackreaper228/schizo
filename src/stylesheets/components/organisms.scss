@@ -32,11 +32,12 @@
   &::before {
     content: '';
     width: 100vw;
-    height: var(--O_LandingSec02-Height);
+    height: inherit;
     left: 50%;
     transform: translateX(-50%);
     position: absolute;
 
+    box-sizing: border-box;
     border-top: var(--red-border);
     border-bottom: var(--red-border);
     box-shadow: var(--schizo-shadow);
@@ -57,7 +58,7 @@
     opacity: 0;
     z-index: 0;
     transition: opacity 0.3s ease;
-    height: calc(var(--O_LandingSec02-Height) + calc(var(--border-width) * 2));
+    height: inherit;
   }
 
   // Ховер эффекты

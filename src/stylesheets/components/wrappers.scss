@@ -5,6 +5,7 @@
   flex-direction: column;
   gap: var(--wrap-gap);
   margin-bottom: var(--wrap-padding);
+  margin-top: var(--wrap-padding-top);
 }
 
 .W_LandingSecContent {
@@ -24,7 +25,6 @@
 }
 
 .W_LandingSecContentType {
-  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -67,7 +67,8 @@
 
 .W_LandingSec02Content {
   position: absolute;
-  bottom: -85px;
+  bottom: 0px;
+  transform: translateY(calc(50% - var(--border-width)));
 
   display: flex;
   width: var(--center-container);
@@ -81,7 +82,7 @@
 
 .W_LandingCardsItemContent {
   display: flex;
-  padding: 58px 16px 16px 16px;
+  padding: 40px 16px 16px 16px;
   flex-direction: column;
   align-items: flex-start;
   gap: var(--W_LandingCardsItemContent-Gap);

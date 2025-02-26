@@ -1,4 +1,7 @@
 @media only screen and (min-width: 2221px) {
+  :root {
+    --center-container: 1176px;
+  }
   .Q_3DLogo {
     --render-height: 350px;
   }
@@ -62,34 +65,98 @@
 @media only screen and (min-device-width: 361px) and (max-device-width: 462px) {
   :root {
     --center-container: 100%;
-    --wrap-padding-top: 200px;
+    --wrap-padding-top: 156px;
+    --wrap-padding: 68px;
+    --wrap-gap: 68px;
 
     --title-font-stroke: 6px;
     --title-word-spacing: 4px;
-    --title-font-size: 26px;
+    --title-font-size: 24px;
+    --body-font-size: 16px;
+    --smaller-font-size: var(--body-font-size);
+
+    --tag-font-size: 19px;
 
     --W_FinalSecContentText-Width: 100%;
     --M_LandingCardsItem-Width: 100%;
 
-    --wrap-padding-top: 128px;
+    --border-width: 6px;
+
+    --A_LandingTitleSec03-Height: 58px;
+
+    --O_LandingCards-Gap: 48px;
+
+    --O_LandingSec02-Height: 216px;
+
+    --Q_TgIcon-Size: 68px;
+
+    --Fixed-Button-Size: 48px;
+
+    --Fixed-Button-Bottom: 152px;
+    --Fixed-Button-Side: 8px;
+  }
+
+  .W_FinalSecContent {
+    padding: 0px 16px 16px 16px;
+    flex-direction: row-reverse;
+    gap: 24px;
+  }
+
+  .W_LandingCardsItemContent {
+    padding: 36px 10px 16px 10px;
+    gap: 32px;
+  }
+
+  .O_LandingSec {
+    &.sec03 {
+      margin-top: 200px;
+    }
+  }
+
+  .W_LandingSec02Content {
+    padding: 16px 22px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    transform: translateY(100%);
+  }
+
+  .A_LandingCardsItemTitle {
+    font-size: 26px;
+    left: calc(var(--A_LandingCardsItemTitle-Left) + 6px);
+  }
+
+  .W_LandingSecContentTypeUpside {
+    gap: 32px;
+  }
+
+  .W_LandingSecContent {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .W_LandingSecContentType {
+    gap: 32px;
+    padding: 0px;
+  }
+
+  .A_Tag {
+    padding: 2px 8px;
+  }
+
+  .Q_LandingSecContentPic {
+    height: 100%;
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
   }
 
   .O_FinalSec {
     position: relative;
   }
 
-  .A_MuteSound {
-    left: 8px;
-    bottom: 20px;
-  }
-
   .A_GoUp {
-    right: 8px;
-    bottom: 20px;
-  }
-
-  .W_LandingSecContent {
-    flex-direction: column;
+    font-size: 24px;
   }
 
   .O_LandingCards {
@@ -127,9 +194,9 @@
   }
   .M_Footer {
     flex-direction: column;
-    // justify-content: flex-start;
     align-items: flex-start;
     padding: 16px 16px;
+    gap: 8px;
   }
 
   .W_FooterText {
@@ -138,16 +205,25 @@
   }
 
   .A_LandingTitle {
+    padding: 0px 16px 12px 16px;
+    margin-bottom: -6px;
+
     &.final {
       width: 100%;
     }
-  }
 
-  .W_LandingSec02Content {
-    position: relative;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 16px;
+    &.invert {
+      top: calc((var(--A_LandingTitleSec03-Height) - var(--border-width)) * -1);
+    }
+
+    &::after {
+      width: calc(100% - 32px);
+    }
+
+    &.shadowed {
+      width: min-content;
+      padding: 0px 20px 12px 16px;
+    }
   }
 
   .preLoader {

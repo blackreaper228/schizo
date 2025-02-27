@@ -97,6 +97,7 @@
     --A_Header-Height: 44px;
   }
 
+  // organisms
   .O_BurgerMenu {
     display: none;
 
@@ -111,13 +112,6 @@
     }
   }
 
-  .Q_BurgerMenuBG {
-    width: inherit;
-    height: inherit;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 99999;
-  }
-
   .O_SearchBar {
     position: fixed;
     width: 100vw;
@@ -130,10 +124,23 @@
     }
   }
 
-  .A_HeaderNews {
-    border-bottom: none;
+  .O_LandingSec {
+    padding: 0px 16px;
+    &.sec03 {
+      margin-top: 156px;
+    }
   }
 
+  .O_FinalSec {
+    position: relative;
+  }
+
+  .O_LandingCards {
+    padding: 0px 16px;
+    flex-direction: column;
+  }
+
+  // wrappers
   .W_FinalSecContentText {
     width: fit-content;
     gap: 32px;
@@ -150,24 +157,12 @@
     gap: 32px;
   }
 
-  .O_LandingSec {
-    padding: 0px 16px;
-    &.sec03 {
-      margin-top: 156px;
-    }
-  }
-
   .W_LandingSec02Content {
     padding: 16px 22px;
     flex-direction: column;
     align-items: flex-start;
     gap: 16px;
     transform: translateY(100%);
-  }
-
-  .A_LandingCardsItemTitle {
-    font-size: 26px;
-    left: calc(var(--A_LandingCardsItemTitle-Left) + 6px);
   }
 
   .W_LandingSecContentTypeUpside {
@@ -184,52 +179,12 @@
     padding: 0px;
   }
 
-  .A_Tag {
-    padding: 2px 8px;
-  }
-
-  .Q_LandingSecContentPic {
-    height: 100%;
-    width: 100%;
-    aspect-ratio: 1/1;
-    object-fit: cover;
-  }
-
-  .O_FinalSec {
-    position: relative;
-  }
-
-  .A_GoUp {
-    font-size: 24px;
-
-    &:hover {
-      padding-bottom: 0px;
-    }
-  }
-
-  .O_LandingCards {
-    padding: 0px 16px;
+  .W_FooterText {
     flex-direction: column;
+    gap: 16px;
   }
 
-  .Q_3DLogo {
-    display: none;
-  }
-
-  .Q_BurgerIcon {
-    display: flex;
-    width: 22px;
-  }
-
-  .Q_SearchIconMobile {
-    display: flex;
-  }
-
-  .Q_LogoMobile {
-    height: 100%;
-    display: flex;
-  }
-
+  // molecules
   .M_HeaderNavbar {
     padding: 6px 16px 6px 16px;
   }
@@ -238,6 +193,7 @@
   .A_HeaderNavbarSearch {
     display: none;
   }
+
   .M_Footer {
     flex-direction: column;
     align-items: flex-start;
@@ -245,9 +201,26 @@
     gap: 16px;
   }
 
-  .W_FooterText {
-    flex-direction: column;
-    gap: 16px;
+  // atoms
+  .A_HeaderNews {
+    border-bottom: none;
+  }
+
+  .A_LandingCardsItemTitle {
+    font-size: 26px;
+    left: calc(var(--A_LandingCardsItemTitle-Left) + 6px);
+  }
+
+  .A_Tag {
+    padding: 2px 8px;
+  }
+
+  .A_GoUp {
+    font-size: 24px;
+
+    &:hover {
+      padding-bottom: 0px;
+    }
   }
 
   .A_LandingTitle {
@@ -270,6 +243,40 @@
     }
   }
 
+  // quarks
+  .Q_BurgerMenuBG {
+    width: inherit;
+    height: inherit;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 99999;
+  }
+
+  .Q_LandingSecContentPic {
+    height: 100%;
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+  }
+
+  .Q_3DLogo {
+    display: none;
+  }
+
+  .Q_BurgerIcon {
+    display: flex;
+    width: 22px;
+  }
+
+  .Q_SearchIconMobile {
+    display: flex;
+  }
+
+  .Q_LogoMobile {
+    height: 100%;
+    display: flex;
+  }
+
+  // basics
   .preLoader {
     gap: 20px;
 
@@ -319,6 +326,7 @@
     --A_Header-Height: 44px;
   }
 
+  // organisms
   .O_BurgerMenu {
     display: none;
 
@@ -333,13 +341,6 @@
     }
   }
 
-  .Q_BurgerMenuBG {
-    width: inherit;
-    height: inherit;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 99999;
-  }
-
   .O_SearchBar {
     position: fixed;
     width: 100vw;
@@ -352,10 +353,23 @@
     }
   }
 
-  .A_HeaderNews {
-    border-bottom: none;
+  .O_LandingSec {
+    padding: 0px 16px;
+    &.sec03 {
+      margin-top: 156px;
+    }
   }
 
+  .O_FinalSec {
+    position: relative;
+  }
+
+  .O_LandingCards {
+    padding: 0px 16px;
+    flex-direction: column;
+  }
+
+  // wrappers
   .W_FinalSecContentText {
     width: fit-content;
     gap: 32px;
@@ -372,24 +386,12 @@
     gap: 32px;
   }
 
-  .O_LandingSec {
-    padding: 0px 16px;
-    &.sec03 {
-      margin-top: 156px;
-    }
-  }
-
   .W_LandingSec02Content {
     padding: 16px 22px;
     flex-direction: column;
     align-items: flex-start;
     gap: 16px;
     transform: translateY(100%);
-  }
-
-  .A_LandingCardsItemTitle {
-    font-size: 6.667vw;
-    left: calc(var(--A_LandingCardsItemTitle-Left) + 6px);
   }
 
   .W_LandingSecContentTypeUpside {
@@ -406,19 +408,40 @@
     padding: 0px;
   }
 
+  .W_FooterText {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  // molecules
+  .M_HeaderNavbar {
+    padding: 6px 16px 6px 16px;
+  }
+
+  .M_HeaderNavbar a,
+  .A_HeaderNavbarSearch {
+    display: none;
+  }
+
+  .M_Footer {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 32px 16px;
+    gap: 16px;
+  }
+
+  // atoms
+  .A_HeaderNews {
+    border-bottom: none;
+  }
+
   .A_Tag {
     padding: 2px 8px;
   }
 
-  .Q_LandingSecContentPic {
-    height: 100%;
-    width: 100%;
-    aspect-ratio: 1/1;
-    object-fit: cover;
-  }
-
-  .O_FinalSec {
-    position: relative;
+  .A_LandingCardsItemTitle {
+    font-size: 6.667vw;
+    left: calc(var(--A_LandingCardsItemTitle-Left) + 6px);
   }
 
   .A_GoUp {
@@ -429,54 +452,8 @@
     }
   }
 
-  .O_LandingCards {
-    padding: 0px 16px;
-    flex-direction: column;
-  }
-
-  .Q_3DLogo {
-    display: none;
-  }
-
-  .Q_BurgerIcon {
-    display: flex;
-    width: 22px;
-  }
-
-  .Q_SearchIconMobile {
-    display: flex;
-  }
-
   .A_SearchBarClose {
     margin-left: 4.103vw;
-  }
-
-  .Q_LogoMobile {
-    min-width: 10px;
-    max-height: 100%;
-    display: flex;
-    margin-left: 20px;
-    margin-right: 20px;
-  }
-
-  .M_HeaderNavbar {
-    padding: 6px 16px 6px 16px;
-  }
-
-  .M_HeaderNavbar a,
-  .A_HeaderNavbarSearch {
-    display: none;
-  }
-  .M_Footer {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 32px 16px;
-    gap: 16px;
-  }
-
-  .W_FooterText {
-    flex-direction: column;
-    gap: 16px;
   }
 
   .A_LandingTitle {
@@ -499,6 +476,43 @@
     }
   }
 
+  // quarks
+  .Q_BurgerMenuBG {
+    width: inherit;
+    height: inherit;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 99999;
+  }
+
+  .Q_LandingSecContentPic {
+    height: 100%;
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+  }
+
+  .Q_3DLogo {
+    display: none;
+  }
+
+  .Q_BurgerIcon {
+    display: flex;
+    width: 22px;
+  }
+
+  .Q_SearchIconMobile {
+    display: flex;
+  }
+
+  .Q_LogoMobile {
+    min-width: 10px;
+    max-height: 100%;
+    display: flex;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  // basics
   .preLoader {
     gap: 20px;
 
@@ -511,3 +525,17 @@
     font-size: 24px;
   }
 }
+
+// superorganisms
+
+// organisms
+
+// wrappers
+
+// molecules
+
+// atoms
+
+// quarks
+
+// basics

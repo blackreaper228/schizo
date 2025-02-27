@@ -162,3 +162,27 @@
     transform: rotate(0deg);
   }
 }
+
+.W_SearchBarContent {
+  filter: drop-shadow(0px 20px 16px);
+
+  display: flex;
+  width: 100%;
+  background-color: var(--schizo-yellow);
+  z-index: 9999;
+  height: var(--A_Header-Height);
+  padding: 8px 16px;
+}
+
+.W_SearchBarContentInput {
+  background-color: var(--schizo-red);
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 4px 8px;
+}
+
+.W_SearchBarContentInputLeft {
+  display: flex;
+  gap: 8px;
+}

@@ -381,3 +381,33 @@ a:has(.A_HeaderNavbarBtn) {
   text-shadow: 0px 0px 0px var(--schizo-red); /* Тень */
   position: inherit;
 }
+
+.A_SearchBarInputText {
+  height: 100%;
+  text-transform: uppercase;
+  background-color: var(--schizo-red);
+  color: var(--schizo-yellow);
+  font-family: 'Times New Roman';
+  font-size: var(--body-font-size);
+  font-style: italic;
+  font-weight: 600;
+  line-height: normal;
+  border: none;
+  padding-top: 2px;
+  &::placeholder {
+    color: var(--schizo-yellow);
+  }
+}
+
+.A_SearchBarClose {
+  font-weight: 600;
+
+  margin-left: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--schizo-red);
+  font-family: 'Times New Roman';
+  font-style: italic;
+  text-transform: uppercase;
+}

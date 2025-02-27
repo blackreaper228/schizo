@@ -109,12 +109,24 @@
     &.active {
       display: block;
     }
+  }
 
-    .O_BurgerMenuBG {
-      width: inherit;
-      height: inherit;
-      background-color: rgba(0, 0, 0, 0.5);
-      z-index: 99999;
+  .Q_BurgerMenuBG {
+    width: inherit;
+    height: inherit;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 99999;
+  }
+
+  .O_SearchBar {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    z-index: 99999;
+
+    &.active {
+      display: block;
     }
   }
 

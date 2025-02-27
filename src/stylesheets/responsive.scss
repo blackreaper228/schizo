@@ -251,6 +251,235 @@
   }
 
   .A_LandingTitle {
+    padding: 0px 0px 12px 16px;
+    margin-bottom: -6px;
+
+    &.final {
+      width: 100%;
+      padding-left: 16px;
+    }
+
+    &::after {
+      width: calc(100% - 16px);
+    }
+
+    &.shadowed {
+      width: min-content;
+      padding: 0px 20px 12px 16px;
+      margin-left: 16px;
+    }
+  }
+
+  .preLoader {
+    gap: 20px;
+
+    img {
+      width: 90%;
+    }
+  }
+
+  .preloaderText {
+    font-size: 24px;
+  }
+}
+
+@media only screen and (max-device-width: 360px) {
+  :root {
+    --center-container: 100%;
+    --wrap-padding-top: 156px;
+    --wrap-padding: 68px;
+    --wrap-gap: 68px;
+
+    --title-font-stroke: 1.282vw;
+    --title-word-spacing: 1.026vw;
+    --title-font-size: 6.154vw;
+    --body-font-size: 4.103vw;
+    --smaller-font-size: var(--body-font-size);
+
+    --tag-font-size: 4.872vw;
+
+    --W_FinalSecContentText-Width: 100%;
+    --M_LandingCardsItem-Width: 100%;
+
+    --border-width: 6px;
+
+    --A_LandingTitleSec03-Height: 58px;
+
+    --O_LandingCards-Gap: 48px;
+
+    --O_LandingSec02-Height: 216px;
+
+    --Q_TgIcon-Size: 68px;
+
+    --Fixed-Button-Size: 48px;
+
+    --Fixed-Button-Bottom: 208px;
+    --Fixed-Button-Side: 8px;
+
+    --A_Header-Height: 44px;
+  }
+
+  .O_BurgerMenu {
+    display: none;
+
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: calc(var(--A_Header-Height) * 2);
+    z-index: 99999;
+
+    &.active {
+      display: block;
+    }
+  }
+
+  .Q_BurgerMenuBG {
+    width: inherit;
+    height: inherit;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 99999;
+  }
+
+  .O_SearchBar {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    z-index: 99999;
+
+    &.active {
+      display: block;
+    }
+  }
+
+  .A_HeaderNews {
+    border-bottom: none;
+  }
+
+  .W_FinalSecContentText {
+    width: fit-content;
+    gap: 32px;
+  }
+
+  .W_FinalSecContent {
+    padding: 0px 16px 16px 16px;
+    flex-direction: row-reverse;
+    gap: 24px;
+  }
+
+  .W_LandingCardsItemContent {
+    padding: 36px 10px 16px 10px;
+    gap: 32px;
+  }
+
+  .O_LandingSec {
+    padding: 0px 16px;
+    &.sec03 {
+      margin-top: 156px;
+    }
+  }
+
+  .W_LandingSec02Content {
+    padding: 16px 22px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    transform: translateY(100%);
+  }
+
+  .A_LandingCardsItemTitle {
+    font-size: 6.667vw;
+    left: calc(var(--A_LandingCardsItemTitle-Left) + 6px);
+  }
+
+  .W_LandingSecContentTypeUpside {
+    gap: 32px;
+  }
+
+  .W_LandingSecContent {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .W_LandingSecContentType {
+    gap: 32px;
+    padding: 0px;
+  }
+
+  .A_Tag {
+    padding: 2px 8px;
+  }
+
+  .Q_LandingSecContentPic {
+    height: 100%;
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+  }
+
+  .O_FinalSec {
+    position: relative;
+  }
+
+  .A_GoUp {
+    font-size: 24px;
+
+    &:hover {
+      padding-bottom: 0px;
+    }
+  }
+
+  .O_LandingCards {
+    padding: 0px 16px;
+    flex-direction: column;
+  }
+
+  .Q_3DLogo {
+    display: none;
+  }
+
+  .Q_BurgerIcon {
+    display: flex;
+    width: 22px;
+  }
+
+  .Q_SearchIconMobile {
+    display: flex;
+  }
+
+  .A_SearchBarClose {
+    margin-left: 4.103vw;
+  }
+
+  .Q_LogoMobile {
+    min-width: 10px;
+    max-height: 100%;
+    display: flex;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .M_HeaderNavbar {
+    padding: 6px 16px 6px 16px;
+  }
+
+  .M_HeaderNavbar a,
+  .A_HeaderNavbarSearch {
+    display: none;
+  }
+  .M_Footer {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 32px 16px;
+    gap: 16px;
+  }
+
+  .W_FooterText {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .A_LandingTitle {
     padding: 0px 16px 12px 16px;
     margin-bottom: -6px;
 
@@ -280,34 +509,5 @@
 
   .preloaderText {
     font-size: 24px;
-  }
-}
-
-@media only screen and (max-device-width: 360px) {
-  :root {
-    --center-container: 100%;
-    --wrap-padding-top: 200px;
-  }
-
-  .Q_3DLogo {
-    display: none;
-  }
-
-  .Q_BurgerIcon {
-    display: flex;
-  }
-
-  .Q_SearchIconMobile {
-    display: flex;
-  }
-
-  .Q_LogoMobile {
-    height: 100%;
-    display: flex;
-  }
-
-  .M_HeaderNavbar a,
-  .A_HeaderNavbarSearch {
-    display: none;
   }
 }

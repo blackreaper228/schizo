@@ -91,10 +91,31 @@
 
     --Fixed-Button-Size: 48px;
 
-    --Fixed-Button-Bottom: 152px;
+    --Fixed-Button-Bottom: 208px;
     --Fixed-Button-Side: 8px;
 
     --A_Header-Height: 44px;
+  }
+
+  .O_BurgerMenu {
+    display: none;
+
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: calc(var(--A_Header-Height) * 2);
+    z-index: 99999;
+
+    &.active {
+      display: block;
+    }
+
+    .O_BurgerMenuBG {
+      width: inherit;
+      height: inherit;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 99999;
+    }
   }
 
   .A_HeaderNews {
@@ -185,6 +206,7 @@
 
   .Q_BurgerIcon {
     display: flex;
+    width: 22px;
   }
 
   .Q_SearchIconMobile {
@@ -207,13 +229,13 @@
   .M_Footer {
     flex-direction: column;
     align-items: flex-start;
-    padding: 16px 16px;
-    gap: 8px;
+    padding: 32px 16px;
+    gap: 16px;
   }
 
   .W_FooterText {
     flex-direction: column;
-    gap: 8px;
+    gap: 16px;
   }
 
   .A_LandingTitle {

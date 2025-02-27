@@ -13,7 +13,7 @@
   width: var(--center-container);
   display: flex;
   flex-direction: column;
-  box-shadow: var(--schizo-shadow);
+  filter: drop-shadow(var(--schizo-drop-shadow));
 
   &.sec03 {
     margin-top: 266px;
@@ -87,4 +87,8 @@
   align-items: center;
 
   box-shadow: var(--schizo-shadow);
+}
+
+.O_BurgerMenu {
+  display: none;
 }

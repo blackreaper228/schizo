@@ -143,14 +143,16 @@
 
 a:has(.A_HeaderNavbarBtn) {
   cursor: none;
+  width: fit-content;
+  flex-shrink: 0;
 }
 
 .A_HeaderNavbarSearch {
-  gap: 160px;
+  width: 100%;
+  justify-content: space-between;
   display: flex;
   transform: rotate(3deg);
   padding: 6px 14px 4px 14px;
-  justify-content: center;
   align-items: center;
   background: var(--schizo-red);
 
@@ -244,7 +246,7 @@ a:has(.A_HeaderNavbarBtn) {
   }
 }
 
-.A_LandingText {
+.A_BodyText {
   overflow: hidden;
   width: 100%;
   display: flex;
@@ -362,7 +364,7 @@ a:has(.A_HeaderNavbarBtn) {
   bottom: -3px;
 
   font-family: 'InterVariable';
-  font-size: var(--body-font-size);
+  font-size: var(--A_LandingCardsItemTitle);
   font-style: italic;
   font-weight: 700;
   text-transform: uppercase;

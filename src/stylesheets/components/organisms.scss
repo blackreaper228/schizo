@@ -6,6 +6,8 @@
   align-items: center;
   filter: drop-shadow(0px 20px 16px);
   z-index: 99;
+
+  justify-content: center;
 }
 
 .O_LandingSec {
@@ -16,7 +18,7 @@
   filter: drop-shadow(var(--schizo-drop-shadow));
 
   &.sec03 {
-    margin-top: 266px;
+    margin-top: var(--O_LandingSec-sec03-MarginTop);
   }
 }
 
@@ -75,7 +77,6 @@
 
 .O_LandingCards {
   display: flex;
-  align-items: center;
   gap: var(--O_LandingCards-Gap);
 }
 

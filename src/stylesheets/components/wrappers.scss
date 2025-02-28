@@ -29,6 +29,7 @@
   flex-direction: column;
   justify-content: space-between;
   padding: 6px 0px 6px 0px;
+  height: 100%;
 }
 
 .W_LandingSecContentTypeUpside {
@@ -66,6 +67,7 @@
 }
 
 .W_LandingSec02Content {
+  gap: 20px;
   position: absolute;
   bottom: 0px;
   transform: translateY(calc(50% - var(--border-width)));
@@ -185,4 +187,9 @@
 .W_SearchBarContentInputLeft {
   display: flex;
   gap: 8px;
+}
+.W_HeaderNavbarsWrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }

@@ -11,6 +11,11 @@ module.exports = {
     index: './src/index.js',
     soon: './src/index.js',
     test: './src/javascript/test.js',
+    articles: './src/javascript/articles.js',
+    flatEarth: './src/javascript/flatEarth.js',
+    cryptographer: './src/javascript/cryptographer.js',
+    predictions: './src/javascript/predictions.js',
+    about: './src/javascript/about.js',
     empty: './src/javascript/empty.js'
   },
   output: {
@@ -147,6 +152,113 @@ module.exports = {
       template: './src/pages/test.html',
       filename: './test.html',
       chunks: ['test']
+    }),
+
+    // articles
+
+    new HtmlWebpackPlugin({
+      hash: true,
+      scriptLoading: 'blocking',
+      template: './src/pages/articlesBitie.html',
+      filename: './bitie.html',
+      chunks: ['articles']
+    }),
+
+    new HtmlWebpackPlugin({
+      hash: true,
+      scriptLoading: 'blocking',
+      template: './src/pages/articlesKosmos.html',
+      filename: './kosmos.html',
+      chunks: ['articles']
+    }),
+
+    new HtmlWebpackPlugin({
+      hash: true,
+      scriptLoading: 'blocking',
+      template: './src/pages/articlesProshloe.html',
+      filename: './proshloe.html',
+      chunks: ['articles']
+    }),
+
+    new HtmlWebpackPlugin({
+      hash: true,
+      scriptLoading: 'blocking',
+      template: './src/pages/articles/bitie/article01.html',
+      filename: './article01.html',
+      chunks: ['articles']
+    }),
+
+    new HtmlWebpackPlugin({
+      hash: true,
+      scriptLoading: 'blocking',
+      template: './src/pages/articles/bitie/article02.html',
+      filename: './article02.html',
+      chunks: ['articles']
+    }),
+
+    new HtmlWebpackPlugin({
+      hash: true,
+      scriptLoading: 'blocking',
+      template: './src/pages/articles/kosmos/article03.html',
+      filename: './article03.html',
+      chunks: ['articles']
+    }),
+
+    new HtmlWebpackPlugin({
+      hash: true,
+      scriptLoading: 'blocking',
+      template: './src/pages/articles/kosmos/article04.html',
+      filename: './article04.html',
+      chunks: ['articles']
+    }),
+
+    new HtmlWebpackPlugin({
+      hash: true,
+      scriptLoading: 'blocking',
+      template: './src/pages/articles/proshloe/article05.html',
+      filename: './article05.html',
+      chunks: ['articles']
+    }),
+
+    new HtmlWebpackPlugin({
+      hash: true,
+      scriptLoading: 'blocking',
+      template: './src/pages/articles/proshloe/article06.html',
+      filename: './article06.html',
+      chunks: ['articles']
+    }),
+
+    // unique pages
+    new HtmlWebpackPlugin({
+      hash: true,
+      scriptLoading: 'blocking',
+      template: './src/pages/flat-earth.html',
+      filename: './flat-earth.html',
+      chunks: ['flatEarth']
+    }),
+
+    new HtmlWebpackPlugin({
+      hash: true,
+      scriptLoading: 'blocking',
+      template: './src/pages/cryptographer.html',
+      filename: './cryptographer.html',
+      chunks: ['cryptographer']
+    }),
+
+    new HtmlWebpackPlugin({
+      hash: true,
+      scriptLoading: 'blocking',
+      template: './src/pages/predictions.html',
+      filename: './predictions.html',
+      chunks: ['predictions']
+    }),
+
+    new HtmlWebpackPlugin({
+      hash: true,
+      scriptLoading: 'blocking',
+      template: './src/pages/about.html',
+      filename: './about.html',
+      chunks: ['about']
     }),
 
     // Partials

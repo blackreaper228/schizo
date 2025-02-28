@@ -33,7 +33,7 @@
 
 .Q_LandingCardsItemPic {
   position: relative;
-  padding: 10px;
+  padding: var(--border-width);
   img {
     width: 100%;
     display: flex;

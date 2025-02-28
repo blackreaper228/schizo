@@ -1,11 +1,26 @@
 .M_HeaderNavbar {
+  gap: var(--border-width);
   display: flex;
   height: var(--A_Header-Height);
   width: var(--center-container);
   background: var(--schizo-yellow);
-  justify-content: space-between;
+  // justify-content: space-between;
   padding: 10px 10px 18px 10px;
   align-items: center;
+
+  &.invert {
+    padding: var(--border-width);
+
+    display: none;
+    background: var(--schizo-red);
+    width: fit-content;
+
+    .A_HeaderNavbarBtn {
+      background: var(--schizo-yellow);
+      color: var(--schizo-red);
+    }
+    margin-left: 120px;
+  }
 }
 
 .M_Footer {

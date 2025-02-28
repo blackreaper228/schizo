@@ -31,34 +31,54 @@
   --body-font-size: 26px;
   --smaller-font-size: 18px;
 
+  --A_LandingCardsItemTitle: var(--body-font-size);
+
   //sizes
   --A_Header-Height: 66px;
 
+  --render-height: 300px;
+
   --Fixed-Button-Size: 72px;
-  --Fixed-Button-Bottom: 128px;
-  --Fixed-Button-Side: 72px;
 
   --center-container: 1176px;
-  --Q_LandingSecContentPic: 354px;
+
   --A_LandingTitle-Height: 56px;
   --A_LandingTitleSec03-Height: 100px;
+
+  --Q_LandingSecContentPic: 354px;
+
   --M_LandingCardsItem-Width: 376px;
-  --O_LandingCards-Gap: 24px;
-  --render-height: 200px;
+
   --O_LandingSec02-Height: 695px;
+
+  --W_FinalSecContentText-Width: 1016px;
+
+  --Q_TgIcon-Size: 100px;
+
+  //gaps
+  --wrap-gap: 100px;
+  --W_LandingCardsItemContent-Gap: 44px;
+  --O_LandingCards-Gap: 24px;
+
+  //positions
+  --Fixed-Button-Bottom: 128px;
+  --Fixed-Button-Side: 72px;
 
   --A_LandingCardsItemTitle-Top: 336px;
   --A_LandingCardsItemTitle-Left: calc(
     var(--border-width) + (calc(var(--border-width) / 2))
   );
 
-  --W_LandingCardsItemContent-Gap: 44px;
-
-  --W_FinalSecContentText-Width: 1016px;
-
-  --Q_TgIcon-Size: 100px;
-
+  //margins&paddings
   --wrap-padding: 100px;
   --wrap-padding-top: 140px;
-  --wrap-gap: 100px;
+
+  --O_LandingSec-sec03-MarginTop: 266px;
 }
+
+//effects
+//typography
+//sizes
+//gaps
+//positions
+//margins&paddings

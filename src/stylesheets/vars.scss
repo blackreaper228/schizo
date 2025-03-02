@@ -15,26 +15,34 @@
   --schizo-shadow-text: 0px 10px 6px #000;
   --schizo-shadow-text-small: 0px 7px 10px #000;
   --schizo-shadow: 0px 20px 30px 0px #000;
-  --schizo-drop-shadow: 0px 20px 16px;
+  --schizo-drop-shadow: 0px 20px 16px #000;
   --yellow-border: var(--border-width) solid var(--schizo-yellow);
   --red-border: var(--border-width) solid var(--schizo-red);
 
   --border-width: 10px;
 
   //typography
-  --title-font-stroke: 10px;
-  --title-word-spacing: 10px;
-  --title-font-size: 46px;
+  --h1-font-size: 86px;
+  --h1-stroke-size: 14px;
+  --h1-word-spacing: 10px;
 
-  --cards-font-stroke: 5px;
+  --h2-font-size: 46px;
+  --h2-stroke-size: 10px;
+  --h2-word-spacing: 10px;
+
+  --h3-font-size: var(--body-font-size);
+  --h3-stroke-size: 5px;
+  --h3-word-spacing: 10px;
+
   --tag-font-size: 30px;
+
   --body-font-size: 26px;
+
   --smaller-font-size: 18px;
 
-  --A_LandingCardsItemTitle: var(--body-font-size);
-
   //sizes
-  --A_Header-Height: 66px;
+  --A_Header-Height: 76px;
+  --header-footer-height: 76px;
 
   --render-height: 300px;
 

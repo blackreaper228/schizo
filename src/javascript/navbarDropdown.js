@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
   const articlesBtn = document.querySelector('#articles')
-  const articlesBtnA = document.querySelector('#articles_a')
   const subMenu = document.querySelector('.M_HeaderNavbar.invert')
   const subMenuBetween = document.querySelector('#main_nav')
 
@@ -19,10 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
     isHovered = true
   })
 
-  articlesBtnA.addEventListener('mouseenter', () => {
-    isHovered = true
-  })
-
   // Добавляем обработчики mouseleave для всех элементов
   subMenu.addEventListener('mouseleave', () => {
     isHovered = false
@@ -34,15 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
   })
 
   subMenuBetween.addEventListener('mouseleave', () => {
-    isHovered = false
-    setTimeout(() => {
-      if (!isHovered) {
-        subMenu.style.display = 'none'
-      }
-    }, 100)
-  })
-
-  articlesBtnA.addEventListener('mouseleave', () => {
     isHovered = false
     setTimeout(() => {
       if (!isHovered) {

@@ -63,7 +63,7 @@
 
     //typography
     --smaller-font-size: 16px;
-    --title-font-size: 40px;
+    --h2-font-size: 40px;
     --body-font-size: 20px;
     --tag-font-size: 24px;
 
@@ -135,6 +135,7 @@
   }
 
   .M_HeaderNavbar a,
+  div.A_HeaderNavbarBtn,
   .A_HeaderNavbarSearch {
     display: none;
   }
@@ -147,7 +148,7 @@
     left: 0;
     width: fit-content;
     height: 100vh;
-    top: calc(var(--A_Header-Height) * 2);
+    top: calc(var(--header-footer-height) * 2);
     z-index: 99999;
 
     box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.5);
@@ -219,6 +220,7 @@
   }
 
   .M_HeaderNavbar {
+    height: var(--header-footer-height);
     align-items: center;
 
     &.invert {
@@ -259,6 +261,7 @@
   }
 
   .M_HeaderNavbar a,
+  div.A_HeaderNavbarBtn,
   .A_HeaderNavbarSearch {
     display: none;
   }
@@ -278,15 +281,15 @@
     --border-width: 6px;
 
     //typography
-    --title-font-stroke: 5px;
-    --title-word-spacing: 4px;
-    --title-font-size: 24px;
+    --h2-stroke-size: 5px;
+    --h2-word-spacing: 4px;
+    --h2-font-size: 24px;
 
     --tag-font-size: 19px;
     --body-font-size: 16px;
     --smaller-font-size: var(--body-font-size);
 
-    --A_LandingCardsItemTitle: 26px;
+    --h3-font-size: 26px;
 
     //sizes
     --A_Header-Height: 44px;
@@ -325,6 +328,7 @@
   }
 
   .W_HeaderNavbarsWrap {
+    height: (var(--A_Header-Height));
     width: 100%;
   }
 
@@ -413,16 +417,19 @@
 
   // molecules
   .M_HeaderNavbar {
+    height: 100%;
     justify-content: space-between;
     padding: 6px 16px 6px 16px;
   }
 
   .M_HeaderNavbar a,
+  div.A_HeaderNavbarBtn,
   .A_HeaderNavbarSearch {
     display: none;
   }
 
   .M_Footer {
+    height: auto;
     flex-direction: column;
     align-items: flex-start;
     padding: 32px 16px;
@@ -431,6 +438,7 @@
 
   // atoms
   .A_HeaderNews {
+    height: var(--A_Header-Height);
     border-bottom: none;
   }
 
@@ -532,15 +540,15 @@
     --border-width: 6px;
 
     //typography
-    --title-font-stroke: 1.282vw;
-    --title-word-spacing: 1.026vw;
-    --title-font-size: 6.154vw;
+    --h2-stroke-size: 1.282vw;
+    --h2-word-spacing: 1.026vw;
+    --h2-font-size: 6.154vw;
 
     --tag-font-size: 4.872vw;
     --body-font-size: 4.103vw;
     --smaller-font-size: var(--body-font-size);
 
-    --A_LandingCardsItemTitle: 26px;
+    --h3-font-size: 26px;
 
     //sizes
     --A_Header-Height: 44px;
@@ -579,6 +587,7 @@
   }
 
   .W_HeaderNavbarsWrap {
+    height: (var(--A_Header-Height));
     width: 100%;
   }
 
@@ -672,11 +681,13 @@
   }
 
   .M_HeaderNavbar a,
+  div.A_HeaderNavbarBtn,
   .A_HeaderNavbarSearch {
     display: none;
   }
 
   .M_Footer {
+    height: auto;
     flex-direction: column;
     align-items: flex-start;
     padding: 32px 16px;
@@ -685,6 +696,7 @@
 
   // atoms
   .A_HeaderNews {
+    height: var(--A_Header-Height);
     border-bottom: none;
   }
 

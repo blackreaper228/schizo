@@ -97,3 +97,23 @@
 .O_SearchBar {
   display: none;
 }
+
+.O_ArticlesCard {
+  display: flex;
+  padding: 10px;
+  align-items: flex-start;
+  gap: 40px;
+  align-self: stretch;
+
+  border: var(--border-width) solid var(--schizo-yellow);
+  background: var(--schizo-red);
+
+  &.invert {
+    border: var(--border-width) solid var(--schizo-red);
+    background: var(--schizo-yellow);
+
+    h5 {
+      color: var(--schizo-red);
+    }
+  }
+}

@@ -13,3 +13,12 @@
   overflow-x: hidden;
   position: relative;
 }
+
+.S_Articles {
+  width: var(--center-container);
+  display: flex;
+  flex-direction: column;
+  margin-top: 240px;
+
+  filter: drop-shadow(var(--schizo-drop-shadow));
+}

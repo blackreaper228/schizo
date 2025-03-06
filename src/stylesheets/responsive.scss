@@ -7,6 +7,13 @@
     --render-height: 350px;
   }
 
+  // flatEarth
+
+  .FlatEarth {
+    width: 100%;
+    max-width: 1676px;
+  }
+
   .A_GoBackMobile {
     display: none;
   }
@@ -24,6 +31,15 @@
     --W_LandingSecContent-Gap: 52px;
   }
 
+  // flatEarth
+
+  .FlatEarth {
+    .FlatEarthUI {
+      height: 660px;
+    }
+  }
+
+  // fixed
   .A_GoBackMobile {
     display: none;
   }
@@ -55,6 +71,14 @@
     --O_LandingSec-sec03-MarginTop: 76px;
   }
 
+  // flatEarth
+
+  .FlatEarth {
+    .FlatEarthUI {
+      height: 860px;
+    }
+  }
+  // Fixed
   .A_GoBack {
     display: none;
   }
@@ -112,6 +136,30 @@
     --O_LandingSec-sec03-MarginTop: 40px;
   }
 
+  // flatEarth
+  .FlatEarth {
+    width: 100%;
+    padding: 0px 16px;
+  }
+
+  .Q_FlatEarthUiExpand {
+    right: 35px;
+    top: 20px;
+    width: 44px;
+  }
+
+  .Q_FlatEarthUiMouseControl {
+    right: 4px;
+    bottom: 10px;
+    width: 106px;
+  }
+
+  .Q_FlatEarthUiSliderControls {
+    left: 26px;
+    bottom: 21px;
+  }
+
+  // articles
   .Q_ArticlesCardPic {
     object-fit: cover;
     aspect-ratio: unset;
@@ -396,6 +444,35 @@
     --Q_ArticlesCardPic-Size: 200px;
 
     --border-width: 6px;
+  }
+
+  // flatEarth
+  .FlatEarth {
+    width: 100%;
+    padding: 0px 16px;
+    margin-bottom: 40px;
+
+    .FlatEarthUI {
+      height: 70dvh;
+      aspect-ratio: auto;
+    }
+  }
+
+  .Q_FlatEarthUiExpand {
+    right: 35px;
+    top: 20px;
+    width: 44px;
+  }
+
+  .Q_FlatEarthUiMouseControl {
+    right: 4px;
+    bottom: 10px;
+    width: 106px;
+  }
+
+  .Q_FlatEarthUiSliderControls {
+    left: 26px;
+    bottom: 21px;
   }
 
   // articlePage
@@ -687,8 +764,41 @@
     --O_LandingSec-sec03-MarginTop: 156px;
   }
 
-  // articlePage
+  // flatEarth
+  .FlatEarth {
+    margin-top: 130px;
+    margin-bottom: 40px;
 
+    width: calc(100% - 32px);
+    height: 70dvh;
+    .FlatEarthUI {
+      height: 70dvh;
+      aspect-ratio: auto;
+    }
+  }
+
+  .Q_FlatEarthUiMouseControl {
+    display: none;
+  }
+
+  .Q_FlatEarthUiSliderControls {
+    position: absolute;
+    bottom: 41px;
+    display: flex;
+    justify-content: space-between;
+    width: calc(100% - 32px);
+    height: 28px;
+    left: 16px;
+    bottom: 16px;
+  }
+
+  .Q_FlatEarthUiExpand {
+    right: 16px;
+    top: 16px;
+    width: 28px;
+  }
+
+  // articlePage
   .S_Article {
     margin-top: 160px;
   }
@@ -1167,8 +1277,41 @@
     --O_LandingSec-sec03-MarginTop: 156px;
   }
 
-  // articlePage
+  // flatEarth
+  .FlatEarth {
+    margin-top: 130px;
+    margin-bottom: 40px;
 
+    width: calc(100% - 32px);
+    height: 70dvh;
+    .FlatEarthUI {
+      height: 70dvh;
+      aspect-ratio: auto;
+    }
+  }
+
+  .Q_FlatEarthUiMouseControl {
+    display: none;
+  }
+
+  .Q_FlatEarthUiSliderControls {
+    position: absolute;
+    bottom: 41px;
+    display: flex;
+    justify-content: space-between;
+    width: calc(100% - 32px);
+    height: 6.763vw;
+    left: 16px;
+    bottom: 16px;
+  }
+
+  .Q_FlatEarthUiExpand {
+    right: 16px;
+    top: 16px;
+    width: 6.763vw;
+  }
+
+  // articlePage
   .S_Article {
     width: 100%;
     margin-top: 41.026vw;

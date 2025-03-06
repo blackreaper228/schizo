@@ -1,0 +1,81 @@
+body.flat-earth {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  background-image: url('./images/backgrounds/bg02.jpg');
+
+  background-size: cover;
+  background-position: center top;
+  background-color: var(--schizo-red);
+
+  overflow-x: hidden;
+  position: relative;
+}
+
+.FlatEarth {
+  width: 100%;
+  max-width: var(--center-container);
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 198px;
+  margin-bottom: 68px;
+  filter: drop-shadow(var(--schizo-drop-shadow));
+
+  .FlatEarthUI {
+    position: relative;
+    align-self: stretch;
+    background: #000;
+    border: var(--yellow-border);
+    height: 924px;
+  }
+}
+
+.Q_FlatEarthUiExpand {
+  position: absolute;
+  right: 55px;
+  top: 40px;
+  aspect-ratio: 1 / 1;
+  width: 44px;
+  opacity: 0.5;
+
+  &:hover {
+    opacity: 1;
+    cursor: var(--cursor-hover);
+  }
+}
+
+.Q_FlatEarthUiMouseControl {
+  position: absolute;
+  right: 24px;
+  bottom: 30px;
+  width: 106px;
+  opacity: 0.5;
+}
+
+.Q_FlatEarthUiSliderControls {
+  gap: 16px;
+  position: absolute;
+  left: 46px;
+  bottom: 41px;
+  display: flex;
+
+  .Q_FlatEarthUiSlider {
+    opacity: 0.5;
+    &:hover {
+      opacity: 1;
+      cursor: var(--cursor-hover);
+    }
+  }
+
+  .Q_FlatEarthUiZoom {
+    opacity: 0.5;
+    &:hover {
+      opacity: 1;
+      cursor: var(--cursor-hover);
+    }
+  }
+}

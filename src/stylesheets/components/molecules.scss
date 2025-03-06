@@ -61,12 +61,116 @@
     .A_LandingCardsItemContentLink {
       color: var(--schizo-red);
     }
+
+    ::selection {
+      background-color: var(--schizo-red);
+      color: var(--schizo-yellow);
+    }
   }
 
   &:hover {
     .A_LandingCardsItemContentLink {
       cursor: var(--cursor-hover);
       text-decoration-line: underline;
+      text-decoration-thickness: 2px;
     }
   }
+
+  ::selection {
+    background-color: var(--schizo-yellow);
+    color: var(--schizo-red);
+  }
+}
+
+// articlePage
+
+.M_ArticleSidePics {
+  display: flex;
+  flex-direction: column;
+  width: var(--sidePics-width);
+  flex-shrink: 0;
+  gap: var(--border-width);
+  border: var(--red-border);
+  height: fit-content;
+  background-color: var(--schizo-red);
+}
+
+.M_ArticleLeftSideItem {
+  padding: 12px;
+  gap: 16px;
+  background-color: var(--schizo-yellow);
+  display: flex;
+  color: var(--schizo-red);
+
+  :hover {
+    cursor: var(--cursor-hover);
+
+    h6:first-child {
+      text-decoration: underline;
+      text-decoration-thickness: 1.5px;
+    }
+  }
+}
+
+.M_ArticleContentBodySamplePic {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 26px;
+  gap: 8px;
+  h6 {
+    color: var(--schizo-red);
+  }
+}
+
+.M_ArticleContentBodySampleQuotePic {
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+  flex-shrink: 0;
+  gap: 8px;
+
+  h6 {
+    color: var(--schizo-red);
+    line-height: 120%;
+  }
+
+  h6.invert {
+    color: var(--schizo-yellow);
+  }
+}
+
+.M_ArticleContentBodySampleQuoteTextContainer {
+  display: flex;
+  padding-bottom: 24px;
+  justify-content: space-between;
+  gap: 16px;
+
+  h5 {
+    text-transform: uppercase;
+    font-weight: 800;
+    font-style: italic;
+
+    padding: 6px 0px 6px 6px;
+  }
+}
+
+.M_ArticleShareLinks {
+  display: flex;
+  gap: 12px;
+  h5 {
+    color: var(--schizo-red);
+
+    &:hover {
+      text-decoration: underline;
+      text-decoration-thickness: 2px;
+    }
+  }
+}
+
+.M_ReadMoreCardsItem {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--schizo-red);
+  padding: var(--border-width);
+  gap: 42px;
 }

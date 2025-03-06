@@ -22,3 +22,12 @@
 
   filter: drop-shadow(var(--schizo-drop-shadow));
 }
+
+.S_Article {
+  margin-top: 240px;
+  width: var(--center-container);
+  display: flex;
+  flex-direction: column;
+  filter: drop-shadow(var(--schizo-drop-shadow));
+  align-items: center;
+}

@@ -65,3 +65,74 @@
 .Q_SearchBarInputDelete {
   width: 14px;
 }
+
+// articlePage
+.Q_ArticlesCardPic {
+  aspect-ratio: 1/1;
+  height: var(--Q_ArticlesCardPic-Size);
+}
+
+.Q_ArticleLeftSideItemPic {
+  aspect-ratio: 1/1;
+  width: var(--Q_ArticleLeftSideItemPic-Size);
+  height: auto;
+}
+
+.Q_ArticleSidePicsImg {
+  position: relative;
+  align-items: flex-end;
+  display: flex;
+  width: 100%;
+  height: var(--Q_ArticleSidePicsImg-height);
+
+  img {
+    height: inherit;
+    width: inherit;
+  }
+
+  h5 {
+    width: inherit;
+    position: absolute;
+    padding: 4px 6px;
+  }
+
+  ::selection {
+    background-color: var(--schizo-yellow);
+    color: var(--schizo-red);
+  }
+}
+
+.Q_ArticleContentBodySamplePicImg {
+  width: 100%;
+}
+
+.Q_ArticleContentBodySampleQuotePicImg {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+}
+
+.Q_ArticleContentBodySampleQuoteMark {
+  width: 38px;
+  display: flex;
+  flex-direction: column;
+
+  &.Left {
+    justify-content: flex-start;
+  }
+
+  &.Right {
+    justify-content: flex-end;
+  }
+}
+
+.Q_ReadMoreCardsItemPic {
+  position: relative;
+  img {
+    width: 100%;
+  }
+  h5.side {
+    position: absolute;
+    bottom: 0;
+    line-height: 120%;
+  }
+}

@@ -1,13 +1,15 @@
 body.about {
   display: flex;
   justify-content: flex-end;
+  height: auto;
 }
 
 .aboutWarp {
   display: flex;
   flex-direction: column;
   gap: 100px;
-  margin-right: 100px;
+  margin: 100px;
+  height: fit-content;
 }
 
 h1 {
@@ -22,7 +24,15 @@ h1 {
   text-transform: uppercase;
   font-weight: 700;
   line-height: 100%;
-  text-shadow: var(--schizo-shadow-text);
+  text-shadow:
+    var(--schizo-shadow-text),
+    4px 10px 20px #000,
+    4px 10px 20px #000;
+
+  &::selection {
+    background-color: var(--schizo-yellow);
+    color: var(--schizo-red);
+  }
 
   &::after {
     -webkit-text-stroke-width: var(--h1-stroke-size);
@@ -77,6 +87,11 @@ h2 {
     font-weight: inherit;
     line-height: inherit;
   }
+
+  &::selection {
+    background-color: var(--schizo-red);
+    color: var(--schizo-yellow);
+  }
 }
 
 h3 {
@@ -112,26 +127,117 @@ h3 {
     font-weight: inherit;
     line-height: inherit;
   }
+  &::selection {
+    background-color: var(--schizo-red);
+    color: var(--schizo-yellow);
+  }
 }
 
 h4 {
   color: var(--schizo-yellow);
 
   font-family: 'InterVariable', sans-serif;
-  font-size: var(--body-font-size);
+  font-size: var(--h4-font-size);
   font-style: normal;
   font-weight: 600;
   line-height: 130%;
+
+  &::selection {
+    background-color: var(--schizo-red);
+    color: var(--schizo-yellow);
+  }
+}
+
+h4.side {
+  padding: 8px 12px 12px 12px;
+
+  background-color: var(--schizo-yellow);
+  display: flex;
+
+  font-style: italic;
+  text-transform: uppercase;
+  line-height: 100%;
+  text-shadow:
+    1px 5px 4px #000,
+    1px 5px 4px #000,
+    1px 5px 4px #000;
+
+  color: var(--schizo-red);
+
+  font-family: 'InterVariable', sans-serif;
+  font-size: var(--h4-font-size);
+  font-weight: 600;
+
+  &::after {
+    -webkit-text-stroke-width: var(--h3-stroke-size);
+    -webkit-text-stroke-color: var(--schizo-yellow);
+
+    paint-order: stroke fill;
+    position: absolute;
+
+    content: attr(data-text);
+    text-shadow: 0px 0px 0px;
+
+    font-size: inherit;
+    word-spacing: inherit;
+    font-family: inherit;
+    font-style: inherit;
+    text-transform: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+  }
 }
 
 h5 {
   color: var(--schizo-yellow);
 
   font-family: 'InterVariable', sans-serif;
-  font-size: var(--smaller-font-size);
+  font-size: var(--h5-font-size);
   font-style: normal;
   font-weight: 600;
   line-height: 140%;
+
+  &::selection {
+    background-color: var(--schizo-red);
+    color: var(--schizo-yellow);
+  }
+}
+
+h5.side {
+  display: flex;
+
+  font-style: italic;
+  text-transform: uppercase;
+  line-height: 100%;
+  text-shadow:
+    2px 7px 7px #000,
+    2px 7px 7px #000,
+    2px 7px 7px #000;
+
+  color: var(--schizo-red);
+
+  font-family: 'InterVariable', sans-serif;
+  font-size: var(--h5-font-size);
+  font-weight: 600;
+
+  &::after {
+    -webkit-text-stroke-width: var(--h5-stroke-size);
+    -webkit-text-stroke-color: var(--schizo-yellow);
+
+    paint-order: stroke fill;
+    position: absolute;
+
+    content: attr(data-text);
+    text-shadow: 0px 0px 0px;
+
+    font-size: inherit;
+    word-spacing: inherit;
+    font-family: inherit;
+    font-style: inherit;
+    text-transform: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+  }
 }
 
 a {
@@ -142,9 +248,24 @@ a {
 p.nav {
   color: var(--schizo-yellow);
   font-family: 'Times New Roman';
-  font-size: var(--smaller-font-size);
+  font-size: var(--h5-font-size);
   font-style: italic;
   font-weight: 700;
   line-height: normal;
   text-transform: uppercase;
+}
+
+h6 {
+  color: var(--schizo-yellow);
+
+  font-family: 'InterVariable', sans-serif;
+  font-size: var(--h6-font-size);
+  font-style: normal;
+  font-weight: 600;
+  line-height: 140%;
+
+  &::selection {
+    background-color: var(--schizo-red);
+    color: var(--schizo-yellow);
+  }
 }

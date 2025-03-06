@@ -26,6 +26,13 @@ a {
   text-decoration: none;
 }
 
+img {
+  &::selection {
+    background-color: var(--schizo-red);
+    color: var(--schizo-yellow);
+  }
+}
+
 // курсор
 
 * {
@@ -123,4 +130,21 @@ body.articles {
   overflow-x: hidden;
   position: relative;
   gap: 68px;
+}
+
+body.articlePage {
+  background-image: url('./images/backgrounds/bg03.jpg');
+
+  background-size: cover;
+  background-position: center top;
+  background-color: var(--schizo-red);
+
+  display: flex;
+  align-items: center;
+  width: auto;
+  flex-direction: column;
+
+  overflow-x: hidden;
+  position: relative;
+  // gap: 68px;
 }

@@ -117,3 +117,57 @@
     }
   }
 }
+
+// articlePage
+.O_ArticleLeftSide {
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  width: var(--sidePics-width);
+
+  background-color: var(--schizo-red);
+  border: var(--border-width) solid var(--schizo-red);
+  gap: var(--border-width);
+
+  flex-shrink: 0;
+}
+
+.O_ArticleContentBody {
+  padding-bottom: 24px;
+  max-width: 676px;
+
+  background-color: var(--schizo-yellow);
+  border: var(--border-width) solid var(--schizo-red);
+}
+
+.O_ArticleContentBodySampleQuote {
+  align-items: center;
+  display: flex;
+  padding: 26px 16px 14px 16px;
+  background-color: var(--schizo-red);
+  gap: 24px;
+
+  margin: 12px 0px;
+
+  .M_ArticleContentBodySampleQuotePic {
+    width: 100%;
+    max-width: 220px;
+  }
+
+  ::selection {
+    background-color: var(--schizo-yellow);
+    color: var(--schizo-red);
+  }
+}
+
+.O_ReadMore {
+  margin: 96px 0px;
+
+  .C_ReadMoreCards {
+    display: flex;
+    gap: 12px;
+    justify-content: space-between;
+    background-color: var(--schizo-yellow);
+    border: var(--yellow-border);
+  }
+}

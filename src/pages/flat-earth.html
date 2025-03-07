@@ -129,16 +129,24 @@
         />
         <div class="Q_FlatEarthUiSliderControls">
           <img
-            class="Q_FlatEarthUiZoom In"
-            src="../svg/FlatEarthUi/Q_FlatEarthUiZoomIn.svg"
-          />
-          <img
-            class="Q_FlatEarthUiSlider"
-            src="../svg/FlatEarthUi/Q_FlatEarthUiSlider.svg"
-          />
-          <img
             class="Q_FlatEarthUiZoom Out"
             src="../svg/FlatEarthUi/Q_FlatEarthUiZoomOut.svg"
+          />
+          <div class="Q_FlatEarthUiSliderWrap">
+            <input
+              type="range"
+              id="zoomSlider"
+              class="Q_FlatEarthUiSlider"
+              min="2"
+              max="20"
+              value="10"
+              step="2"
+            />
+          </div>
+
+          <img
+            class="Q_FlatEarthUiZoom In"
+            src="../svg/FlatEarthUi/Q_FlatEarthUiZoomIn.svg"
           />
         </div>
       </div>

@@ -12,8 +12,12 @@ import * as THREE from 'three'
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js'
 import { RGBELoader } from 'three/addons/loaders/RGBELoader.js' // Импортируем RGBELoader
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js' // Импортируем OrbitControls
+import { TrackballControls } from 'three/addons/controls/TrackballControls.js' // Импортируем OrbitControls
 import schizoLogo from '../models/schizo_logo2.glb'
+import questionMark from '../models/questionMark.glb'
+
 import nebulae from '../assets/HDR_blue_nebulae-1.hdr' // Ваш HDRI файл
+import { xor } from 'three/tsl'
 
 // three js
 
@@ -77,7 +81,7 @@ rgbeLoader.load(nebulae, (texture) => {
 // Загрузка модели логотипа с использованием GLTFLoader и LoadingManager
 const loader = new GLTFLoader(loadingManager)
 let model // Объявляем переменную для модели
-loader.load(schizoLogo, (gltf) => {
+loader.load(questionMark, (gltf) => {
   model = gltf.scene
   model.scale.set(0.5, 0.5, 0.5) // Устанавливаем масштаб логотипа
   model.position.set(0, 0, 0) // Устанавливаем позицию логотипа
@@ -101,11 +105,25 @@ const controls = new OrbitControls(camera, renderer.domElement)
 controls.enableDamping = true // Включаем демпфирование (плавное движение)
 controls.dampingFactor = 0.25 // Фактор демпфирования
 controls.screenSpacePanning = false // Запрет панорамирования в пространстве экрана
+controls.enableZoom = false
+
+const controls2 = new TrackballControls(camera, renderer.domElement)
+controls2.noRotate = true
+controls2.noPan = true
+controls2.noZoom = false
+controls2.zoomSpeed = 1.5
+
+// Устанавливаем минимальное и максимальное расстояние (зум)
+controls.minDistance = 2 // Минимальное расстояние (максимальный зум)
+controls.maxDistance = 20 // Максимальное расстояние (минимальный зум)
 
 // Анимация
 function animate() {
+  const target = controls.target
   requestAnimationFrame(animate)
   controls.update() // Обновляем контролы
+  controls2.target.set(target.x, target.y, target.z)
+  controls2.update()
   renderer.render(scene, camera)
 }
 
@@ -184,4 +202,77 @@ document.addEventListener('fullscreenchange', () => {
     // Если вышли из полноэкранного режима, меняем изображение на "развернуть"
     img.src = Q_FlatEarthUiExpand // Используем импортированное изображение
   }
+})
+
+// Обработчик события для слайдера
+const zoomSlider = document.getElementById('zoomSlider')
+zoomSlider.addEventListener('input', (event) => {
+  const zoomValue = event.target.value // Получаем текущее значение слайдера
+
+  // Устанавливаем минимальное и максимальное расстояние
+  controls2.minDistance = 2 // Минимальное расстояние (максимальный зум)
+  controls2.maxDistance = 21 // Максимальное расстояние (минимальный зум)
+
+  // Инвертируем значение слайдера
+  const distance = controls2.maxDistance - zoomValue // Устанавливаем позицию камеры на основе инвертированного значения
+
+  // Обновляем позицию камеры
+  const direction = new THREE.Vector3() // Вектор направления
+  camera.getWorldDirection(direction) // Получаем направление камеры
+  direction.normalize() // Нормализуем вектор
+
+  // Устанавливаем позицию камеры
+  camera.position
+    .copy(controls2.target)
+    .add(direction.multiplyScalar(-distance))
+})
+
+// Обработчик события для кнопки увеличения зума
+const zoomInButton = document.querySelector('.Q_FlatEarthUiZoom.In')
+zoomInButton.addEventListener('click', () => {
+  // Получаем текущее значение слайдера
+  const zoomValue = parseInt(zoomSlider.value, 10)
+
+  // Увеличиваем значение слайдера
+  const newZoomValue = Math.min(controls2.maxDistance, zoomValue + 2) // Увеличиваем на 2, не превышая maxDistance
+  zoomSlider.value = newZoomValue // Обновляем значение слайдера
+
+  // Вызываем обработчик события слайдера, чтобы обновить позицию камеры
+  zoomSlider.dispatchEvent(new Event('input'))
+})
+
+// Обработчик события для кнопки уменьшения зума
+const zoomOutButton = document.querySelector('.Q_FlatEarthUiZoom.Out')
+zoomOutButton.addEventListener('click', () => {
+  // Получаем текущее значение слайдера
+  const zoomValue = parseInt(zoomSlider.value, 10)
+
+  // Уменьшаем значение слайдера
+  const newZoomValue = Math.max(controls2.minDistance, zoomValue - 2) // Уменьшаем на 2, не опускаясь ниже minDistance
+  zoomSlider.value = newZoomValue // Обновляем значение слайдера
+
+  // Вызываем обработчик события слайдера, чтобы обновить позицию камеры
+  zoomSlider.dispatchEvent(new Event('input'))
+})
+
+// Обработчик события для прокрутки колёсика
+container.addEventListener('wheel', (event) => {
+  event.preventDefault() // Предотвращаем прокрутку страницы
+
+  // Получаем текущее значение слайдера
+  const zoomValue = parseInt(zoomSlider.value, 10)
+
+  // Увеличиваем или уменьшаем значение слайдера в зависимости от направления прокрутки
+  if (event.deltaY < 0) {
+    // Прокрутка вверх (увеличение зума)
+    const newZoomValue = Math.min(controls2.maxDistance, zoomValue + 2) // Увеличиваем на 2
+    zoomSlider.value = newZoomValue // Обновляем значение слайдера
+  } else {
+    // Прокрутка вниз (уменьшение зума)
+    const newZoomValue = Math.max(controls2.minDistance, zoomValue - 2) // Уменьшаем на 2
+    zoomSlider.value = newZoomValue // Обновляем значение слайдера
+  }
+
+  // Вызываем обработчик события слайдера, чтобы обновить позицию камеры
+  zoomSlider.dispatchEvent(new Event('input'))
 })

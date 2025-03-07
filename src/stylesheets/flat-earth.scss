@@ -40,7 +40,7 @@ body.flat-earth {
   top: 40px;
   aspect-ratio: 1 / 1;
   width: 44px;
-  opacity: 0.5;
+  opacity: 0.25;
 
   &:hover {
     opacity: 1;
@@ -53,7 +53,7 @@ body.flat-earth {
   right: 24px;
   bottom: 30px;
   width: 106px;
-  opacity: 0.5;
+  opacity: 0.25;
 }
 
 .Q_FlatEarthUiSliderControls {
@@ -63,19 +63,37 @@ body.flat-earth {
   bottom: 41px;
   display: flex;
 
-  .Q_FlatEarthUiSlider {
-    opacity: 0.5;
-    &:hover {
-      opacity: 1;
-      cursor: var(--cursor-hover);
-    }
-  }
-
   .Q_FlatEarthUiZoom {
-    opacity: 0.5;
+    opacity: 0.25;
     &:hover {
       opacity: 1;
       cursor: var(--cursor-hover);
     }
   }
+}
+
+.Q_FlatEarthUiSliderWrap {
+  display: flex;
+  align-items: center;
+
+  .Q_FlatEarthUiSlider {
+    width: 205px;
+    height: 6px;
+    opacity: 0.25;
+    -webkit-appearance: none;
+    background-color: var(--schizo-yellow);
+    &:hover {
+      opacity: 1;
+      cursor: var(--cursor-hover);
+    }
+  }
+}
+
+.Q_FlatEarthUiSlider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 32px;
+  width: 18px;
+  background-color: var(--schizo-yellow);
+  border: 4px solid var(--schizo-red);
+  box-shadow: var(--schizo-shadow), var(--schizo-shadow), var(--schizo-shadow);
 }

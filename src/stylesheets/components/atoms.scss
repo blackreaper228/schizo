@@ -595,3 +595,264 @@
     padding: 0;
   }
 }
+
+// encryptor
+.A_EncryptorSelectButtonsItem {
+  display: flex;
+  padding: 12px 12px;
+
+  h5:first-child {
+    display: none;
+  }
+
+  &.Selected {
+    margin-left: -2px;
+    background-color: var(--schizo-yellow);
+
+    h5:first-child {
+      display: flex;
+    }
+
+    &.Selected:hover {
+      h5 {
+        margin-left: 0px;
+        text-decoration: none;
+      }
+    }
+    h5 {
+      color: var(--schizo-red);
+      font-style: italic;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.A_EncryptorSelectButtonsItem:hover {
+  margin-left: -2px;
+
+  h5:first-child {
+    display: flex;
+    text-decoration: none;
+    font-weight: 800;
+  }
+
+  h5 {
+    font-style: italic;
+    text-transform: uppercase;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    font-weight: 800;
+  }
+}
+
+.A_EncryptorContentButton {
+  background-color: var(--schizo-yellow);
+  border: 6px solid var(--schizo-red);
+  width: 230px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: rotate(-12deg);
+  box-shadow: var(--schizo-shadow);
+  position: absolute;
+  bottom: -6px;
+  right: -36px;
+  transition: 0.1s;
+
+  p.nav {
+    color: var(--schizo-red);
+  }
+
+  &:hover {
+    transform: rotate(-8deg);
+
+    p.nav {
+      color: var(--schizo-red);
+      text-decoration: underline;
+      text-decoration-thickness: 1.5px;
+    }
+  }
+}
+
+.A_EncryptorContentInterfaceSwitchBtn {
+  width: 50px;
+  height: 50px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--schizo-yellow);
+  background-image: url('./svg/encryptor/Q_EncryptorContentInterfaceSwitchBtnIcon.svg');
+  background-origin: content-box;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  transition: 0.1s;
+  transition-transform: 0.3s;
+
+  &:hover {
+    background-image: url('./svg/encryptor/Q_EncryptorContentInterfaceSwitchBtnIconHover.svg');
+    transform: rotate(8deg);
+  }
+
+  &:active {
+    transform: rotate(-8deg);
+  }
+}
+
+.A_EncryptorContentInterfaceWindowInput {
+  overflow-wrap: anywhere;
+  width: 100%;
+  height: 100%;
+  background: none;
+  border: none;
+  display: flex;
+  overflow: hidden;
+  overflow-y: auto;
+
+  color: var(--schizo-red);
+
+  font-family: 'InterVariable', sans-serif;
+  font-size: var(--h5-font-size);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 140%;
+  resize: none;
+
+  &::selection {
+    background-color: var(--schizo-red);
+    color: var(--schizo-yellow);
+  }
+
+  &::placeholder {
+    color: var(--schizo-red);
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &::-webkit-scrollbar {
+    width: 6px;
+    border-radius: 0px;
+  }
+
+  &::-webkit-scrollbar-track {
+    border-radius: 0px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--schizo-red);
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: var(--schizo-red-hover);
+  }
+}
+
+.A_EncryptorContentInterfaceWindowInput:focus::placeholder {
+  opacity: 0.25;
+}
+
+.A_EncryptorContentInterfaceWindowCopyBtn {
+  position: absolute;
+
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-origin: content-box;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  background-color: var(--schizo-yellow);
+  background-image: url('./svg/encryptor/A_EncryptorContentInterfaceWindowCopyBtn.svg');
+  padding-top: 7px;
+  padding-bottom: 7px;
+
+  bottom: 10px;
+  left: 10px;
+
+  transition: background-image 0.1s ease;
+
+  &.Done {
+    background-color: var(--schizo-red);
+    background-image: url('./svg/encryptor/A_EncryptorContentInterfaceWindowCopyBtnDoneHover.svg');
+    padding-left: 9px;
+    padding-right: 9px;
+  }
+
+  &.Done:hover {
+    background-color: var(--schizo-red);
+    background-image: url('./svg/encryptor/A_EncryptorContentInterfaceWindowCopyBtnDoneHover.svg');
+  }
+
+  // copied to clipboard
+
+  // background-color: var(--schizo-yellow);
+  // background-image: url('./svg/encryptor/A_EncryptorContentInterfaceWindowCopyBtnDone.svg');
+  // padding-left: 10px;
+  // padding-right: 10px;
+  // padding-top: 0px;
+  // padding-bottom: 0px;
+
+  &:hover {
+    background-color: var(--schizo-red);
+    background-image: url('./svg/encryptor/A_EncryptorContentInterfaceWindowCopyBtnHover.svg');
+  }
+
+  // background-color: var(--schizo-yellow);
+  // background-image: url('./svg/encryptor/A_EncryptorContentInterfaceWindowCopyBtnDone.svg');
+  // padding-left: 10px;
+  // padding-right: 10px;
+  // padding-top: 0px;
+  // padding-bottom: 0px;
+
+  // &:active {
+  //   background-color: var(--schizo-red-hover);
+  //   background-image: url('./svg/encryptor/A_EncryptorContentInterfaceWindowCopyBtnHover.svg');
+  // }
+}
+
+.A_EncryptorContentInterfaceWindowDeleteBtn {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--schizo-yellow);
+  background-image: url('./svg/encryptor/A_EncryptorContentInterfaceWindowDeleteBtn.svg');
+  background-origin: content-box;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding-top: 11px;
+  padding-bottom: 11px;
+  padding-right: 1px;
+
+  bottom: 10px;
+  left: 56px;
+
+  &:hover {
+    background-color: var(--schizo-red);
+    background-image: url('./svg/encryptor/A_EncryptorContentInterfaceWindowDeleteBtnHover.svg');
+  }
+
+  &:active {
+    background-color: var(--schizo-red-hover);
+    background-image: url('./svg/encryptor/A_EncryptorContentInterfaceWindowDeleteBtnHover.svg');
+  }
+}
+
+.A_EncryptorContentInputSlider {
+}

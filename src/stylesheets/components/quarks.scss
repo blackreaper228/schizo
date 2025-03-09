@@ -136,3 +136,42 @@
     line-height: 120%;
   }
 }
+
+// encryptor
+.Q_EncryptorSelectTitleBtn {
+  display: none;
+}
+
+.Q_EncryptorContentAnnotationQuestionMark {
+  position: absolute;
+  right: 0;
+  top: -20px;
+  height: 194px;
+  filter: drop-shadow(var(--schizo-drop-shadow));
+  transform: rotate(8deg);
+}
+
+.Q_EncryptorContentInterfaceSwitchBtnIcon {
+  aspect-ratio: 4 / 5;
+  width: 24px;
+}
+
+.Q_FlatEarthUiZoom {
+  transition: 0.3s;
+}
+
+.Q_FlatEarthUiZoom:hover {
+  transform: rotate(8deg);
+}
+
+.Q_FlatEarthUiZoom:active {
+  transform: rotate(32deg);
+}
+
+.Q_FlatEarthUiZoom.Out:hover {
+  transform: rotate(-8deg);
+}
+
+.Q_FlatEarthUiZoom.Out:active {
+  transform: rotate(-32deg);
+}

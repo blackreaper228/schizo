@@ -270,43 +270,9 @@
     display: none;
   }
 
-  // .O_BurgerMenu {
-  //   display: none;
-  //   background-color: var(--schizo-yellow);
-
-  //   position: fixed;
-  //   left: 0;
-  //   width: fit-content;
-  //   height: 100vh;
-  //   top: calc(var(--header-footer-height) * 2);
-  //   z-index: 99999;
-
-  //   box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.5);
-
-  //   &.active {
-  //     display: block;
-  //   }
-  // }
-
-  // .Q_BurgerMenuBG {
-  //   width: inherit;
-  //   height: inherit;
-  //   background-color: rgba(0, 0, 0, 0.5);
-  // }
-
-  // .O_SearchBar {
-  //   position: fixed;
-  //   width: 100vw;
-  //   height: 100vh;
-  //   top: 0;
-  //   z-index: 99999;
-
-  //   &.active {
-  //     display: block;
-  //   }
-  // }
-
-  //e
+  .O_BurgerMenu .A_HeaderNavbarBtn {
+    display: flex;
+  }
 
   .O_BurgerMenu {
     background-color: var(--schizo-yellow);
@@ -476,7 +442,7 @@
   }
 
   // articlePage
-  .S_Article {
+  .S_ArticlePage {
     margin-top: 270px;
   }
 
@@ -688,6 +654,10 @@
     display: none;
   }
 
+  .O_BurgerMenu .A_HeaderNavbarBtn {
+    display: flex;
+  }
+
   .W_LandingSecContent {
     padding-right: 10px;
     flex-direction: column;
@@ -764,6 +734,137 @@
     --O_LandingSec-sec03-MarginTop: 156px;
   }
 
+  //encryptor
+  .O_EncryptorSelect .C_EncryptorSelectButtons {
+    display: none;
+  }
+
+  .S_Encryptor {
+    margin-top: 132px;
+    margin-bottom: 64px;
+    gap: 164px;
+  }
+
+  .W_EncryptorContent {
+    flex-direction: column;
+    align-items: center;
+    height: fit-content;
+    gap: 64px;
+  }
+
+  .Q_EncryptorSelectTitleBtn {
+    display: flex;
+  }
+
+  .O_EncryptorSelect {
+    padding: 12px 0px;
+    width: calc(100% - 32px);
+  }
+
+  .M_EncryptorSelectTitle {
+    // padding: 12px 18px;
+  }
+
+  .O_EncryptorContent {
+    height: 624px;
+    width: calc(100% - 32px);
+    padding: 44px 16px 50px 16px;
+
+    h2 {
+      font-size: 30px;
+      left: 16px;
+      top: -18px;
+    }
+
+    h3 {
+      font-size: 24px;
+    }
+  }
+
+  .W_EncryptorContentInterface {
+    flex-direction: column;
+  }
+
+  .O_EncryptorContentAnnotation {
+    margin-left: 16px;
+    margin-right: 16px;
+    padding: 66px 16px 16px 16px;
+
+    h2 {
+      font-size: 30px;
+      left: 16px;
+      top: -18px;
+      width: 200px;
+    }
+  }
+
+  .A_EncryptorContentButton {
+    width: 182px;
+    height: 46px;
+    border: 4px solid var(--schizo-red);
+
+    bottom: -20px;
+    right: -14px;
+  }
+
+  .O_EncryptorContentAnnotation h5 {
+    padding: 0;
+  }
+
+  .M_EncryptorSelectTitle {
+    h3 {
+      font-size: 24px;
+    }
+  }
+
+  .A_EncryptorContentInterfaceSwitchBtn {
+    width: 40px;
+    height: 40px;
+
+    padding-top: 7px;
+    padding-bottom: 7px;
+  }
+  .W_EncryptorContentInput {
+    flex-direction: column;
+    gap: 12px;
+    padding-top: 24px;
+  }
+
+  .A_EncryptorContentInterfaceWindowCopyBtn {
+    width: 40px;
+    height: 40px;
+
+    padding-top: 7px;
+    padding-bottom: 7px;
+  }
+
+  .A_EncryptorContentInterfaceWindowDeleteBtn {
+    width: 40px;
+    height: 40px;
+
+    padding-top: 11px;
+    padding-bottom: 11px;
+    padding-right: 2px;
+
+    left: 60px;
+  }
+
+  .Q_EncryptorContentAnnotationQuestionMark {
+    width: 98px;
+    height: 131px;
+    top: -40px;
+    right: -10px;
+    object-fit: contain;
+  }
+
+  .A_EncryptorSelectButtonsItem {
+    padding: 12px 16px;
+
+    &:last-child {
+      padding-bottom: 6px;
+    }
+  }
+
   // flatEarth
   .FlatEarth {
     margin-top: 130px;
@@ -805,7 +906,7 @@
   }
 
   // articlePage
-  .S_Article {
+  .S_ArticlePage {
     margin-top: 160px;
   }
 
@@ -1136,6 +1237,10 @@
     display: none;
   }
 
+  .O_BurgerMenu .A_HeaderNavbarBtn {
+    display: flex;
+  }
+
   .M_Footer {
     height: auto;
     flex-direction: column;
@@ -1283,6 +1388,148 @@
     --O_LandingSec-sec03-MarginTop: 156px;
   }
 
+  //encryptor
+  .O_EncryptorSelect .C_EncryptorSelectButtons {
+    display: none;
+  }
+
+  .S_Encryptor {
+    margin-top: 132px;
+    margin-bottom: 17.778vw;
+    gap: 45.556vw;
+  }
+
+  .W_EncryptorContent {
+    flex-direction: column;
+    align-items: center;
+    height: fit-content;
+    gap: 17.778vw;
+  }
+
+  .Q_EncryptorSelectTitleBtn {
+    display: flex;
+  }
+
+  .O_EncryptorSelect {
+    padding: 12px 0px;
+    width: calc(100% - 32px);
+  }
+
+  .M_EncryptorSelectTitle {
+    // padding: 12px 18px;
+  }
+
+  .O_EncryptorContent {
+    height: 624px;
+    width: calc(100% - 32px);
+    padding: 12.222vw 16px 13.889vw 16px;
+
+    h2 {
+      font-size: 7.634vw;
+      left: 16px;
+      top: -18px;
+    }
+
+    h3 {
+      font-size: 6.107vw;
+    }
+  }
+
+  .W_EncryptorContentInterfaceWindow h3::after {
+    -webkit-text-stroke-width: 1.111vw;
+  }
+
+  .M_EncryptorSelectTitle h3::after {
+    -webkit-text-stroke-width: 1.111vw;
+  }
+
+  .W_EncryptorContentInterface {
+    flex-direction: column;
+  }
+
+  .O_EncryptorContentAnnotation {
+    margin-left: 16px;
+    margin-right: 16px;
+    padding: 18.333vw 16px 16px 16px;
+
+    h2 {
+      font-size: 7.634vw;
+      left: 16px;
+      top: -18px;
+      width: 55.556vw;
+    }
+  }
+
+  .A_EncryptorContentButton {
+    width: 50.556vw;
+    height: 12.778vw;
+    border: 1.111vw solid var(--schizo-red);
+
+    bottom: -20px;
+    right: -14px;
+  }
+
+  .O_EncryptorContentAnnotation h5 {
+    padding: 0;
+  }
+
+  .M_EncryptorSelectTitle {
+    h3 {
+      font-size: 6.107vw;
+    }
+  }
+
+  .A_EncryptorContentInterfaceSwitchBtn {
+    width: 11.111vw;
+    height: 11.111vw;
+
+    padding-top: 1.944vw;
+    padding-bottom: 1.944vw;
+
+    left: 2.778vw;
+    bottom: 2.778vw;
+  }
+  .W_EncryptorContentInput {
+    flex-direction: column;
+    gap: 3.333vw;
+    padding-top: 6.667vw;
+  }
+
+  .A_EncryptorContentInterfaceWindowCopyBtn {
+    width: 11.111vw;
+    height: 11.111vw;
+
+    padding-top: 1.944vw;
+    padding-bottom: 1.944vw;
+  }
+
+  .A_EncryptorContentInterfaceWindowDeleteBtn {
+    width: 11.111vw;
+    height: 11.111vw;
+
+    padding-top: 3.056vw;
+    padding-bottom: 3.056vw;
+    padding-right: 0.556vw;
+
+    left: 16.667vw;
+  }
+
+  .Q_EncryptorContentAnnotationQuestionMark {
+    width: 27.222vw;
+    height: 36.389vw;
+    top: -40px;
+    right: -10px;
+    object-fit: contain;
+  }
+
+  .A_EncryptorSelectButtonsItem {
+    padding: 12px 16px;
+
+    &:last-child {
+      padding-bottom: 6px;
+    }
+  }
+
   // flatEarth
   .FlatEarth {
     margin-top: 130px;
@@ -1324,7 +1571,7 @@
   }
 
   // articlePage
-  .S_Article {
+  .S_ArticlePage {
     width: 100%;
     margin-top: 41.026vw;
   }
@@ -1659,6 +1906,10 @@
   div.A_HeaderNavbarBtn,
   .A_HeaderNavbarSearch {
     display: none;
+  }
+
+  .O_BurgerMenu .A_HeaderNavbarBtn {
+    display: flex;
   }
 
   .M_Footer {

@@ -3,9 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Космос</title>
+    <meta name="format-detection" content="telephone=no" />
+    <title>Шифровщик</title>
+    <link rel="icon" href="../images/favicon.png" type="/image/x-icon" />
+    <analytics></analytics>
   </head>
-  <body class="articles">
+  <body class="encryptor">
     <div class="O_Header">
       <div class="A_HeaderNews">
         <div>
@@ -104,125 +107,116 @@
       </div>
       <div class="Q_BurgerMenuBG" id="burgerMenuBG-02"></div>
     </div>
-    <div class="A_GoBack">
-      <h2>← Назад</h2>
-    </div>
-    <div class="A_GoUp">↑</div>
-    <div class="S_Articles">
-      <div class="A_ArticlesType">
-        <h1>Космос</h1>
-      </div>
-      <div class="O_ArticlesCard">
-        <img
-          class="Q_ArticlesCardPic"
-          src="../images/articles/Q_ArticlesCardPic01.jpg"
-        />
-        <div class="W_ArticlesCardContent">
-          <div class="W_ArticlesCardContentText">
-            <h2>16 прогнозов для мира в 2030 году</h2>
-            <h5>
-              Что скрывается за этим веществом, которое связывают с элитой и
-              тайными обрядами? После этой статьи вы точно пересмотрите своё
-              мнение о звёздах Голливуда!
-            </h5>
+
+    <div class="S_Encryptor">
+      <div class="W_EncryptorContent">
+        <div class="O_EncryptorSelect">
+          <div class="M_EncryptorSelectTitle">
+            <h3>Шифры</h3>
+            <img
+              class="Q_EncryptorSelectTitleBtn"
+              src="../svg/encryptor/Q_EncryptorSelectTitleBtn.svg"
+            />
           </div>
-          <div class="W_ArticlesCardContentInfo">
-            <h5>04.12.24</h5>
-            <a href="./article01.html" target="_blank">
-              <h5>Читать в источнике →</h5>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="O_ArticlesCard invert">
-        <img
-          class="Q_ArticlesCardPic"
-          src="../images/articles/Q_ArticlesCardPic02.jpg"
-        />
-        <div class="W_ArticlesCardContent">
-          <div class="W_ArticlesCardContentText">
-            <h2>Адренохром — эликсир вечной молодости знаменитостей</h2>
-            <h5>
-              Что скрывается за этим веществом, которое связывают с элитой и
-              тайными обрядами? После этой статьи вы точно пересмотрите своё
-              мнение о звёздах Голливуда!
-            </h5>
-          </div>
-          <div class="W_ArticlesCardContentInfo">
-            <h5>04.12.24</h5>
-            <a href="./article01.html" target="_blank">
-              <h5>Читать в источнике →</h5>
-            </a>
+          <div class="C_EncryptorSelectButtons">
+            <div class="A_EncryptorSelectButtonsItem Selected" id="binaryCode">
+              <div class="W_EncryptorSelectButtonsItemWrap">
+                <h5>→</h5>
+                <h5>Двоичный код</h5>
+              </div>
+            </div>
+            <div class="A_EncryptorSelectButtonsItem" id="caesar">
+              <div class="W_EncryptorSelectButtonsItemWrap">
+                <h5>→</h5>
+                <h5>Шифр Цезаря</h5>
+              </div>
+            </div>
+            <div class="A_EncryptorSelectButtonsItem" id="atbash">
+              <div class="W_EncryptorSelectButtonsItemWrap">
+                <h5>→</h5>
+                <h5>Шифр Атбаш</h5>
+              </div>
+            </div>
           </div>
         </div>
+        <form class="O_EncryptorContent">
+          <h2 id="EncryptorTitle">Двоичный код</h2>
+          <h1 id="soon">СКОРО</h1>
+          <div class="W_EncryptorContentInterface">
+            <div class="W_EncryptorContentInterfaceWindow">
+              <h3 id="inputTitle">Текст</h3>
+
+              <textarea
+                class="A_EncryptorContentInterfaceWindowInput"
+                placeholder="Введите текст..."
+                data-type="text"
+                id="input"
+              ></textarea>
+              <div
+                class="A_EncryptorContentInterfaceWindowCopyBtn"
+                id="copyInput"
+              ></div>
+              <div class="A_EncryptorContentInterfaceWindowDeleteBtn"></div>
+            </div>
+            <div
+              class="A_EncryptorContentInterfaceSwitchBtn"
+              data-type="text"
+            ></div>
+            <div class="W_EncryptorContentInterfaceWindow">
+              <h3 id="outputTitle">Шифр</h3>
+              <div class="A_EncryptorContentInterfaceWindowInput" id="output">
+                Вывод шифра...
+              </div>
+              <div
+                class="A_EncryptorContentInterfaceWindowCopyBtn"
+                id="copy"
+              ></div>
+            </div>
+          </div>
+          <div class="W_EncryptorContentInput">
+            <div class="W_EncryptorContentInputText">
+              <h5>Сдвиг на</h5>
+              <h3>26</h3>
+              <h5>символов</h5>
+            </div>
+            <div class="W_EncryptorContentInputControls">
+              <img
+                class="Q_FlatEarthUiZoom Out"
+                src="../svg/FlatEarthUi/Q_FlatEarthUiZoomOut.svg"
+              />
+              <input
+                type="range"
+                class="Q_FlatEarthUiSlider"
+                min="1"
+                max="30"
+                value="1"
+                step="1"
+              />
+              <img
+                class="Q_FlatEarthUiZoom In"
+                src="../svg/FlatEarthUi/Q_FlatEarthUiZoomIn.svg"
+              />
+            </div>
+          </div>
+          <button class="A_EncryptorContentButton" type="submit">
+            <p class="nav">Рассчитать</p>
+          </button>
+        </form>
       </div>
-      <div class="O_ArticlesCard">
+      <div class="O_EncryptorContentAnnotation">
+        <h2>Как это работает?</h2>
+        <h5 id="Annotation">
+          Двоичный код&nbsp;&mdash; это система счисления, использующая только
+          два символа: 0&nbsp;и&nbsp;1, применяемая в&nbsp;компьютерах
+          для&nbsp;представления данных.
+        </h5>
         <img
-          class="Q_ArticlesCardPic"
-          src="../images/articles/Q_ArticlesCardPic03.jpg"
+          src="../assets/gifs/questionMarkAnim.gif"
+          class="Q_EncryptorContentAnnotationQuestionMark"
         />
-        <div class="W_ArticlesCardContent">
-          <div class="W_ArticlesCardContentText">
-            <h2>Антарктиды не существует</h2>
-            <h5>
-              Что скрывается за этим веществом, которое связывают с элитой и
-              тайными обрядами? После этой статьи вы точно пересмотрите своё
-              мнение о звёздах Голливуда!
-            </h5>
-          </div>
-          <div class="W_ArticlesCardContentInfo">
-            <h5>04.12.24</h5>
-            <a href="./article01.html" target="_blank">
-              <h5>Читать в источнике →</h5>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="O_ArticlesCard invert">
-        <img
-          class="Q_ArticlesCardPic"
-          src="../images/articles/Q_ArticlesCardPic04.jpg"
-        />
-        <div class="W_ArticlesCardContent">
-          <div class="W_ArticlesCardContentText">
-            <h2>Голова змеи Ватикана</h2>
-            <h5>
-              Что скрывается за этим веществом, которое связывают с элитой и
-              тайными обрядами? После этой статьи вы точно пересмотрите своё
-              мнение о звёздах Голливуда!
-            </h5>
-          </div>
-          <div class="W_ArticlesCardContentInfo">
-            <h5>04.12.24</h5>
-            <a href="./article01.html" target="_blank">
-              <h5>Читать в источнике →</h5>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="O_ArticlesCard">
-        <img
-          class="Q_ArticlesCardPic"
-          src="../images/articles/Q_ArticlesCardPic05.jpg"
-        />
-        <div class="W_ArticlesCardContent">
-          <div class="W_ArticlesCardContentText">
-            <h2>Богемская роща. Кремация души</h2>
-            <h5>
-              Что скрывается за этим веществом, которое связывают с элитой и
-              тайными обрядами? После этой статьи вы точно пересмотрите своё
-              мнение о звёздах Голливуда!
-            </h5>
-          </div>
-          <div class="W_ArticlesCardContentInfo">
-            <h5>04.12.24</h5>
-            <a href="./article01.html" target="_blank">
-              <h5>Читать в источнике →</h5>
-            </a>
-          </div>
-        </div>
       </div>
     </div>
+
     <div class="M_Footer">
       <div class="W_FooterText">
         <a href="https://t.me/schizofiles" target="_blank"

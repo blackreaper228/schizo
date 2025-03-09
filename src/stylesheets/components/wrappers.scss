@@ -166,7 +166,8 @@
     }
   }
 
-  a {
+  a,
+  div {
     width: fit-content;
   }
 
@@ -345,4 +346,69 @@
 .W_ReadMoreCardsItemTextInfo {
   display: flex;
   justify-content: space-between;
+}
+
+// encryptor
+
+.W_EncryptorSelectButtonsItemWrap {
+  display: flex;
+  gap: 4px;
+}
+
+.W_EncryptorContent {
+  position: relative;
+  display: flex;
+  gap: 32px;
+  height: 380px;
+}
+
+.W_EncryptorContentInterface {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 20px; // как это ваще блять сработало
+  width: 100%;
+  height: 100%;
+
+  gap: 16px;
+}
+
+.W_EncryptorContentInterfaceWindow {
+  max-width: 380px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+
+  background-color: var(--schizo-yellow);
+  padding: 24px 12px 60px 12px;
+
+  h3 {
+    position: absolute;
+    top: -10px;
+    left: 12px;
+  }
+}
+
+.W_EncryptorContentInput {
+  position: relative;
+  height: 44px;
+  display: none;
+  gap: 40px;
+  padding-top: 12px;
+}
+
+.W_EncryptorContentInputText {
+  align-items: center;
+  display: flex;
+  gap: 12px;
+}
+
+.W_EncryptorContentInputControls {
+  width: 100%;
+  max-width: 374px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
 }

@@ -78,14 +78,23 @@ body.flat-earth {
 
   .Q_FlatEarthUiSlider {
     width: 205px;
-    height: 6px;
     opacity: 0.25;
-    -webkit-appearance: none;
-    background-color: var(--schizo-yellow);
-    &:hover {
-      opacity: 1;
-      cursor: var(--cursor-hover);
-    }
+  }
+
+  .Q_FlatEarthUiSlider::-webkit-slider-thumb {
+    box-shadow:
+      var(--schizo-shadow), var(--schizo-shadow), var(--schizo-shadow);
+  }
+}
+
+.Q_FlatEarthUiSlider {
+  width: 100%;
+  height: 6px;
+  -webkit-appearance: none;
+  background-color: var(--schizo-yellow);
+  &:hover {
+    opacity: 1;
+    cursor: var(--cursor-hover);
   }
 }
 
@@ -95,5 +104,4 @@ body.flat-earth {
   width: 18px;
   background-color: var(--schizo-yellow);
   border: 4px solid var(--schizo-red);
-  box-shadow: var(--schizo-shadow), var(--schizo-shadow), var(--schizo-shadow);
 }

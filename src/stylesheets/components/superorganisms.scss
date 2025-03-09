@@ -23,11 +23,21 @@
   filter: drop-shadow(var(--schizo-drop-shadow));
 }
 
-.S_Article {
+.S_ArticlePage {
   margin-top: 240px;
   width: var(--center-container);
   display: flex;
   flex-direction: column;
   filter: drop-shadow(var(--schizo-drop-shadow));
   align-items: center;
+}
+
+.S_Encryptor {
+  margin-top: 240px;
+  margin-bottom: 120px;
+  width: var(--center-container);
+  display: flex;
+  filter: drop-shadow(var(--schizo-drop-shadow));
+  flex-direction: column;
+  gap: 68px;
 }

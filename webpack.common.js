@@ -13,7 +13,7 @@ module.exports = {
     test: './src/javascript/test.js',
     articles: './src/javascript/articles.js',
     flatEarth: './src/javascript/flatEarth.js',
-    cryptographer: './src/javascript/cryptographer.js',
+    encryptor: './src/javascript/encryptor.js',
     predictions: './src/javascript/predictions.js',
     about: './src/javascript/about.js',
     empty: './src/javascript/empty.js'
@@ -240,9 +240,9 @@ module.exports = {
     new HtmlWebpackPlugin({
       hash: true,
       scriptLoading: 'blocking',
-      template: './src/pages/cryptographer.html',
-      filename: './cryptographer.html',
-      chunks: ['cryptographer']
+      template: './src/pages/encryptor.html',
+      filename: './encryptor.html',
+      chunks: ['encryptor']
     }),
 
     new HtmlWebpackPlugin({

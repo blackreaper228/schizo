@@ -41,3 +41,26 @@
   flex-direction: column;
   gap: 68px;
 }
+
+// iceberg
+
+.S_Iceberg {
+  width: var(--center-container);
+  background-color: var(--schizo-red);
+  border: var(--yellow-border);
+
+  position: relative;
+  display: flex;
+
+  gap: 40px;
+
+  margin-top: 198px;
+  margin-bottom: 132px;
+  padding: 58px 50px 16px 50px;
+
+  h2 {
+    position: absolute;
+    top: -30px;
+    left: 40px;
+  }
+}

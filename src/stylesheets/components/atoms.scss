@@ -854,5 +854,107 @@
   }
 }
 
-.A_EncryptorContentInputSlider {
+// iceberg
+.A_IcebergResultActionsDelete {
+  background-color: var(--schizo-yellow);
+  background-image: url('./svg/iceberg/A_IcebergResultActionsDelete.svg');
+  background-origin: content-box;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  width: 40px;
+  height: 40px;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.A_IcebergResultActionsDownload {
+  background-color: var(--schizo-yellow);
+  background-image: url('./svg/iceberg/A_IcebergResultActionsDownload.svg');
+  background-origin: content-box;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  width: 40px;
+  height: 40px;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.A_IcebergContentLevelsSettings {
+  background-color: var(--schizo-yellow);
+  background-image: url('./svg/iceberg/A_IcebergContentLevelsSettings.svg');
+  background-origin: content-box;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  width: 40px;
+  height: 40px;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.A_IcebergContentInputsItemUndo {
+  background-color: var(--schizo-yellow);
+  background-image: url('./svg/iceberg/A_IcebergContentInputsItemUndo.svg');
+  background-origin: content-box;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  width: 50px;
+  height: 50px;
+
+  aspect-ratio: 1 / 1;
+
+  transition: 0.1s;
+
+  &:hover {
+    transform: rotate(-8deg);
+    opacity: 1;
+  }
+
+  &:active {
+    transform: rotate(-16deg);
+    opacity: 0.8;
+  }
+}
+
+.A_IcebergContentInputsItemFieldAddBtn {
+  background-color: var(--schizo-red);
+  background-image: url('./svg/iceberg/A_IcebergContentInputsItemFieldAddBtn.svg');
+  background-origin: content-box;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  border: 5px solid var(--schizo-yellow);
+
+  width: 50px;
+  height: 50px;
+
+  aspect-ratio: 1 / 1;
+
+  padding: 6px;
+  transition: 0.1s ease;
+
+  &:hover {
+    padding: 6px;
+    background-color: var(--schizo-yellow);
+    background-image: url('./svg/iceberg/A_IcebergContentInputsItemFieldAddBtnHover.svg');
+  }
+
+  &:active {
+    opacity: 0.8;
+    padding: 8px;
+  }
 }

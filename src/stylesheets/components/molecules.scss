@@ -182,3 +182,44 @@
   justify-content: space-between;
   padding: 0px 18px;
 }
+
+// iceberg
+.M_IcebergContentInputsItemField {
+  background-color: var(--schizo-yellow);
+  display: flex;
+  gap: 10px;
+  padding-left: 16px;
+  align-items: center;
+  width: 100%;
+
+  input {
+    width: 100%;
+    height: 100%;
+    padding: 12px 0px;
+
+    color: var(--schizo-red);
+
+    font-family: 'InterVariable', sans-serif;
+    font-size: var(--h5-font-size);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 140%;
+  }
+
+  input::selection {
+    background-color: var(--schizo-red);
+    color: var(--schizo-yellow);
+  }
+
+  input::placeholder {
+    color: var(--schizo-red);
+  }
+
+  input:focus {
+    outline: none;
+  }
+
+  input:focus::placeholder {
+    opacity: 0.25;
+  }
+}

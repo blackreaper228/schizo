@@ -232,3 +232,25 @@
     padding: 20px 276px 0px 0px;
   }
 }
+
+// iceberg
+.O_IcebergContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  width: 100%;
+
+  .C_IcebergContentInputs {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 5px 0px;
+  }
+}
+
+.O_IcebergResult {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}

@@ -412,3 +412,56 @@
   align-items: center;
   gap: 14px;
 }
+
+// iceberg
+.W_IcebergResultActions {
+  display: flex;
+  position: relative;
+
+  gap: 16px;
+
+  .A_EncryptorContentInterfaceWindowCopyBtn {
+    position: relative;
+    width: 40px;
+    height: 40px;
+
+    bottom: auto;
+    left: auto;
+
+    transition: 0s;
+  }
+
+  .A_EncryptorContentInterfaceWindowCopyBtn:hover {
+    background-color: var(--schizo-yellow);
+    background-image: url('./svg/encryptor/A_EncryptorContentInterfaceWindowCopyBtn.svg');
+    opacity: 0.8;
+  }
+}
+
+.W_IcebergContentLevels {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.W_IcebergResultPic {
+  background-color: var(--schizo-yellow);
+  padding: 5px;
+  position: relative;
+
+  .C_AddPic {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    right: 5px;
+    background-color: var(--schizo-yellow);
+  }
+}
+
+.W_IcebergContentInputsItem {
+  display: flex;
+  gap: 16px;
+  padding: 8px 0px;
+  // height: 100%;
+}

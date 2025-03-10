@@ -5,6 +5,7 @@
 @import 'stylesheets/index.scss';
 @import 'stylesheets/test.scss';
 @import 'stylesheets/flat-earth.scss';
+@import 'stylesheets/iceberg.scss';
 
 @import 'stylesheets/components/atoms.scss';
 @import 'stylesheets/components/molecules.scss';

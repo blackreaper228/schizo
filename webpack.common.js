@@ -16,6 +16,7 @@ module.exports = {
     encryptor: './src/javascript/encryptor.js',
     predictions: './src/javascript/predictions.js',
     about: './src/javascript/about.js',
+    iceberg: './src/javascript/iceberg.js',
     empty: './src/javascript/empty.js'
   },
   output: {
@@ -251,6 +252,14 @@ module.exports = {
       template: './src/pages/predictions.html',
       filename: './predictions.html',
       chunks: ['predictions']
+    }),
+
+    new HtmlWebpackPlugin({
+      hash: true,
+      scriptLoading: 'blocking',
+      template: './src/pages/iceberg.html',
+      filename: './iceberg.html',
+      chunks: ['iceberg']
     }),
 
     new HtmlWebpackPlugin({

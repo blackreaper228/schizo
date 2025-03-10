@@ -734,6 +734,17 @@
     --O_LandingSec-sec03-MarginTop: 156px;
   }
 
+  //iceberg
+
+  .S_Iceberg {
+    flex-direction: column;
+    padding: 58px 16px 16px 16px;
+  }
+
+  .Q_CanvasPic {
+    width: 100%;
+  }
+
   //encryptor
   .O_EncryptorSelect .C_EncryptorSelectButtons {
     display: none;

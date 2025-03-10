@@ -165,3 +165,20 @@ body.encryptor {
   overflow-x: hidden;
   position: relative;
 }
+
+body.iceberg {
+  background-image: url('./images/backgrounds/bg01.jpg');
+
+  background-size: cover;
+  background-position: center top;
+  background-color: var(--schizo-red);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: auto;
+  flex-direction: column;
+
+  overflow-x: hidden;
+  position: relative;
+}

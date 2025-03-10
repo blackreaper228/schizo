@@ -175,3 +175,37 @@
 .Q_FlatEarthUiZoom.Out:active {
   transform: rotate(-32deg);
 }
+
+// iceberg
+.Q_CanvasPic {
+  width: 415px;
+  height: 492px;
+  background-image: url('./images/iceberg/Q_CanvasTestPic.jpg');
+}
+
+.Q_AddPicBtn {
+  display: flex;
+  width: 66px;
+  aspect-ratio: 1 / 1;
+  // padding: 14px;
+
+  background-color: var(--schizo-red);
+  background-image: url('./svg/iceberg/Q_AddPicBtn.svg');
+  background-origin: content-box;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  transition: 0.1s ease;
+
+  &:hover {
+    background-color: var(--schizo-yellow);
+    background-image: url('./svg/iceberg/Q_AddPicBtnHover.svg');
+  }
+
+  &:active {
+    background-color: var(--schizo-yellow);
+    background-image: url('./svg/iceberg/Q_AddPicBtnHover.svg');
+    padding: 6px;
+  }
+}

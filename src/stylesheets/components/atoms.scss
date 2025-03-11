@@ -531,6 +531,10 @@
   }
 }
 
+.A_ArticleTitle.Tall {
+  height: var(--A_ArticleTitle-Tall);
+}
+
 .A_Breadcrumbs {
   display: flex;
   justify-content: space-between;
@@ -585,7 +589,7 @@
 }
 
 .A_ArticleContentBodySampleWithPic {
-  padding: 20px 68px 20px 58px;
+  padding: 20px 28px 20px 58px;
 
   display: flex;
   width: 100%;

@@ -310,6 +310,21 @@
   }
 }
 
+.M_ArticleContentBodySampleQuoteTextContainer {
+  h5 {
+    padding: 8px 0px 8px 28px;
+    color: var(--schizo-yellow);
+    font-style: italic;
+    font-weight: 800;
+    text-transform: uppercase;
+
+    &::selection {
+      background-color: var(--schizo-yellow);
+      color: var(--schizo-red);
+    }
+  }
+}
+
 .W_ArticleShareWrap {
   display: flex;
   flex-direction: column;

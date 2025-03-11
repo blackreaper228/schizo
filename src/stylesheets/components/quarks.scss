@@ -83,7 +83,8 @@
   align-items: flex-end;
   display: flex;
   width: 100%;
-  height: var(--Q_ArticleSidePicsImg-height);
+  // height: var(--Q_ArticleSidePicsImg-height);
+  aspect-ratio: 113/138;
 
   img {
     height: inherit;
@@ -91,9 +92,12 @@
   }
 
   h5 {
-    width: inherit;
     position: absolute;
     padding: 4px 6px;
+  }
+
+  h5:after {
+    width: calc(100% - 10px);
   }
 
   ::selection {

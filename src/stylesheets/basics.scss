@@ -118,6 +118,8 @@ img {
 body.articles {
   background-image: url('./images/backgrounds/bg02.jpg');
 
+  justify-content: space-between;
+
   background-size: cover;
   background-position: center top;
   background-color: var(--schizo-red);

@@ -184,48 +184,80 @@ module.exports = {
     new HtmlWebpackPlugin({
       hash: true,
       scriptLoading: 'blocking',
-      template: './src/pages/articles/bitie/article01.html',
-      filename: './article01.html',
+      template: './src/pages/articles/bitie/ten-predictions.html',
+      filename: './ten-predictions.html',
       chunks: ['articles']
     }),
 
     new HtmlWebpackPlugin({
       hash: true,
       scriptLoading: 'blocking',
-      template: './src/pages/articles/bitie/article02.html',
-      filename: './article02.html',
+      template: './src/pages/articles/bitie/adrenochrome.html',
+      filename: './adrenochrome.html',
       chunks: ['articles']
     }),
 
     new HtmlWebpackPlugin({
       hash: true,
       scriptLoading: 'blocking',
-      template: './src/pages/articles/kosmos/article03.html',
-      filename: './article03.html',
+      template: './src/pages/articles/bitie/antarctica.html',
+      filename: './antarctica.html',
       chunks: ['articles']
     }),
 
     new HtmlWebpackPlugin({
       hash: true,
       scriptLoading: 'blocking',
-      template: './src/pages/articles/kosmos/article04.html',
-      filename: './article04.html',
+      template: './src/pages/articles/bitie/vatican.html',
+      filename: './vatican.html',
       chunks: ['articles']
     }),
 
     new HtmlWebpackPlugin({
       hash: true,
       scriptLoading: 'blocking',
-      template: './src/pages/articles/proshloe/article05.html',
-      filename: './article05.html',
+      template: './src/pages/articles/kosmos/fake-moon-landing.html',
+      filename: './fake-moon-landing.html',
       chunks: ['articles']
     }),
 
     new HtmlWebpackPlugin({
       hash: true,
       scriptLoading: 'blocking',
-      template: './src/pages/articles/proshloe/article06.html',
-      filename: './article06.html',
+      template: './src/pages/articles/kosmos/ufo-on-video.html',
+      filename: './ufo-on-video.html',
+      chunks: ['articles']
+    }),
+
+    new HtmlWebpackPlugin({
+      hash: true,
+      scriptLoading: 'blocking',
+      template: './src/pages/articles/kosmos/water-is-door.html',
+      filename: './water-is-door.html',
+      chunks: ['articles']
+    }),
+
+    new HtmlWebpackPlugin({
+      hash: true,
+      scriptLoading: 'blocking',
+      template: './src/pages/articles/proshloe/chernobyl-hiv.html',
+      filename: './chernobyl-hiv.html',
+      chunks: ['articles']
+    }),
+
+    new HtmlWebpackPlugin({
+      hash: true,
+      scriptLoading: 'blocking',
+      template: './src/pages/articles/proshloe/bush-and-children.html',
+      filename: './bush-and-children.html',
+      chunks: ['articles']
+    }),
+
+    new HtmlWebpackPlugin({
+      hash: true,
+      scriptLoading: 'blocking',
+      template: './src/pages/articles/proshloe/dyatlov-pass.html',
+      filename: './dyatlov-pass.html',
       chunks: ['articles']
     }),
 

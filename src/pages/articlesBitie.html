@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="../images/favicon.png" type="/image/x-icon" />
     <title>Бытие</title>
   </head>
   <body class="articles">
@@ -34,15 +35,16 @@
           <img class="Q_LogoMobile" src="../images/Q_LogoMobile.png" />
           <img class="Q_SearchIconMobile" src="../svg/Q_SearchIconMobile.svg" />
 
-          <a href="./index.html" class="A_HeaderNavbarBtn">Главная</a>
+          <a href="./test.html" class="A_HeaderNavbarBtn">Главная</a>
           <div class="A_HeaderNavbarBtn" id="articles">Статьи</div>
           <a href="./flat-earth.html" class="A_HeaderNavbarBtn">
             Карта истинной Земли
           </a>
-          <div class="A_HeaderNavbarBtn">Генераторы</div>
+          <div class="A_HeaderNavbarBtn" id="gensBtn">Генераторы</div>
           <a href="./predictions.html" class="A_HeaderNavbarBtn">
             Предсказание дня
           </a>
+
           <div class="A_HeaderNavbarSearch">
             Поиск
             <image class="Q_SearchIcon" src="../svg/Q_SearchIcon.svg"></image>
@@ -61,6 +63,18 @@
           </a>
           <a href="./proshloe.html">
             <div class="A_HeaderNavbarBtn" id="articles_in">Прошлое</div>
+          </a>
+        </div>
+        <div class="M_HeaderNavbar invert Gen" id="gens">
+          <img class="Q_BurgerIcon" src="../svg/Q_BurgerIcon.svg" />
+          <img class="Q_LogoMobile" src="../images/Q_LogoMobile.png" />
+          <img class="Q_SearchIconMobile" src="../svg/Q_SearchIconMobile.svg" />
+
+          <a href="./encryptor.html">
+            <div class="A_HeaderNavbarBtn" id="articles_in">Шифровщик</div>
+          </a>
+          <a href="./iceberg.html">
+            <div class="A_HeaderNavbarBtn" id="articles_in">Айсберги</div>
           </a>
         </div>
       </div>
@@ -115,11 +129,11 @@
       <div class="O_ArticlesCard">
         <img
           class="Q_ArticlesCardPic"
-          src="../images/articles/Q_ArticlesCardPic01.jpg"
+          src="../images/articles/Q_ArticlesCardPic02.jpg"
         />
         <div class="W_ArticlesCardContent">
           <div class="W_ArticlesCardContentText">
-            <h2>16 прогнозов для мира в 2030 году</h2>
+            <h2>Адренохром — эликсир вечной молодости знаменитостей</h2>
             <h5>
               Что скрывается за этим веществом, которое связывают с элитой и
               тайными обрядами? После этой статьи вы точно пересмотрите своё
@@ -127,8 +141,8 @@
             </h5>
           </div>
           <div class="W_ArticlesCardContentInfo">
-            <h5>04.12.24</h5>
-            <a href="./article01.html">
+            <h5>11.03.25</h5>
+            <a href="./adrenochrome.html">
               <h5>Читать в источнике →</h5>
             </a>
           </div>
@@ -137,20 +151,20 @@
       <div class="O_ArticlesCard invert">
         <img
           class="Q_ArticlesCardPic"
-          src="../images/articles/Q_ArticlesCardPic02.jpg"
+          src="../images/articles/Q_ArticlesCardPic01.jpg"
         />
         <div class="W_ArticlesCardContent">
           <div class="W_ArticlesCardContentText">
-            <h2>Адренохром — эликсир вечной молодости знаменитостей</h2>
+            <h2>10 прогнозов для мира в 2030 году</h2>
             <h5>
-              Что скрывается за этим веществом, которое связывают с элитой и
-              тайными обрядами? После этой статьи вы точно пересмотрите своё
-              мнение о звёздах Голливуда!
+              2030: случайность или план элит? Тайные договорённости, цифровой
+              контроль, кризисы и трансгуманизм — 10 прогнозов, которые могут
+              стать реальностью.
             </h5>
           </div>
           <div class="W_ArticlesCardContentInfo">
-            <h5>04.12.24</h5>
-            <a href="./article01.html">
+            <h5>11.03.25</h5>
+            <a href="./ten-predictions.html">
               <h5>Читать в источнике →</h5>
             </a>
           </div>
@@ -159,26 +173,26 @@
       <div class="O_ArticlesCard">
         <img
           class="Q_ArticlesCardPic"
-          src="../images/articles/Q_ArticlesCardPic03.jpg"
+          src="../images/articles/bitie/Q_ArticlesCardPic03.jpg"
         />
         <div class="W_ArticlesCardContent">
           <div class="W_ArticlesCardContentText">
             <h2>Антарктиды не существует</h2>
             <h5>
-              Что скрывается за этим веществом, которое связывают с элитой и
-              тайными обрядами? После этой статьи вы точно пересмотрите своё
-              мнение о звёздах Голливуда!
+              Антарктида — континент или тщательно охраняемая тайна? Запрет
+              на полёты, скрытые базы и аномалии — что мировые элиты не хотят
+              нам показывать?
             </h5>
           </div>
           <div class="W_ArticlesCardContentInfo">
-            <h5>04.12.24</h5>
-            <a href="./article01.html">
+            <h5>11.03.25</h5>
+            <a href="./antarctica.html">
               <h5>Читать в источнике →</h5>
             </a>
           </div>
         </div>
       </div>
-      <div class="O_ArticlesCard invert">
+      <!-- <div class="O_ArticlesCard invert">
         <img
           class="Q_ArticlesCardPic"
           src="../images/articles/Q_ArticlesCardPic04.jpg"
@@ -187,41 +201,19 @@
           <div class="W_ArticlesCardContentText">
             <h2>Голова змеи Ватикана</h2>
             <h5>
-              Что скрывается за этим веществом, которое связывают с элитой и
-              тайными обрядами? После этой статьи вы точно пересмотрите своё
-              мнение о звёздах Голливуда!
+              Ватикан — духовный центр или храм тьмы? Тайные символы, змеиная
+              архитектура и скрытые знания — что на самом деле скрывается
+              за фасадом веры?
             </h5>
           </div>
           <div class="W_ArticlesCardContentInfo">
-            <h5>04.12.24</h5>
-            <a href="./article01.html">
+            <h5>11.03.25</h5>
+            <a href="./vatican.html">
               <h5>Читать в источнике →</h5>
             </a>
           </div>
         </div>
-      </div>
-      <div class="O_ArticlesCard">
-        <img
-          class="Q_ArticlesCardPic"
-          src="../images/articles/Q_ArticlesCardPic05.jpg"
-        />
-        <div class="W_ArticlesCardContent">
-          <div class="W_ArticlesCardContentText">
-            <h2>Богемская роща. Кремация души</h2>
-            <h5>
-              Что скрывается за этим веществом, которое связывают с элитой и
-              тайными обрядами? После этой статьи вы точно пересмотрите своё
-              мнение о звёздах Голливуда!
-            </h5>
-          </div>
-          <div class="W_ArticlesCardContentInfo">
-            <h5>04.12.24</h5>
-            <a href="./article01.html">
-              <h5>Читать в источнике →</h5>
-            </a>
-          </div>
-        </div>
-      </div>
+      </div> -->
     </div>
     <div class="M_Footer">
       <div class="W_FooterText">

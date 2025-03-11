@@ -57,6 +57,7 @@
     --M_LandingCardsItem-Width: 316px;
     --W_FinalSecContentText-Width: 828px;
 
+    --A_ArticleTitle-Tall: 300px;
     --render-height: 200px;
 
     --Q_LandingSecContentPic: 288px;
@@ -69,6 +70,12 @@
 
     //margins&paddings
     --O_LandingSec-sec03-MarginTop: 76px;
+
+    --sidePics-width: 224px;
+  }
+
+  .O_ArticleContentBody {
+    max-width: 492px;
   }
 
   // flatEarth
@@ -123,6 +130,8 @@
 
     --Q_ArticlesCardPic-Size: 288px;
 
+    --A_ArticleTitle-Tall: 300px;
+
     // --render-height: 150px;
 
     //effects
@@ -134,6 +143,85 @@
 
     //margins&paddings
     --O_LandingSec-sec03-MarginTop: 40px;
+
+    --sidePics-width: 100%;
+  }
+
+  .O_ReadMore {
+    margin: 96px 16px;
+
+    .A_LandingTitle {
+      margin: 0px 16px calc(var(--border-width) * -1) 16px;
+      height: 40px;
+      padding: 0px 16px 12px 16px;
+      h2 {
+        font-size: 32px;
+      }
+    }
+  }
+
+  .O_ReadMore .C_ReadMoreCards {
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: flex-start;
+    justify-content: flex-start;
+    margin: 0 16px;
+  }
+
+  .Q_ReadMoreCardsItemPic {
+    position: relative;
+    height: auto;
+    width: 100%;
+    img {
+      object-fit: cover;
+    }
+  }
+
+  .M_ReadMoreCardsItem {
+    width: 100%;
+    min-width: 40%;
+    max-width: 50%;
+    box-sizing: border-box;
+    flex: 1 0 0;
+  }
+
+  .A_ArticleTitle.Tall {
+    width: 100%;
+    max-width: 676px;
+    position: relative;
+    height: 200px;
+
+    h1 {
+      width: inherit;
+    }
+  }
+
+  .A_ArticleTitle {
+    width: 100%;
+    max-width: 676px;
+    position: relative;
+    height: 100px;
+
+    h1 {
+      font-size: 50px;
+    }
+  }
+
+  .A_Breadcrumbs {
+    width: 100%;
+    max-width: 676px;
+  }
+
+  .O_ArticleLeftSide {
+    display: none;
+  }
+
+  .O_ArticleContentBody {
+    width: 100%;
+  }
+
+  .M_ArticleSidePics {
+    display: none;
   }
 
   // flatEarth
@@ -410,8 +498,37 @@
     --Q_ArticlesCardPic-Size: 200px;
 
     --border-width: 6px;
+
+    --A_ArticleTitle-Tall: 200px;
   }
 
+  .W_ArticleContentBodySample h5 {
+    padding: 10px 40px 10px 40px;
+    line-height: 140%;
+  }
+
+  .A_ArticleContentBodySampleWithPic {
+    padding: 10px 40px;
+  }
+
+  .W_ArticleContent {
+    width: calc(100% - 32px);
+    position: relative;
+  }
+
+  .W_ArticleShareWrap {
+    margin: 0px;
+    padding: 0;
+  }
+
+  .M_ArticleContentBodySampleQuotePic {
+    width: 200px;
+  }
+
+  .O_ArticleContentBody {
+    width: 100%;
+    max-width: none;
+  }
   // flatEarth
   .FlatEarth {
     width: 100%;
@@ -447,7 +564,7 @@
   }
 
   .W_ArticleShareWrap {
-    margin: 0px 16px;
+    margin: 0px 0px;
   }
 
   .O_ArticleLeftSide {
@@ -953,15 +1070,44 @@
   }
 
   .A_ArticleTitle {
-    width: auto;
-    margin: 0px 16px;
+    width: calc(100% - 32px);
+    // margin: 0px 16px;
     h1 {
       width: auto;
       position: relative;
       padding-bottom: 20px;
 
       &::after {
-        width: 100%;
+      }
+    }
+  }
+
+  .A_ArticleTitle.Tall {
+    height: 110px;
+
+    h1 {
+      width: auto;
+      position: relative;
+      padding-bottom: 16px;
+
+      font-size: 24px;
+
+      &::after {
+      }
+    }
+  }
+
+  .A_ArticleTitle {
+    height: 60px;
+
+    h1 {
+      width: auto;
+      position: relative;
+      padding-bottom: 16px;
+
+      font-size: 24px;
+
+      &::after {
       }
     }
   }
@@ -1620,15 +1766,46 @@
   }
 
   .A_ArticleTitle {
-    width: auto;
-    margin: 0px 4.103vw;
+    width: calc(100% - 32px);
+    // margin: 0px 4.103vw;
     h1 {
       width: auto;
       position: relative;
       padding-bottom: 7.128vw;
+      font-size: 24px;
 
       &::after {
-        width: 100%;
+      }
+    }
+  }
+
+  .A_ArticleTitle.Tall {
+    height: 110px;
+
+    h1 {
+      width: auto;
+      position: relative;
+      padding-bottom: 16px;
+
+      font-size: 24px;
+
+      &::after {
+      }
+    }
+  }
+
+  .A_ArticleTitle {
+    height: 90px;
+    width: calc(100% - 8.206vw);
+
+    h1 {
+      width: auto;
+      position: relative;
+      padding-bottom: 16px;
+
+      font-size: 24px;
+
+      &::after {
       }
     }
   }

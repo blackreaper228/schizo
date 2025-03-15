@@ -89,11 +89,26 @@
     <div class="O_BurgerMenu">
       <div class="W_BurgerMenuContent">
         <a href="./test.html" class="A_HeaderNavbarBtn">Главная </a>
-        <div class="A_HeaderNavbarBtn" style="display: flex">Статьи</div>
+        <div class="A_HeaderNavbarBtn" style="display: flex" id="ArticleMobile">
+          Статьи
+        </div>
+        <div
+          class="W_ArticlesDropdown"
+          style="display: none"
+          id="ArticlesDropdown"
+        >
+          <a href="./bitie.html" class="A_HeaderNavbarBtn">Бытие</a>
+          <a href="./bitie.html" class="A_HeaderNavbarBtn">Космос</a>
+          <a href="./bitie.html" class="A_HeaderNavbarBtn">Прошлое</a>
+        </div>
         <a href="./flat-earth.html" class="A_HeaderNavbarBtn">
           Карта истинной Земли
         </a>
-        <div class="A_HeaderNavbarBtn">Генераторы</div>
+        <div class="A_HeaderNavbarBtn" id="GensMobile">Генераторы</div>
+        <div class="W_ArticlesDropdown" style="display: none" id="GensDropdown">
+          <a href="./bitie.html" class="A_HeaderNavbarBtn">Шифровщик</a>
+          <a href="./bitie.html" class="A_HeaderNavbarBtn">Айсберги</a>
+        </div>
         <a href="./predictions.html" class="A_HeaderNavbarBtn">
           Предсказание дня
         </a>

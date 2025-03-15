@@ -154,7 +154,7 @@
   background-color: var(--schizo-yellow);
   width: 100%;
   z-index: 9999;
-  padding: 24px 16px 24px 16px;
+  padding: 24px 0px 24px 0px;
   gap: 22px;
 
   > * {
@@ -168,6 +168,7 @@
 
   a,
   div {
+    margin: 0px 24px 0px 24px;
     width: fit-content;
   }
 
@@ -479,4 +480,21 @@
   gap: 16px;
   padding: 8px 0px;
   // height: 100%;
+}
+
+.W_ArticlesDropdown {
+  padding: 24px 0px 24px 0px;
+  transform: rotate(0deg) !important;
+  margin: 0 !important;
+  background-color: var(--schizo-red);
+  width: 100% !important;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+
+  a {
+    background-color: var(--schizo-yellow);
+    color: var(--schizo-red);
+    transform: rotate(1deg) !important;
+  }
 }

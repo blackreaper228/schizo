@@ -2,8 +2,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const articlesBtn = document.querySelector('#articles')
   const subMenu = document.querySelector('.M_HeaderNavbar.invert')
   const subMenuBetween = document.querySelector('#main_nav')
+  const ArticleMobile = document.querySelector('#ArticleMobile')
+  const ArticlesDropdown = document.querySelector('#ArticlesDropdown')
+  const GensMobile = document.querySelector('#GensMobile')
+  const GensDropdown = document.querySelector('#GensDropdown')
 
   let isHovered = false
+  let isArticlesClicked = false
+  let isGensClicked = false
 
   articlesBtn.addEventListener('mouseenter', () => {
     subMenu.style.display = 'flex'
@@ -44,5 +50,25 @@ document.addEventListener('DOMContentLoaded', () => {
         subMenu.style.display = 'none'
       }
     }, 100)
+  })
+
+  ArticleMobile.addEventListener('click', () => {
+    if (!isArticlesClicked) {
+      isArticlesClicked = true
+      ArticlesDropdown.style.display = 'flex'
+    } else {
+      isArticlesClicked = false
+      ArticlesDropdown.style.display = 'none'
+    }
+  })
+
+  GensMobile.addEventListener('click', () => {
+    if (!isGensClicked) {
+      isGensClicked = true
+      GensDropdown.style.display = 'flex'
+    } else {
+      isGensClicked = false
+      GensDropdown.style.display = 'none'
+    }
   })
 })

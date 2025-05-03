@@ -35,13 +35,13 @@
 /******/ 		// When supporting browsers where an automatic publicPath is not supported you must specify an output.publicPath manually via configuration
 /******/ 		// or pass an empty string ("") and set the __webpack_public_path__ variable from your code to use your own logic.
 /******/ 		if (!scriptUrl) throw new Error("Automatic publicPath is not supported in this browser");
-/******/ 		scriptUrl = scriptUrl.replace(/#.*$/, "").replace(/\?.*$/, "").replace(/\/[^\/]+$/, "/");
+/******/ 		scriptUrl = scriptUrl.replace(/^blob:/, "").replace(/#.*$/, "").replace(/\?.*$/, "").replace(/\/[^\/]+$/, "/");
 /******/ 		__webpack_require__.p = scriptUrl;
 /******/ 	})();
 /******/ 	
 /************************************************************************/
 
-;// CONCATENATED MODULE: ./src/javascript/audio.js
+;// ./src/javascript/audio.js
 var audioMain = function audioMain() {
   var hoverText = document.getElementById('hoverText');
   function playAudio() {
@@ -54,7 +54,7 @@ var audioMain = function audioMain() {
   document.addEventListener('click', playAudio);
 };
 /* harmony default export */ const audio = (audioMain);
-;// CONCATENATED MODULE: ./node_modules/three/build/three.core.js
+;// ./node_modules/three/build/three.core.js
 /**
  * @license
  * Copyright 2010-2025 Three.js Authors
@@ -37477,7 +37477,7 @@ if ( typeof window !== 'undefined' ) {
 
 
 
-;// CONCATENATED MODULE: ./node_modules/three/build/three.module.js
+;// ./node_modules/three/build/three.module.js
 /**
  * @license
  * Copyright 2010-2025 Three.js Authors
@@ -54776,7 +54776,7 @@ class WebGLRenderer {
 
 
 
-;// CONCATENATED MODULE: ./node_modules/three/examples/jsm/utils/BufferGeometryUtils.js
+;// ./node_modules/three/examples/jsm/utils/BufferGeometryUtils.js
 
 
 function computeMikkTSpaceTangents( geometry, MikkTSpace, negateSign = true ) {
@@ -56129,7 +56129,7 @@ function toCreasedNormals( geometry, creaseAngle = Math.PI / 3 /* 60 degrees */ 
 
 
 
-;// CONCATENATED MODULE: ./node_modules/three/examples/jsm/loaders/GLTFLoader.js
+;// ./node_modules/three/examples/jsm/loaders/GLTFLoader.js
 
 
 
@@ -60810,9 +60810,9 @@ function addPrimitiveAttributes( geometry, primitiveDef, parser ) {
 
 
 
-;// CONCATENATED MODULE: ./src/models/schizo_logo2.glb
+;// ./src/models/schizo_logo2.glb
 const schizo_logo2_namespaceObject = __webpack_require__.p + "models/55afd45942a8076fdedb.glb";
-;// CONCATENATED MODULE: ./src/javascript/logo-3D.js
+;// ./src/javascript/logo-3D.js
 
 
 
@@ -60917,7 +60917,7 @@ var logo3D = function logo3D() {
   animate();
 };
 /* harmony default export */ const logo_3D = (logo3D);
-;// CONCATENATED MODULE: ./src/index.js
+;// ./src/index.js
 
 
 

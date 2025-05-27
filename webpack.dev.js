@@ -7,7 +7,11 @@ module.exports = merge(common, {
   devtool: 'inline-source-map',
   watch: true,
   devServer: {
-    static: './dev_build'
+    static: {
+      directory: path.join(__dirname, 'dev_build')
+    },
+    port: 8080,
+    open: ['/test.html']
   },
   output: {
     path: path.resolve(__dirname, 'dev_build')

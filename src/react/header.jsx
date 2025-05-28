@@ -52,7 +52,7 @@ const Header = () => {
             alt="search"
           />
 
-          <a href="./test.html" className="A_HeaderNavbarBtn">
+          <a href="./index.html" className="A_HeaderNavbarBtn">
             Главная
           </a>
           <div className="A_HeaderNavbarBtn" id="articles">

@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const ArticleMobile = document.querySelector('#ArticleMobile')
   const ArticlesDropdown = document.querySelector('#ArticlesDropdown')
   const GensMobile = document.querySelector('#GensMobile')
-  const GensDropdown = document.querySelector('#GensDropdown')
+  // const GensDropdown = document.querySelector('#GensDropdown')
 
   let isHovered = false
   let isArticlesClicked = false
@@ -62,13 +62,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   })
 
-  GensMobile.addEventListener('click', () => {
-    if (!isGensClicked) {
-      isGensClicked = true
-      GensDropdown.style.display = 'flex'
-    } else {
-      isGensClicked = false
-      GensDropdown.style.display = 'none'
-    }
-  })
+  // GensMobile.addEventListener('click', () => {
+  //   if (!isGensClicked) {
+  //     isGensClicked = true
+  //     GensDropdown.style.display = 'flex'
+  //   } else {
+  //     isGensClicked = false
+  //     GensDropdown.style.display = 'none'
+  //   }
+  // })
 })

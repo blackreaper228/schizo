@@ -6,6 +6,9 @@ import '../index.css'
 import goBack from './goBack.js'
 import titleElements from './data-text.js'
 
+import { mountHeader } from './initReact.js'
+mountHeader()
+
 document.addEventListener('DOMContentLoaded', () => {
   // goUp()
 })

@@ -11,6 +11,9 @@ import copyDone from '../svg/encryptor/A_EncryptorContentInterfaceWindowCopyBtnD
 
 import caesar from './encryptorSelector.js'
 
+import { mountHeader } from './initReact.js'
+mountHeader()
+
 document.addEventListener('DOMContentLoaded', () => {
   // goUp()
 })

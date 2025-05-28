@@ -7,10 +7,23 @@ import Q_SearchIcon from '../assets/svg/Q_SearchIcon.svg'
 import Q_LogoMobile from '../images/Q_LogoMobile.png'
 
 const newsItems = [
-  'Вода — это дверь. Космос — это вода ↗',
-  '5 прогнозов для мира в 2030 году ↗',
-  'ИСТИННАЯ модель планеты ↗',
-  'Генератор айсбергов ↗'
+  {
+    text: 'Адренохром — эликсир вечной молодости знаменитостей ↗',
+    href: './adrenochrome.html'
+  },
+  {
+    text: '10 прогнозов для мира в 2030 году ↗',
+    href: './ten-predictions.html'
+  },
+  {
+    text: 'Вода — это дверь. Космос — это вода ↗',
+    href: './water-is-door.html'
+  },
+  { text: 'НЛО на видео Пентагона ↗', href: './ufo-on-video.html' },
+  {
+    text: 'Влияние ЧАЭС на распространение ВИЧ ↗',
+    href: './chernobyl-hiv.html'
+  }
 ]
 
 const Header = () => {
@@ -20,9 +33,9 @@ const Header = () => {
         {[...Array(3)].map((_, i) => (
           <div key={i}>
             {newsItems.map((item, j) => (
-              <span className="A_NewsLink" key={j}>
-                {item}
-              </span>
+              <a className="A_NewsLink" key={j} href={item.href}>
+                {item.text}
+              </a>
             ))}
           </div>
         ))}
@@ -45,7 +58,7 @@ const Header = () => {
           <div className="A_HeaderNavbarBtn" id="articles">
             Статьи
           </div>
-          <a href="./flat-earth.html" className="A_HeaderNavbarBtn">
+          {/* <a href="./flat-earth.html" className="A_HeaderNavbarBtn">
             Карта истинной Земли
           </a>
           <div className="A_HeaderNavbarBtn" id="gensBtn">
@@ -54,7 +67,6 @@ const Header = () => {
           <a href="./predictions.html" className="A_HeaderNavbarBtn">
             Предсказание дня
           </a>
-
           <div className="A_HeaderNavbarSearch">
             Поиск
             <img
@@ -62,7 +74,7 @@ const Header = () => {
               src={Q_SearchIcon}
               alt="search icon"
             />
-          </div>
+          </div> */}
         </div>
 
         {/* Подменю Статьи */}

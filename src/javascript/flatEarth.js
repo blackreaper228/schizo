@@ -21,6 +21,9 @@ import questionMark from '../models/questionMark.glb'
 import nebulae from '../assets/HDR_blue_nebulae-1.hdr' // Ваш HDRI файл
 import { xor } from 'three/tsl'
 
+import { mountHeader } from './initReact.js'
+mountHeader()
+
 // three js
 
 // Получаем контейнер

@@ -19,6 +19,9 @@ let myFont
 
 let uploadedImages = [] // 🔥 Храним все загруженные изображения с их уровнями
 
+import { mountHeader } from './initReact.js'
+mountHeader()
+
 const sketch = (p) => {
   p.preload = () => {
     icebergImg = p.loadImage(icebergImgPic) // Загружаем айсберг

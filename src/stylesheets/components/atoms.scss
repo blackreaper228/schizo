@@ -184,9 +184,9 @@
   text-transform: uppercase;
   text-decoration: none;
   transition: transform 0.1s ease;
+  text-wrap: nowrap;
 
-  width: fit-content;
-  flex-shrink: 0;
+  width: 100%;
 
   &::selection {
     background-color: var(--schizo-yellow);
@@ -208,6 +208,7 @@
 
 .A_HeaderNavbarSearch {
   width: 100%;
+  max-width: 250px;
   justify-content: space-between;
   display: flex;
   transform: rotate(3deg);

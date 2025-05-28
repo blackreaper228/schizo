@@ -9,16 +9,8 @@ import audioNew from './audio_new.js'
 import logo3D from './logo-3D.js'
 import goUp from './LandingGoUp.js'
 
-import React from 'react'
-import { createRoot } from 'react-dom/client'
-import Header from '../react/header.jsx'
-
-// Отдельно монтируем Header
-const navbar = document.getElementById('navbar-root')
-if (navbar) {
-  const navbarRoot = createRoot(navbar)
-  navbarRoot.render(<Header />)
-}
+import { mountHeader } from './initReact.js'
+mountHeader()
 
 document.addEventListener('DOMContentLoaded', () => {
   audioNew()

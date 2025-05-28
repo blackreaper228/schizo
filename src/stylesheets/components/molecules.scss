@@ -3,9 +3,10 @@
   height: calc(var(--header-footer-height) - var(--border-width));
   gap: var(--border-width);
   display: flex;
-  width: var(--center-container);
+  width: 100%;
   background: var(--schizo-yellow);
   align-items: center;
+  max-width: var(--center-container);
 
   &.invert {
     padding: var(--border-width);
@@ -18,7 +19,7 @@
       background: var(--schizo-yellow);
       color: var(--schizo-red);
     }
-    margin-left: 120px;
+    margin-left: 520px;
   }
 
   &.invert.Gen {

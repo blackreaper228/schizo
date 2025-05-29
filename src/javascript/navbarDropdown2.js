@@ -5,9 +5,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   let isHovered = false
 
-  // articlesBtn.addEventListener('mouseenter', () => {
-  //   subMenu.style.display = 'flex'
-  // })
+  articlesBtn.addEventListener('mouseenter', () => {
+    subMenu.style.display = 'flex'
+  })
 
   // Добавляем отслеживание наведения на подменю
   subMenu.addEventListener('mouseenter', () => {
@@ -37,12 +37,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 100)
   })
 
-  // articlesBtn.addEventListener('mouseleave', () => {
-  //   isHovered = false
-  //   setTimeout(() => {
-  //     if (!isHovered) {
-  //       subMenu.style.display = 'none'
-  //     }
-  //   }, 100)
-  // })
+  articlesBtn.addEventListener('mouseleave', () => {
+    isHovered = false
+    setTimeout(() => {
+      if (!isHovered) {
+        subMenu.style.display = 'none'
+      }
+    }, 100)
+  })
 })

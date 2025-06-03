@@ -16,7 +16,8 @@ import { RGBELoader } from 'three/addons/loaders/RGBELoader.js' // Импорт�
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js' // Импортируем OrbitControls
 import { TrackballControls } from 'three/addons/controls/TrackballControls.js' // Импортируем OrbitControls
 import schizoLogo from '../models/schizo_logo2.glb'
-import questionMark from '../models/questionMark.glb'
+// import questionMark from '../models/questionMark.glb'
+import questionMark from '../models/flat-earth.glb'
 
 import nebulae from '../assets/HDR_blue_nebulae-1.hdr' // Ваш HDRI файл
 import { xor } from 'three/tsl'
@@ -83,33 +84,53 @@ rgbeLoader.load(nebulae, (texture) => {
   pmremGenerator.dispose() // Освобождаем память
 })
 
-// Загрузка модели логотипа с использованием GLTFLoader и LoadingManager
+// Загрузка модели
 const loader = new GLTFLoader(loadingManager)
 let model // Объявляем переменную для модели
-loader.load(questionMark, (gltf) => {
-  model = gltf.scene
-  model.scale.set(0.5, 0.5, 0.5) // Устанавливаем масштаб логотипа
-  model.position.set(0, 0, 0) // Устанавливаем позицию логотипа
-  scene.add(model) // Добавляем логотип в сцену
-})
+loader.load(
+  questionMark,
+  (gltf) => {
+    console.log('Модель загружена')
+    model = gltf.scene
+    model.scale.set(0.5, 0.5, 0.5)
+    model.position.set(0, 0, 0)
+    scene.add(model)
+  },
+  undefined,
+  (error) => {
+    console.error('Ошибка загрузки:', error)
+  }
+)
 
 // Свет
-const light = new THREE.DirectionalLight(0xff0000, 1)
-light.position.set(2, 2, 5)
-scene.add(light)
+const ambientLight = new THREE.AmbientLight(0xffffff, 1)
+scene.add(ambientLight)
 
-const redLight = new THREE.DirectionalLight(0xff0000, 2)
-redLight.position.set(-2, -2, 3)
-scene.add(redLight)
+const directionalLight = new THREE.DirectionalLight(0xffffff, 1)
+directionalLight.position.set(2, 2, 5)
+scene.add(directionalLight)
+
+// Добавляем голубые PointLight для эффекта свечения
+const blueLight1 = new THREE.PointLight(0x3399ff, 1.5, 20)
+blueLight1.position.set(0, 2, 4)
+scene.add(blueLight1)
+
+const blueLight2 = new THREE.PointLight(0x3399ff, 1.2, 20)
+blueLight2.position.set(2, -2, 2)
+scene.add(blueLight2)
+
+const blueLight3 = new THREE.PointLight(0x3399ff, 1.2, 20)
+blueLight3.position.set(-2, 2, -2)
+scene.add(blueLight3)
 
 // Устанавливаем камеру
-camera.position.set(0, 0, 10) // Устанавливаем начальную позицию камеры
+camera.position.set(0, 0, 10)
 
 // Создаем OrbitControls
 const controls = new OrbitControls(camera, renderer.domElement)
-controls.enableDamping = true // Включаем демпфирование (плавное движение)
-controls.dampingFactor = 0.25 // Фактор демпфирования
-controls.screenSpacePanning = false // Запрет панорамирования в пространстве экрана
+controls.enableDamping = true
+controls.dampingFactor = 0.25
+controls.screenSpacePanning = false
 controls.enableZoom = false
 
 const controls2 = new TrackballControls(camera, renderer.domElement)
@@ -124,10 +145,8 @@ controls.maxDistance = 20 // Максимальное расстояние (ми
 
 // Анимация
 function animate() {
-  const target = controls.target
   requestAnimationFrame(animate)
-  controls.update() // Обновляем контролы
-  controls2.target.set(target.x, target.y, target.z)
+  controls.update()
   controls2.update()
   renderer.render(scene, camera)
 }

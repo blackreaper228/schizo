@@ -64,11 +64,10 @@ const Header = () => {
           <a href="./predictions.html" className="A_HeaderNavbarBtn">
             Предсказание дня
           </a>
-          {/* <a href="./flat-earth.html" className="A_HeaderNavbarBtn">
+          <a href="./flat-earth.html" className="A_HeaderNavbarBtn">
             Карта истинной Земли
           </a>
-          
-          
+          {/* 
           <div className="A_HeaderNavbarSearch">
             Поиск
             <img

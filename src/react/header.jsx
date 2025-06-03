@@ -58,15 +58,16 @@ const Header = () => {
           <div className="A_HeaderNavbarBtn" id="articles">
             Статьи
           </div>
-          <div className="A_HeaderNavbarBtn" id="gensBtn">
-            Генераторы
-          </div>
           <a href="./predictions.html" className="A_HeaderNavbarBtn">
             Предсказание дня
           </a>
+          <div className="A_HeaderNavbarBtn" id="gensBtn">
+            Генераторы
+          </div>
           <a href="./flat-earth.html" className="A_HeaderNavbarBtn">
             Карта истинной Земли
           </a>
+
           {/* 
           <div className="A_HeaderNavbarSearch">
             Поиск
@@ -119,11 +120,11 @@ const Header = () => {
               Шифровщик
             </div>
           </a>
-          {/* <a href="./iceberg.html">
+          <a href="./iceberg.html">
             <div className="A_HeaderNavbarBtn" id="articles_in">
               Айсберги
             </div>
-          </a> */}
+          </a>
         </div>
       </div>
     </div>

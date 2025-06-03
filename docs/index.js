@@ -77883,13 +77883,13 @@ var Header = function Header() {
   }, "\u0413\u043B\u0430\u0432\u043D\u0430\u044F"), /*#__PURE__*/react.createElement("div", {
     className: "A_HeaderNavbarBtn",
     id: "articles"
-  }, "\u0421\u0442\u0430\u0442\u044C\u0438"), /*#__PURE__*/react.createElement("div", {
+  }, "\u0421\u0442\u0430\u0442\u044C\u0438"), /*#__PURE__*/react.createElement("a", {
+    href: "./predictions.html",
+    className: "A_HeaderNavbarBtn"
+  }, "\u041F\u0440\u0435\u0434\u0441\u043A\u0430\u0437\u0430\u043D\u0438\u0435 \u0434\u043D\u044F"), /*#__PURE__*/react.createElement("div", {
     className: "A_HeaderNavbarBtn",
     id: "gensBtn"
   }, "\u0413\u0435\u043D\u0435\u0440\u0430\u0442\u043E\u0440\u044B"), /*#__PURE__*/react.createElement("a", {
-    href: "./predictions.html",
-    className: "A_HeaderNavbarBtn"
-  }, "\u041F\u0440\u0435\u0434\u0441\u043A\u0430\u0437\u0430\u043D\u0438\u0435 \u0434\u043D\u044F"), /*#__PURE__*/react.createElement("a", {
     href: "./flat-earth.html",
     className: "A_HeaderNavbarBtn"
   }, "\u041A\u0430\u0440\u0442\u0430 \u0438\u0441\u0442\u0438\u043D\u043D\u043E\u0439 \u0417\u0435\u043C\u043B\u0438")), /*#__PURE__*/react.createElement("div", {
@@ -77941,7 +77941,12 @@ var Header = function Header() {
   }, /*#__PURE__*/react.createElement("div", {
     className: "A_HeaderNavbarBtn",
     id: "articles_in"
-  }, "\u0428\u0438\u0444\u0440\u043E\u0432\u0449\u0438\u043A")))));
+  }, "\u0428\u0438\u0444\u0440\u043E\u0432\u0449\u0438\u043A")), /*#__PURE__*/react.createElement("a", {
+    href: "./iceberg.html"
+  }, /*#__PURE__*/react.createElement("div", {
+    className: "A_HeaderNavbarBtn",
+    id: "articles_in"
+  }, "\u0410\u0439\u0441\u0431\u0435\u0440\u0433\u0438")))));
 };
 /* harmony default export */ const header = (Header);
 ;// ./src/javascript/initReact.js

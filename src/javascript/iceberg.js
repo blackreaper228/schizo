@@ -318,6 +318,18 @@ const sketch = (p) => {
   } else {
     console.error('Элемент с ID icebergCopy не найден.')
   }
+
+  const shareBtn = document.getElementById('share')
+  if (shareBtn) {
+    shareBtn.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(window.location.href)
+        alert('Ссылка скопирована в буфер обмена')
+      } catch (err) {
+        alert('Не удалось скопировать ссылку: ' + err)
+      }
+    })
+  }
 }
 
 window.addEventListener('DOMContentLoaded', () => {

@@ -19,12 +19,11 @@
       background: var(--schizo-yellow);
       color: var(--schizo-red);
     }
-    margin-left: 0px;
+    margin-left: -300px;
   }
 
   &.invert.Gen {
     padding: var(--border-width);
-
     display: none;
     // display: flex;
 
@@ -35,7 +34,7 @@
       background: var(--schizo-yellow);
       color: var(--schizo-red);
     }
-    margin-left: 700px;
+    margin-left: 400px;
   }
 }
 

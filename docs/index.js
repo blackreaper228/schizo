@@ -1,276 +1,44 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 30:
-/***/ (() => {
-
-document.addEventListener('DOMContentLoaded', function () {
-  var preLoader = document.querySelector('.preLoader');
-  var body = document.body;
-  body.style.overflow = 'hidden';
-  window.addEventListener('load', function () {
-    preLoader.classList.add('preLoader--hidden');
-    setTimeout(function () {
-      preLoader.style.display = 'none';
-      body.style.overflow = '';
-    }, 500);
-  });
-});
-
-/***/ }),
-
-/***/ 195:
-/***/ (() => {
-
-document.addEventListener('DOMContentLoaded', function () {
-  var searchIcon = document.querySelector('.Q_SearchIconMobile');
-  var searchBar = document.querySelector('.O_SearchBar');
-  var header = document.querySelector('.O_Header');
-  var body = document.body;
-  var toggleSearch = function toggleSearch() {
-    searchBar.classList.toggle('active');
-    if (searchBar.classList.contains('active')) {
-      body.style.overflow = 'hidden';
-      // Скрываем хедер
-      header.style.display = 'none';
-    } else {
-      body.style.overflow = '';
-      // Показываем хедер
-      header.style.display = '';
-    }
-  };
-  searchIcon.addEventListener('click', toggleSearch);
-  var closeButton = document.querySelector('.A_SearchBarClose');
-  if (closeButton) {
-    closeButton.addEventListener('click', toggleSearch);
-  }
-  var searchBarBG = document.querySelector('#burgerMenuBG-02');
-  if (searchBarBG) {
-    searchBarBG.addEventListener('click', toggleSearch);
-  }
-});
-
-/***/ }),
-
-/***/ 221:
-/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+/***/ 961:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
-/**
- * @license React
- * react-dom.production.js
- *
- * Copyright (c) Meta Platforms, Inc. and affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
 
 
-var React = __webpack_require__(540);
-function formatProdErrorMessage(code) {
-  var url = "https://react.dev/errors/" + code;
-  if (1 < arguments.length) {
-    url += "?args[]=" + encodeURIComponent(arguments[1]);
-    for (var i = 2; i < arguments.length; i++)
-      url += "&args[]=" + encodeURIComponent(arguments[i]);
-  }
-  return (
-    "Minified React error #" +
-    code +
-    "; visit " +
-    url +
-    " for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
-  );
-}
-function noop() {}
-var Internals = {
-    d: {
-      f: noop,
-      r: function () {
-        throw Error(formatProdErrorMessage(522));
-      },
-      D: noop,
-      C: noop,
-      L: noop,
-      m: noop,
-      X: noop,
-      S: noop,
-      M: noop
-    },
-    p: 0,
-    findDOMNode: null
-  },
-  REACT_PORTAL_TYPE = Symbol.for("react.portal");
-function createPortal$1(children, containerInfo, implementation) {
-  var key =
-    3 < arguments.length && void 0 !== arguments[3] ? arguments[3] : null;
-  return {
-    $$typeof: REACT_PORTAL_TYPE,
-    key: null == key ? null : "" + key,
-    children: children,
-    containerInfo: containerInfo,
-    implementation: implementation
-  };
-}
-var ReactSharedInternals =
-  React.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE;
-function getCrossOriginStringAs(as, input) {
-  if ("font" === as) return "";
-  if ("string" === typeof input)
-    return "use-credentials" === input ? input : "";
-}
-exports.__DOM_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE =
-  Internals;
-exports.createPortal = function (children, container) {
-  var key =
-    2 < arguments.length && void 0 !== arguments[2] ? arguments[2] : null;
+function checkDCE() {
+  /* global __REACT_DEVTOOLS_GLOBAL_HOOK__ */
   if (
-    !container ||
-    (1 !== container.nodeType &&
-      9 !== container.nodeType &&
-      11 !== container.nodeType)
-  )
-    throw Error(formatProdErrorMessage(299));
-  return createPortal$1(children, container, null, key);
-};
-exports.flushSync = function (fn) {
-  var previousTransition = ReactSharedInternals.T,
-    previousUpdatePriority = Internals.p;
-  try {
-    if (((ReactSharedInternals.T = null), (Internals.p = 2), fn)) return fn();
-  } finally {
-    (ReactSharedInternals.T = previousTransition),
-      (Internals.p = previousUpdatePriority),
-      Internals.d.f();
-  }
-};
-exports.preconnect = function (href, options) {
-  "string" === typeof href &&
-    (options
-      ? ((options = options.crossOrigin),
-        (options =
-          "string" === typeof options
-            ? "use-credentials" === options
-              ? options
-              : ""
-            : void 0))
-      : (options = null),
-    Internals.d.C(href, options));
-};
-exports.prefetchDNS = function (href) {
-  "string" === typeof href && Internals.d.D(href);
-};
-exports.preinit = function (href, options) {
-  if ("string" === typeof href && options && "string" === typeof options.as) {
-    var as = options.as,
-      crossOrigin = getCrossOriginStringAs(as, options.crossOrigin),
-      integrity =
-        "string" === typeof options.integrity ? options.integrity : void 0,
-      fetchPriority =
-        "string" === typeof options.fetchPriority
-          ? options.fetchPriority
-          : void 0;
-    "style" === as
-      ? Internals.d.S(
-          href,
-          "string" === typeof options.precedence ? options.precedence : void 0,
-          {
-            crossOrigin: crossOrigin,
-            integrity: integrity,
-            fetchPriority: fetchPriority
-          }
-        )
-      : "script" === as &&
-        Internals.d.X(href, {
-          crossOrigin: crossOrigin,
-          integrity: integrity,
-          fetchPriority: fetchPriority,
-          nonce: "string" === typeof options.nonce ? options.nonce : void 0
-        });
-  }
-};
-exports.preinitModule = function (href, options) {
-  if ("string" === typeof href)
-    if ("object" === typeof options && null !== options) {
-      if (null == options.as || "script" === options.as) {
-        var crossOrigin = getCrossOriginStringAs(
-          options.as,
-          options.crossOrigin
-        );
-        Internals.d.M(href, {
-          crossOrigin: crossOrigin,
-          integrity:
-            "string" === typeof options.integrity ? options.integrity : void 0,
-          nonce: "string" === typeof options.nonce ? options.nonce : void 0
-        });
-      }
-    } else null == options && Internals.d.M(href);
-};
-exports.preload = function (href, options) {
-  if (
-    "string" === typeof href &&
-    "object" === typeof options &&
-    null !== options &&
-    "string" === typeof options.as
+    typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ === 'undefined' ||
+    typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE !== 'function'
   ) {
-    var as = options.as,
-      crossOrigin = getCrossOriginStringAs(as, options.crossOrigin);
-    Internals.d.L(href, as, {
-      crossOrigin: crossOrigin,
-      integrity:
-        "string" === typeof options.integrity ? options.integrity : void 0,
-      nonce: "string" === typeof options.nonce ? options.nonce : void 0,
-      type: "string" === typeof options.type ? options.type : void 0,
-      fetchPriority:
-        "string" === typeof options.fetchPriority
-          ? options.fetchPriority
-          : void 0,
-      referrerPolicy:
-        "string" === typeof options.referrerPolicy
-          ? options.referrerPolicy
-          : void 0,
-      imageSrcSet:
-        "string" === typeof options.imageSrcSet ? options.imageSrcSet : void 0,
-      imageSizes:
-        "string" === typeof options.imageSizes ? options.imageSizes : void 0,
-      media: "string" === typeof options.media ? options.media : void 0
-    });
+    return;
   }
-};
-exports.preloadModule = function (href, options) {
-  if ("string" === typeof href)
-    if (options) {
-      var crossOrigin = getCrossOriginStringAs(options.as, options.crossOrigin);
-      Internals.d.m(href, {
-        as:
-          "string" === typeof options.as && "script" !== options.as
-            ? options.as
-            : void 0,
-        crossOrigin: crossOrigin,
-        integrity:
-          "string" === typeof options.integrity ? options.integrity : void 0
-      });
-    } else Internals.d.m(href);
-};
-exports.requestFormReset = function (form) {
-  Internals.d.r(form);
-};
-exports.unstable_batchedUpdates = function (fn, a) {
-  return fn(a);
-};
-exports.useFormState = function (action, initialState, permalink) {
-  return ReactSharedInternals.H.useFormState(action, initialState, permalink);
-};
-exports.useFormStatus = function () {
-  return ReactSharedInternals.H.useHostTransitionStatus();
-};
-exports.version = "19.1.0";
+  if (false) // removed by dead control flow
+{}
+  try {
+    // Verify that the code above has been dead code eliminated (DCE'd).
+    __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE(checkDCE);
+  } catch (err) {
+    // DevTools shouldn't crash React, no matter what.
+    // We should still report in case we break this code.
+    console.error(err);
+  }
+}
+
+if (true) {
+  // DCE check should happen before ReactDOM bundle executes so that
+  // DevTools can report bad minification during injection.
+  checkDCE();
+  module.exports = __webpack_require__(6221);
+} else // removed by dead control flow
+{}
 
 
 /***/ }),
 
-/***/ 247:
+/***/ 1247:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -289,8 +57,8 @@ var __webpack_unused_export__;
  Modernizr 3.0.0pre (Custom Build) | MIT
 */
 
-var Scheduler = __webpack_require__(982),
-  React = __webpack_require__(540),
+var Scheduler = __webpack_require__(9982),
+  React = __webpack_require__(6540),
   ReactDOM = __webpack_require__(961);
 function formatProdErrorMessage(code) {
   var url = "https://react.dev/errors/" + code;
@@ -15672,44 +15440,74 @@ __webpack_unused_export__ = "19.1.0";
 
 /***/ }),
 
-/***/ 338:
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+/***/ 2030:
+/***/ (() => {
 
-"use strict";
-
-
-function checkDCE() {
-  /* global __REACT_DEVTOOLS_GLOBAL_HOOK__ */
-  if (
-    typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ === 'undefined' ||
-    typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE !== 'function'
-  ) {
-    return;
-  }
-  if (false) // removed by dead control flow
-{}
-  try {
-    // Verify that the code above has been dead code eliminated (DCE'd).
-    __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE(checkDCE);
-  } catch (err) {
-    // DevTools shouldn't crash React, no matter what.
-    // We should still report in case we break this code.
-    console.error(err);
-  }
-}
-
-if (true) {
-  // DCE check should happen before ReactDOM bundle executes so that
-  // DevTools can report bad minification during injection.
-  checkDCE();
-  module.exports = __webpack_require__(247);
-} else // removed by dead control flow
-{}
-
+document.addEventListener('DOMContentLoaded', function () {
+  var preLoader = document.querySelector('.preLoader');
+  var body = document.body;
+  body.style.overflow = 'hidden';
+  window.addEventListener('load', function () {
+    preLoader.classList.add('preLoader--hidden');
+    setTimeout(function () {
+      preLoader.style.display = 'none';
+      body.style.overflow = '';
+    }, 500);
+  });
+});
 
 /***/ }),
 
-/***/ 477:
+/***/ 3651:
+/***/ (() => {
+
+document.addEventListener('DOMContentLoaded', function () {
+  var articlesBtn = document.querySelector('#gensBtn');
+  var subMenu = document.querySelector('#gens');
+  var subMenuBetween = document.querySelector('#main_nav');
+  var isHovered = false;
+  articlesBtn.addEventListener('mouseenter', function () {
+    subMenu.style.display = 'flex';
+  });
+
+  // Добавляем отслеживание наведения на подменю
+  subMenu.addEventListener('mouseenter', function () {
+    isHovered = true;
+  });
+  subMenuBetween.addEventListener('mouseenter', function () {
+    isHovered = true;
+  });
+
+  // Добавляем обработчики mouseleave для всех элементов
+  subMenu.addEventListener('mouseleave', function () {
+    isHovered = false;
+    setTimeout(function () {
+      if (!isHovered) {
+        subMenu.style.display = 'none';
+      }
+    }, 100);
+  });
+  subMenuBetween.addEventListener('mouseleave', function () {
+    isHovered = false;
+    setTimeout(function () {
+      if (!isHovered) {
+        subMenu.style.display = 'none';
+      }
+    }, 100);
+  });
+  articlesBtn.addEventListener('mouseleave', function () {
+    isHovered = false;
+    setTimeout(function () {
+      if (!isHovered) {
+        subMenu.style.display = 'none';
+      }
+    }, 100);
+  });
+});
+
+/***/ }),
+
+/***/ 4477:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -16057,70 +15855,44 @@ exports.unstable_wrapCallback = function (callback) {
 
 /***/ }),
 
-/***/ 540:
+/***/ 5338:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
 
 
+function checkDCE() {
+  /* global __REACT_DEVTOOLS_GLOBAL_HOOK__ */
+  if (
+    typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ === 'undefined' ||
+    typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE !== 'function'
+  ) {
+    return;
+  }
+  if (false) // removed by dead control flow
+{}
+  try {
+    // Verify that the code above has been dead code eliminated (DCE'd).
+    __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE(checkDCE);
+  } catch (err) {
+    // DevTools shouldn't crash React, no matter what.
+    // We should still report in case we break this code.
+    console.error(err);
+  }
+}
+
 if (true) {
-  module.exports = __webpack_require__(869);
+  // DCE check should happen before ReactDOM bundle executes so that
+  // DevTools can report bad minification during injection.
+  checkDCE();
+  module.exports = __webpack_require__(1247);
 } else // removed by dead control flow
 {}
 
 
 /***/ }),
 
-/***/ 651:
-/***/ (() => {
-
-document.addEventListener('DOMContentLoaded', function () {
-  var articlesBtn = document.querySelector('#gensBtn');
-  var subMenu = document.querySelector('#gens');
-  var subMenuBetween = document.querySelector('#main_nav');
-  var isHovered = false;
-  articlesBtn.addEventListener('mouseenter', function () {
-    subMenu.style.display = 'flex';
-  });
-
-  // Добавляем отслеживание наведения на подменю
-  subMenu.addEventListener('mouseenter', function () {
-    isHovered = true;
-  });
-  subMenuBetween.addEventListener('mouseenter', function () {
-    isHovered = true;
-  });
-
-  // Добавляем обработчики mouseleave для всех элементов
-  subMenu.addEventListener('mouseleave', function () {
-    isHovered = false;
-    setTimeout(function () {
-      if (!isHovered) {
-        subMenu.style.display = 'none';
-      }
-    }, 100);
-  });
-  subMenuBetween.addEventListener('mouseleave', function () {
-    isHovered = false;
-    setTimeout(function () {
-      if (!isHovered) {
-        subMenu.style.display = 'none';
-      }
-    }, 100);
-  });
-  articlesBtn.addEventListener('mouseleave', function () {
-    isHovered = false;
-    setTimeout(function () {
-      if (!isHovered) {
-        subMenu.style.display = 'none';
-      }
-    }, 100);
-  });
-});
-
-/***/ }),
-
-/***/ 785:
+/***/ 5785:
 /***/ (() => {
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -16181,20 +15953,286 @@ document.addEventListener('DOMContentLoaded', function () {
       ArticlesDropdown.style.display = 'none';
     }
   });
-  GensMobile.addEventListener('click', function () {
-    if (!isGensClicked) {
-      isGensClicked = true;
-      GensDropdown.style.display = 'flex';
-    } else {
-      isGensClicked = false;
-      GensDropdown.style.display = 'none';
-    }
-  });
+
+  // GensMobile.addEventListener('click', () => {
+  //   if (!isGensClicked) {
+  //     isGensClicked = true
+  //     GensDropdown.style.display = 'flex'
+  //   } else {
+  //     isGensClicked = false
+  //     GensDropdown.style.display = 'none'
+  //   }
+  // })
 });
 
 /***/ }),
 
-/***/ 869:
+/***/ 6221:
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+/**
+ * @license React
+ * react-dom.production.js
+ *
+ * Copyright (c) Meta Platforms, Inc. and affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+
+var React = __webpack_require__(6540);
+function formatProdErrorMessage(code) {
+  var url = "https://react.dev/errors/" + code;
+  if (1 < arguments.length) {
+    url += "?args[]=" + encodeURIComponent(arguments[1]);
+    for (var i = 2; i < arguments.length; i++)
+      url += "&args[]=" + encodeURIComponent(arguments[i]);
+  }
+  return (
+    "Minified React error #" +
+    code +
+    "; visit " +
+    url +
+    " for the full message or use the non-minified dev environment for full errors and additional helpful warnings."
+  );
+}
+function noop() {}
+var Internals = {
+    d: {
+      f: noop,
+      r: function () {
+        throw Error(formatProdErrorMessage(522));
+      },
+      D: noop,
+      C: noop,
+      L: noop,
+      m: noop,
+      X: noop,
+      S: noop,
+      M: noop
+    },
+    p: 0,
+    findDOMNode: null
+  },
+  REACT_PORTAL_TYPE = Symbol.for("react.portal");
+function createPortal$1(children, containerInfo, implementation) {
+  var key =
+    3 < arguments.length && void 0 !== arguments[3] ? arguments[3] : null;
+  return {
+    $$typeof: REACT_PORTAL_TYPE,
+    key: null == key ? null : "" + key,
+    children: children,
+    containerInfo: containerInfo,
+    implementation: implementation
+  };
+}
+var ReactSharedInternals =
+  React.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE;
+function getCrossOriginStringAs(as, input) {
+  if ("font" === as) return "";
+  if ("string" === typeof input)
+    return "use-credentials" === input ? input : "";
+}
+exports.__DOM_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE =
+  Internals;
+exports.createPortal = function (children, container) {
+  var key =
+    2 < arguments.length && void 0 !== arguments[2] ? arguments[2] : null;
+  if (
+    !container ||
+    (1 !== container.nodeType &&
+      9 !== container.nodeType &&
+      11 !== container.nodeType)
+  )
+    throw Error(formatProdErrorMessage(299));
+  return createPortal$1(children, container, null, key);
+};
+exports.flushSync = function (fn) {
+  var previousTransition = ReactSharedInternals.T,
+    previousUpdatePriority = Internals.p;
+  try {
+    if (((ReactSharedInternals.T = null), (Internals.p = 2), fn)) return fn();
+  } finally {
+    (ReactSharedInternals.T = previousTransition),
+      (Internals.p = previousUpdatePriority),
+      Internals.d.f();
+  }
+};
+exports.preconnect = function (href, options) {
+  "string" === typeof href &&
+    (options
+      ? ((options = options.crossOrigin),
+        (options =
+          "string" === typeof options
+            ? "use-credentials" === options
+              ? options
+              : ""
+            : void 0))
+      : (options = null),
+    Internals.d.C(href, options));
+};
+exports.prefetchDNS = function (href) {
+  "string" === typeof href && Internals.d.D(href);
+};
+exports.preinit = function (href, options) {
+  if ("string" === typeof href && options && "string" === typeof options.as) {
+    var as = options.as,
+      crossOrigin = getCrossOriginStringAs(as, options.crossOrigin),
+      integrity =
+        "string" === typeof options.integrity ? options.integrity : void 0,
+      fetchPriority =
+        "string" === typeof options.fetchPriority
+          ? options.fetchPriority
+          : void 0;
+    "style" === as
+      ? Internals.d.S(
+          href,
+          "string" === typeof options.precedence ? options.precedence : void 0,
+          {
+            crossOrigin: crossOrigin,
+            integrity: integrity,
+            fetchPriority: fetchPriority
+          }
+        )
+      : "script" === as &&
+        Internals.d.X(href, {
+          crossOrigin: crossOrigin,
+          integrity: integrity,
+          fetchPriority: fetchPriority,
+          nonce: "string" === typeof options.nonce ? options.nonce : void 0
+        });
+  }
+};
+exports.preinitModule = function (href, options) {
+  if ("string" === typeof href)
+    if ("object" === typeof options && null !== options) {
+      if (null == options.as || "script" === options.as) {
+        var crossOrigin = getCrossOriginStringAs(
+          options.as,
+          options.crossOrigin
+        );
+        Internals.d.M(href, {
+          crossOrigin: crossOrigin,
+          integrity:
+            "string" === typeof options.integrity ? options.integrity : void 0,
+          nonce: "string" === typeof options.nonce ? options.nonce : void 0
+        });
+      }
+    } else null == options && Internals.d.M(href);
+};
+exports.preload = function (href, options) {
+  if (
+    "string" === typeof href &&
+    "object" === typeof options &&
+    null !== options &&
+    "string" === typeof options.as
+  ) {
+    var as = options.as,
+      crossOrigin = getCrossOriginStringAs(as, options.crossOrigin);
+    Internals.d.L(href, as, {
+      crossOrigin: crossOrigin,
+      integrity:
+        "string" === typeof options.integrity ? options.integrity : void 0,
+      nonce: "string" === typeof options.nonce ? options.nonce : void 0,
+      type: "string" === typeof options.type ? options.type : void 0,
+      fetchPriority:
+        "string" === typeof options.fetchPriority
+          ? options.fetchPriority
+          : void 0,
+      referrerPolicy:
+        "string" === typeof options.referrerPolicy
+          ? options.referrerPolicy
+          : void 0,
+      imageSrcSet:
+        "string" === typeof options.imageSrcSet ? options.imageSrcSet : void 0,
+      imageSizes:
+        "string" === typeof options.imageSizes ? options.imageSizes : void 0,
+      media: "string" === typeof options.media ? options.media : void 0
+    });
+  }
+};
+exports.preloadModule = function (href, options) {
+  if ("string" === typeof href)
+    if (options) {
+      var crossOrigin = getCrossOriginStringAs(options.as, options.crossOrigin);
+      Internals.d.m(href, {
+        as:
+          "string" === typeof options.as && "script" !== options.as
+            ? options.as
+            : void 0,
+        crossOrigin: crossOrigin,
+        integrity:
+          "string" === typeof options.integrity ? options.integrity : void 0
+      });
+    } else Internals.d.m(href);
+};
+exports.requestFormReset = function (form) {
+  Internals.d.r(form);
+};
+exports.unstable_batchedUpdates = function (fn, a) {
+  return fn(a);
+};
+exports.useFormState = function (action, initialState, permalink) {
+  return ReactSharedInternals.H.useFormState(action, initialState, permalink);
+};
+exports.useFormStatus = function () {
+  return ReactSharedInternals.H.useHostTransitionStatus();
+};
+exports.version = "19.1.0";
+
+
+/***/ }),
+
+/***/ 6540:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+"use strict";
+
+
+if (true) {
+  module.exports = __webpack_require__(9869);
+} else // removed by dead control flow
+{}
+
+
+/***/ }),
+
+/***/ 7195:
+/***/ (() => {
+
+document.addEventListener('DOMContentLoaded', function () {
+  var searchIcon = document.querySelector('.Q_SearchIconMobile');
+  var searchBar = document.querySelector('.O_SearchBar');
+  var header = document.querySelector('.O_Header');
+  var body = document.body;
+  var toggleSearch = function toggleSearch() {
+    searchBar.classList.toggle('active');
+    if (searchBar.classList.contains('active')) {
+      body.style.overflow = 'hidden';
+      // Скрываем хедер
+      header.style.display = 'none';
+    } else {
+      body.style.overflow = '';
+      // Показываем хедер
+      header.style.display = '';
+    }
+  };
+  searchIcon.addEventListener('click', toggleSearch);
+  var closeButton = document.querySelector('.A_SearchBarClose');
+  if (closeButton) {
+    closeButton.addEventListener('click', toggleSearch);
+  }
+  var searchBarBG = document.querySelector('#burgerMenuBG-02');
+  if (searchBarBG) {
+    searchBarBG.addEventListener('click', toggleSearch);
+  }
+});
+
+/***/ }),
+
+/***/ 9869:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -16748,51 +16786,14 @@ exports.version = "19.1.0";
 
 /***/ }),
 
-/***/ 961:
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-"use strict";
-
-
-function checkDCE() {
-  /* global __REACT_DEVTOOLS_GLOBAL_HOOK__ */
-  if (
-    typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ === 'undefined' ||
-    typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE !== 'function'
-  ) {
-    return;
-  }
-  if (false) // removed by dead control flow
-{}
-  try {
-    // Verify that the code above has been dead code eliminated (DCE'd).
-    __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE(checkDCE);
-  } catch (err) {
-    // DevTools shouldn't crash React, no matter what.
-    // We should still report in case we break this code.
-    console.error(err);
-  }
-}
-
-if (true) {
-  // DCE check should happen before ReactDOM bundle executes so that
-  // DevTools can report bad minification during injection.
-  checkDCE();
-  module.exports = __webpack_require__(221);
-} else // removed by dead control flow
-{}
-
-
-/***/ }),
-
-/***/ 982:
+/***/ 9982:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
 
 
 if (true) {
-  module.exports = __webpack_require__(477);
+  module.exports = __webpack_require__(4477);
 } else // removed by dead control flow
 {}
 
@@ -16868,7 +16869,7 @@ var __webpack_exports__ = {};
 "use strict";
 
 // EXTERNAL MODULE: ./src/javascript/preloader.js
-var preloader = __webpack_require__(30);
+var preloader = __webpack_require__(2030);
 ;// ./src/svg/Q_BurgerIconClose.svg
 const Q_BurgerIconClose_namespaceObject = __webpack_require__.p + "images/f134e8cf6d1bac49cef2.svg";
 ;// ./src/svg/Q_BurgerIcon.svg
@@ -16894,11 +16895,11 @@ document.addEventListener('DOMContentLoaded', function () {
   burgerMenuBG.addEventListener('click', toggleMenu);
 });
 // EXTERNAL MODULE: ./src/javascript/searchbarMobile.js
-var searchbarMobile = __webpack_require__(195);
+var searchbarMobile = __webpack_require__(7195);
 // EXTERNAL MODULE: ./src/javascript/navbarDropdown.js
-var navbarDropdown = __webpack_require__(785);
+var navbarDropdown = __webpack_require__(5785);
 // EXTERNAL MODULE: ./src/javascript/navbarDropdown2.js
-var navbarDropdown2 = __webpack_require__(651);
+var navbarDropdown2 = __webpack_require__(3651);
 ;// ./src/javascript/audio_new.js
 var audioNew = function audioNew() {
   var audio = document.getElementById('my_audio');
@@ -77804,9 +77805,9 @@ var goUp = function goUp() {
 };
 /* harmony default export */ const LandingGoUp = (goUp);
 // EXTERNAL MODULE: ./node_modules/react/index.js
-var react = __webpack_require__(540);
+var react = __webpack_require__(6540);
 // EXTERNAL MODULE: ./node_modules/react-dom/client.js
-var client = __webpack_require__(338);
+var client = __webpack_require__(5338);
 ;// ./src/assets/svg/Q_BurgerIcon.svg
 const assets_svg_Q_BurgerIcon_namespaceObject = __webpack_require__.p + "images/bb20d8f26829057e911d.svg";
 ;// ./src/assets/svg/Q_SearchIconMobile.svg
@@ -77885,7 +77886,10 @@ var Header = function Header() {
   }, "\u0421\u0442\u0430\u0442\u044C\u0438"), /*#__PURE__*/react.createElement("div", {
     className: "A_HeaderNavbarBtn",
     id: "gensBtn"
-  }, "\u0413\u0435\u043D\u0435\u0440\u0430\u0442\u043E\u0440\u044B")), /*#__PURE__*/react.createElement("div", {
+  }, "\u0413\u0435\u043D\u0435\u0440\u0430\u0442\u043E\u0440\u044B"), /*#__PURE__*/react.createElement("a", {
+    href: "./predictions.html",
+    className: "A_HeaderNavbarBtn"
+  }, "\u041F\u0440\u0435\u0434\u0441\u043A\u0430\u0437\u0430\u043D\u0438\u0435 \u0434\u043D\u044F")), /*#__PURE__*/react.createElement("div", {
     className: "M_HeaderNavbar invert"
   }, /*#__PURE__*/react.createElement("img", {
     className: "Q_BurgerIcon",

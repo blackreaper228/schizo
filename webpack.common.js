@@ -1,3 +1,4 @@
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const HtmlWebpackPartialsPlugin = require('html-webpack-partials-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
@@ -310,7 +311,11 @@ module.exports = {
         template_filename: '*',
         priority: 'replace'
       }
-    ])
+    ]),
+
+    new CopyWebpackPlugin({
+      patterns: [{ from: 'public', to: '' }]
+    })
   ],
   optimization: {
     minimizer: [new CssMinimizerPlugin()]

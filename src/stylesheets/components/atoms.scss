@@ -874,6 +874,7 @@
 
   &:hover {
     opacity: 0.8;
+    cursor: var(--cursor-hover);
   }
 }
 
@@ -890,6 +891,7 @@
 
   &:hover {
     opacity: 0.8;
+    cursor: var(--cursor-hover);
   }
 }
 
@@ -962,5 +964,22 @@
   &:active {
     opacity: 0.8;
     padding: 8px;
+  }
+}
+
+.A_Calendar {
+  background-color: var(--schizo-yellow);
+  background-image: url('./svg/Q_Calendar.svg');
+  background-origin: content-box;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  width: 40px;
+  height: 40px;
+
+  &:hover {
+    opacity: 0.8;
+    cursor: var(--cursor-hover);
   }
 }

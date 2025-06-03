@@ -185,7 +185,309 @@ body.iceberg {
   position: relative;
 }
 
+body.predictions {
+  background-image: url('./images/backgrounds/bg02.jpg');
+
+  background-size: cover;
+  background-position: center top;
+  background-color: var(--schizo-red);
+
+  display: flex;
+  align-items: center;
+  width: auto;
+  flex-direction: column;
+
+  overflow-x: hidden;
+  position: relative;
+  gap: 68px;
+  justify-content: space-between;
+  height: fit-content;
+}
+
 #navbar-root {
   width: 100%;
   left: 0;
+}
+
+.O_Predictions {
+  filter: drop-shadow(var(--schizo-drop-shadow));
+  padding: 60px 20px 20px 20px;
+  max-width: 830px;
+  width: 100%;
+  background-color: var(--schizo-red);
+  border: var(--yellow-border);
+  margin-bottom: 120px;
+  margin-top: 240px;
+  min-height: 510px;
+
+  h2 {
+    position: absolute;
+    top: -90px;
+    left: 0px;
+  }
+}
+
+.O_PredictionsResult {
+  position: relative;
+  filter: drop-shadow(var(--schizo-drop-shadow));
+  padding: 40px 20px 20px 20px;
+  max-width: 830px;
+  width: fit-content;
+  background-color: var(--schizo-red);
+  border: var(--yellow-border);
+  margin-bottom: 120px;
+  margin-top: 240px;
+  min-height: 510px;
+
+  h2 {
+    position: absolute;
+    top: -30px;
+    left: 26px;
+  }
+
+  h4 {
+    margin-top: 42px;
+    margin-bottom: 58px;
+    max-width: 504px;
+  }
+
+  .buttonsFlex {
+    display: flex;
+    gap: 12px;
+    div {
+      position: relative;
+      top: auto;
+      left: auto;
+      bottom: auto;
+      width: 40px;
+      height: 40px;
+
+      &:hover {
+        background-color: var(--schizo-yellow);
+        opacity: 0.8;
+      }
+
+      &:nth-child(2) {
+        background-image: url('./svg/encryptor/A_EncryptorContentInterfaceWindowCopyBtn.svg');
+      }
+    }
+  }
+}
+
+.W_PredictionsContent {
+  position: relative;
+
+  label {
+    position: absolute;
+    top: -10px;
+    left: 16px;
+    font-size: var(--h3-font-size);
+    font-weight: 500;
+    line-height: 140%;
+    color: var(--schizo-red);
+
+    content: attr(data-text);
+    display: flex;
+    word-spacing: var(--h3-word-spacing);
+
+    font-family: 'InterVariable', sans-serif;
+    font-style: italic;
+    text-transform: uppercase;
+    font-weight: 700;
+    line-height: 100%;
+    text-shadow: var(--schizo-shadow-text-small);
+
+    &::after {
+      -webkit-text-stroke-width: var(--h3-stroke-size);
+      -webkit-text-stroke-color: var(--schizo-yellow);
+
+      paint-order: stroke fill;
+      position: absolute;
+
+      content: attr(data-text);
+      text-shadow: 0px 0px 0px;
+
+      font-size: inherit;
+      word-spacing: inherit;
+      font-family: inherit;
+      font-style: inherit;
+      text-transform: inherit;
+      font-weight: inherit;
+      line-height: inherit;
+    }
+    &::selection {
+      background-color: var(--schizo-red);
+      color: var(--schizo-yellow);
+    }
+  }
+
+  input,
+  textarea {
+    all: unset;
+    background-color: var(--schizo-yellow);
+    color: var(--schizo-red);
+    min-height: 64px;
+    padding: 4px 12px 0px 12px;
+  }
+
+  textarea {
+    min-height: 120px;
+    padding-top: 30px;
+  }
+
+  input::placeholder {
+    all: unset;
+    background-color: var(--schizo-yellow);
+    color: var(--schizo-red);
+    font-weight: 500;
+  }
+
+  textarea::placeholder {
+    all: unset;
+    background-color: var(--schizo-yellow);
+    color: var(--schizo-red);
+    font-weight: 500;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    opacity: 0.5;
+  }
+}
+
+.formInputWrap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.radioGroup {
+  display: flex;
+  margin-top: 6px;
+  gap: 26px;
+}
+
+.formInputWrapRadio {
+  gap: 16px;
+  align-items: center;
+  height: 100%;
+  position: relative;
+  display: flex;
+  display: flex;
+
+  label {
+    display: flex;
+    color: #d20000;
+    color: var(--schizo-red);
+    font-family: 'InterVariable', sans-serif;
+    font-size: 18px;
+    font-size: var(--h5-font-size);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 140%;
+    position: relative;
+    top: auto;
+    left: auto;
+    text-shadow: none;
+    text-transform: none;
+  }
+
+  input[type='radio'] {
+    min-height: auto;
+    width: 18px;
+    aspect-ratio: 1;
+    padding: 0;
+    border: 5px solid var(--schizo-red);
+    position: relative;
+
+    &:checked {
+      &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 12px;
+        aspect-ratio: 1;
+        background-color: var(--schizo-red);
+      }
+    }
+  }
+}
+
+.formInputWrapRadioField {
+  display: flex;
+  gap: 32px;
+  position: relative;
+  width: 100%;
+  background-color: var(--schizo-yellow);
+  color: #d20000;
+  color: var(--schizo-red);
+  height: 68px;
+  padding: 12px 12px 0px 12px;
+}
+
+.opacityDiv {
+  display: flex;
+  width: 100%;
+  background-color: #fff200;
+
+  input {
+    width: 100%;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 4px;
+    width: 40px;
+    aspect-ratio: 1;
+    background-image: url('./svg/Q_Calendar.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    pointer-events: none;
+  }
+}
+
+.W_PredictionsContent {
+  .A_EncryptorContentButton {
+    bottom: -26px;
+    right: -44px;
+  }
+}
+
+.codeAnim {
+  color: var(--schizo-yellow);
+
+  font-family: 'InterVariable', sans-serif;
+  font-size: var(--h5-font-size);
+  font-style: normal;
+  font-weight: 600;
+  line-height: 140%;
+
+  &::selection {
+    background-color: var(--schizo-red);
+    color: var(--schizo-yellow);
+  }
+}
+
+.PredictionsResultImage {
+  width: 100%;
+  object-fit: cover;
+}
+
+h2.predictionResultDate {
+  position: relative;
+  top: auto;
+  left: auto;
+  margin-top: -28px;
 }

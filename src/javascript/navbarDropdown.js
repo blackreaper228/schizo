@@ -62,13 +62,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   })
 
-  GensMobile.addEventListener('click', () => {
-    if (!isGensClicked) {
-      isGensClicked = true
-      GensDropdown.style.display = 'flex'
-    } else {
-      isGensClicked = false
-      GensDropdown.style.display = 'none'
-    }
-  })
+  // GensMobile.addEventListener('click', () => {
+  //   if (!isGensClicked) {
+  //     isGensClicked = true
+  //     GensDropdown.style.display = 'flex'
+  //   } else {
+  //     isGensClicked = false
+  //     GensDropdown.style.display = 'none'
+  //   }
+  // })
 })

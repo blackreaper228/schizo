@@ -422,6 +422,7 @@ body.predictions {
 }
 
 .formInputWrapRadioField {
+  flex-wrap: wrap;
   display: flex;
   gap: 32px;
   position: relative;
@@ -429,8 +430,8 @@ body.predictions {
   background-color: var(--schizo-yellow);
   color: #d20000;
   color: var(--schizo-red);
-  height: 68px;
-  padding: 12px 12px 0px 12px;
+  height: fit-content;
+  padding: 32px 12px 24px 12px;
 }
 
 .opacityDiv {

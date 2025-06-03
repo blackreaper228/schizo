@@ -1502,6 +1502,38 @@
       display: none;
     }
   }
+
+  #calculate,
+  #share {
+    right: -16px;
+  }
+
+  .O_Predictions,
+  .O_PredictionsResult {
+    margin-bottom: 120px;
+    margin-top: 120px;
+    width: calc(100% - 32px);
+  }
+
+  .O_PredictionsResult {
+    h2 {
+      top: -16px;
+    }
+  }
+
+  .W_PredictionsContent {
+    input {
+      padding-bottom: 12px;
+    }
+
+    textarea {
+      padding-top: 44px;
+    }
+  }
+
+  h2.predictionResultDate {
+    margin-top: 6px;
+  }
 }
 
 @media only screen and (max-device-width: 360px) {

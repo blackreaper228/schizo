@@ -16892,7 +16892,9 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   };
   burgerIcon.addEventListener('click', toggleMenu);
+  burgerIcon.addEventListener('touchstart', toggleMenu);
   burgerMenuBG.addEventListener('click', toggleMenu);
+  burgerMenuBG.addEventListener('touchstart', toggleMenu);
 });
 // EXTERNAL MODULE: ./src/javascript/searchbarMobile.js
 var searchbarMobile = __webpack_require__(7195);

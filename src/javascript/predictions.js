@@ -136,7 +136,7 @@ function getCurrentDate() {
   return `${day}.${month}.${year}`
 }
 
-const PREDICTION_LIMIT_ENABLED = true // Выключи на false для отладки/разработки
+const PREDICTION_LIMIT_ENABLED = false // Выключи на false для отладки/разработки
 
 function getTodayKey() {
   const now = new Date()

@@ -77871,7 +77871,6 @@ var Header = function Header() {
     alt: "menu"
   }), /*#__PURE__*/react.createElement("a", {
     href: "https://schizofiles.ru",
-    target: "_blank",
     className: "Q_LogoMobileLink"
   }, /*#__PURE__*/react.createElement("img", {
     className: "Q_LogoMobile",

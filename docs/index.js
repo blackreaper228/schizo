@@ -77869,11 +77869,15 @@ var Header = function Header() {
     className: "Q_BurgerIcon",
     src: assets_svg_Q_BurgerIcon_namespaceObject,
     alt: "menu"
-  }), /*#__PURE__*/react.createElement("img", {
+  }), /*#__PURE__*/react.createElement("a", {
+    href: "https://schizofiles.ru",
+    target: "_blank",
+    className: "Q_LogoMobileLink"
+  }, /*#__PURE__*/react.createElement("img", {
     className: "Q_LogoMobile",
     src: Q_LogoMobile_namespaceObject,
     alt: "logo"
-  }), /*#__PURE__*/react.createElement("img", {
+  })), /*#__PURE__*/react.createElement("img", {
     className: "Q_SearchIconMobile",
     src: Q_SearchIconMobile_namespaceObject,
     alt: "search"

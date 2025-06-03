@@ -45,7 +45,13 @@ const Header = () => {
         {/* Главное меню */}
         <div className="M_HeaderNavbar" id="main_nav">
           <img className="Q_BurgerIcon" src={Q_BurgerIcon} alt="menu" />
-          <img className="Q_LogoMobile" src={Q_LogoMobile} alt="logo" />
+          <a
+            href="https://schizofiles.ru"
+            target="_blank"
+            className="Q_LogoMobileLink"
+          >
+            <img className="Q_LogoMobile" src={Q_LogoMobile} alt="logo" />
+          </a>
           <img
             className="Q_SearchIconMobile"
             src={Q_SearchIconMobile}

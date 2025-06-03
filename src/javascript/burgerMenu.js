@@ -20,7 +20,5 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   burgerIcon.addEventListener('click', toggleMenu)
-  burgerIcon.addEventListener('touchstart', toggleMenu)
   burgerMenuBG.addEventListener('click', toggleMenu)
-  burgerMenuBG.addEventListener('touchstart', toggleMenu)
 })

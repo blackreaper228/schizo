@@ -16896,7 +16896,8 @@ document.addEventListener('DOMContentLoaded', function () {
   var burgerMenu = document.querySelector('.O_BurgerMenu');
   var burgerMenuBG = document.querySelector('#burgerMenuBG-01');
   var toggleMenu = function toggleMenu(e) {
-    e.preventDefault();
+    // Убираем preventDefault() - он блокируется браузером
+    // e.preventDefault()
     e.stopPropagation();
     burgerMenu.classList.toggle('active');
     if (burgerMenu.classList.contains('active')) {
@@ -16908,12 +16909,9 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   };
 
-  // Добавляем поддержку touch событий БЕЗ passive
+  // Используем только click событие для мобильных
   burgerIcon.addEventListener('click', toggleMenu);
-  burgerIcon.addEventListener('touchstart', toggleMenu); // Убрал { passive: true }
-
   burgerMenuBG.addEventListener('click', toggleMenu);
-  burgerMenuBG.addEventListener('touchstart', toggleMenu); // Убрал { passive: true }
 });
 // EXTERNAL MODULE: ./src/javascript/searchbarMobile.js
 var searchbarMobile = __webpack_require__(7195);
@@ -17053,6 +17051,7 @@ var Header = function Header() {
     id: "main_nav"
   }, /*#__PURE__*/react.createElement("img", {
     className: "Q_BurgerIcon",
+    id: "burger-icon-main",
     src: assets_svg_Q_BurgerIcon_namespaceObject,
     alt: "menu"
   }), /*#__PURE__*/react.createElement("a", {
@@ -17085,6 +17084,7 @@ var Header = function Header() {
     className: "M_HeaderNavbar invert"
   }, /*#__PURE__*/react.createElement("img", {
     className: "Q_BurgerIcon",
+    id: "burger-icon-articles",
     src: assets_svg_Q_BurgerIcon_namespaceObject,
     alt: "menu"
   }), /*#__PURE__*/react.createElement("img", {
@@ -17115,6 +17115,7 @@ var Header = function Header() {
     id: "gens"
   }, /*#__PURE__*/react.createElement("img", {
     className: "Q_BurgerIcon",
+    id: "burger-icon-gens",
     src: assets_svg_Q_BurgerIcon_namespaceObject,
     alt: "menu"
   }), /*#__PURE__*/react.createElement("img", {

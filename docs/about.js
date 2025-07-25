@@ -16758,6 +16758,7 @@ var Header = function Header() {
     id: "main_nav"
   }, /*#__PURE__*/react.createElement("img", {
     className: "Q_BurgerIcon",
+    id: "burger-icon-main",
     src: Q_BurgerIcon_namespaceObject,
     alt: "menu"
   }), /*#__PURE__*/react.createElement("a", {
@@ -16790,6 +16791,7 @@ var Header = function Header() {
     className: "M_HeaderNavbar invert"
   }, /*#__PURE__*/react.createElement("img", {
     className: "Q_BurgerIcon",
+    id: "burger-icon-articles",
     src: Q_BurgerIcon_namespaceObject,
     alt: "menu"
   }), /*#__PURE__*/react.createElement("img", {
@@ -16820,6 +16822,7 @@ var Header = function Header() {
     id: "gens"
   }, /*#__PURE__*/react.createElement("img", {
     className: "Q_BurgerIcon",
+    id: "burger-icon-gens",
     src: Q_BurgerIcon_namespaceObject,
     alt: "menu"
   }), /*#__PURE__*/react.createElement("img", {

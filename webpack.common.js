@@ -101,7 +101,7 @@ module.exports = {
 
     // Landing page
     new HtmlWebpackPlugin({
-      hash: true,
+      hash: false,
       scriptLoading: 'blocking',
       template: './src/index.html',
       filename: './index.html',
@@ -110,7 +110,7 @@ module.exports = {
 
     // Internal pages
     new HtmlWebpackPlugin({
-      hash: true,
+      hash: false,
       scriptLoading: 'blocking',
       template: './src/pages/soon.html',
       filename: './soon.html',
@@ -118,7 +118,7 @@ module.exports = {
     }),
 
     new HtmlWebpackPlugin({
-      hash: true,
+      hash: false,
       scriptLoading: 'blocking',
       template: './src/pages/who.html',
       filename: './who.html',
@@ -126,7 +126,7 @@ module.exports = {
     }),
 
     new HtmlWebpackPlugin({
-      hash: true,
+      hash: false,
       scriptLoading: 'blocking',
       template: './src/pages/sickness.html',
       filename: './sickness.html',
@@ -134,7 +134,7 @@ module.exports = {
     }),
 
     new HtmlWebpackPlugin({
-      hash: true,
+      hash: false,
       scriptLoading: 'blocking',
       template: './src/pages/servant.html',
       filename: './servant.html',
@@ -142,7 +142,7 @@ module.exports = {
     }),
 
     new HtmlWebpackPlugin({
-      hash: true,
+      hash: false,
       scriptLoading: 'blocking',
       template: './src/pages/bruh.html',
       filename: './bruh.html',
@@ -150,7 +150,7 @@ module.exports = {
     }),
 
     new HtmlWebpackPlugin({
-      hash: true,
+      hash: false,
       scriptLoading: 'blocking',
       template: './src/pages/test.html',
       filename: './test.html',
@@ -160,7 +160,7 @@ module.exports = {
     // articles
 
     new HtmlWebpackPlugin({
-      hash: true,
+      hash: false,
       scriptLoading: 'blocking',
       template: './src/pages/articlesBitie.html',
       filename: './bitie.html',
@@ -168,7 +168,7 @@ module.exports = {
     }),
 
     new HtmlWebpackPlugin({
-      hash: true,
+      hash: false,
       scriptLoading: 'blocking',
       template: './src/pages/articlesKosmos.html',
       filename: './kosmos.html',
@@ -176,7 +176,7 @@ module.exports = {
     }),
 
     new HtmlWebpackPlugin({
-      hash: true,
+      hash: false,
       scriptLoading: 'blocking',
       template: './src/pages/articlesProshloe.html',
       filename: './proshloe.html',
@@ -184,7 +184,7 @@ module.exports = {
     }),
 
     new HtmlWebpackPlugin({
-      hash: true,
+      hash: false,
       scriptLoading: 'blocking',
       template: './src/pages/articles/bitie/ten-predictions.html',
       filename: './ten-predictions.html',
@@ -192,7 +192,7 @@ module.exports = {
     }),
 
     new HtmlWebpackPlugin({
-      hash: true,
+      hash: false,
       scriptLoading: 'blocking',
       template: './src/pages/articles/bitie/adrenochrome.html',
       filename: './adrenochrome.html',
@@ -200,7 +200,7 @@ module.exports = {
     }),
 
     new HtmlWebpackPlugin({
-      hash: true,
+      hash: false,
       scriptLoading: 'blocking',
       template: './src/pages/articles/bitie/antarctica.html',
       filename: './antarctica.html',
@@ -208,7 +208,7 @@ module.exports = {
     }),
 
     new HtmlWebpackPlugin({
-      hash: true,
+      hash: false,
       scriptLoading: 'blocking',
       template: './src/pages/articles/bitie/vatican.html',
       filename: './vatican.html',
@@ -216,7 +216,7 @@ module.exports = {
     }),
 
     new HtmlWebpackPlugin({
-      hash: true,
+      hash: false,
       scriptLoading: 'blocking',
       template: './src/pages/articles/kosmos/fake-moon-landing.html',
       filename: './fake-moon-landing.html',
@@ -224,7 +224,7 @@ module.exports = {
     }),
 
     new HtmlWebpackPlugin({
-      hash: true,
+      hash: false,
       scriptLoading: 'blocking',
       template: './src/pages/articles/kosmos/ufo-on-video.html',
       filename: './ufo-on-video.html',
@@ -232,7 +232,7 @@ module.exports = {
     }),
 
     new HtmlWebpackPlugin({
-      hash: true,
+      hash: false,
       scriptLoading: 'blocking',
       template: './src/pages/articles/kosmos/water-is-door.html',
       filename: './water-is-door.html',
@@ -240,7 +240,7 @@ module.exports = {
     }),
 
     new HtmlWebpackPlugin({
-      hash: true,
+      hash: false,
       scriptLoading: 'blocking',
       template: './src/pages/articles/proshloe/chernobyl-hiv.html',
       filename: './chernobyl-hiv.html',
@@ -248,7 +248,7 @@ module.exports = {
     }),
 
     new HtmlWebpackPlugin({
-      hash: true,
+      hash: false,
       scriptLoading: 'blocking',
       template: './src/pages/articles/proshloe/bush-and-children.html',
       filename: './bush-and-children.html',
@@ -256,7 +256,7 @@ module.exports = {
     }),
 
     new HtmlWebpackPlugin({
-      hash: true,
+      hash: false,
       scriptLoading: 'blocking',
       template: './src/pages/articles/proshloe/dyatlov-pass.html',
       filename: './dyatlov-pass.html',
@@ -265,7 +265,7 @@ module.exports = {
 
     // unique pages
     new HtmlWebpackPlugin({
-      hash: true,
+      hash: false,
       scriptLoading: 'blocking',
       template: './src/pages/flat-earth.html',
       filename: './flat-earth.html',
@@ -273,7 +273,7 @@ module.exports = {
     }),
 
     new HtmlWebpackPlugin({
-      hash: true,
+      hash: false,
       scriptLoading: 'blocking',
       template: './src/pages/encryptor.html',
       filename: './encryptor.html',
@@ -281,7 +281,7 @@ module.exports = {
     }),
 
     new HtmlWebpackPlugin({
-      hash: true,
+      hash: false,
       scriptLoading: 'blocking',
       template: './src/pages/predictions.html',
       filename: './predictions.html',
@@ -289,7 +289,7 @@ module.exports = {
     }),
 
     new HtmlWebpackPlugin({
-      hash: true,
+      hash: false,
       scriptLoading: 'blocking',
       template: './src/pages/iceberg.html',
       filename: './iceberg.html',
@@ -297,7 +297,7 @@ module.exports = {
     }),
 
     new HtmlWebpackPlugin({
-      hash: true,
+      hash: false,
       scriptLoading: 'blocking',
       template: './src/pages/about.html',
       filename: './about.html',

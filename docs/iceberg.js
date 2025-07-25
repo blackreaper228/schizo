@@ -16915,10 +16915,9 @@ function showSuccessModal() {
   alert(message);
 }
 document.addEventListener('DOMContentLoaded', function () {
-  var burgerIcon = document.querySelector('.Q_BurgerIcon');
+  // const burgerIcon = document.querySelector('.Q_BurgerIcon')
   var burgerMenu = document.querySelector('.O_BurgerMenu');
-  // const burgerMenu = document.querySelector('#burger-icon-main')
-
+  var burgerIcon = document.querySelector('#burger-icon-main');
   var burgerMenuBG = document.querySelector('#burgerMenuBG-01');
   var toggleMenu = function toggleMenu(e) {
     // Убираем preventDefault() - он блокируется браузером
@@ -17014,11 +17013,9 @@ var Header = function Header() {
   }, /*#__PURE__*/react.createElement("div", {
     className: "M_HeaderNavbar",
     id: "main_nav"
-  }, /*#__PURE__*/react.createElement("img", {
-    className: "Q_BurgerIcon",
-    src: assets_svg_Q_BurgerIcon_namespaceObject,
-    alt: "menu"
-  }), /*#__PURE__*/react.createElement("a", {
+  }, /*#__PURE__*/react.createElement("div", {
+    id: "burger-icon-main"
+  }, "text"), /*#__PURE__*/react.createElement("a", {
     href: "https://schizofiles.ru",
     className: "Q_LogoMobileLink"
   }, /*#__PURE__*/react.createElement("img", {

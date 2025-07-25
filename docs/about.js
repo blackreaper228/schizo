@@ -16756,11 +16756,9 @@ var Header = function Header() {
   }, /*#__PURE__*/react.createElement("div", {
     className: "M_HeaderNavbar",
     id: "main_nav"
-  }, /*#__PURE__*/react.createElement("img", {
-    className: "Q_BurgerIcon",
-    src: Q_BurgerIcon_namespaceObject,
-    alt: "menu"
-  }), /*#__PURE__*/react.createElement("a", {
+  }, /*#__PURE__*/react.createElement("div", {
+    id: "burger-icon-main"
+  }, "text"), /*#__PURE__*/react.createElement("a", {
     href: "https://schizofiles.ru",
     className: "Q_LogoMobileLink"
   }, /*#__PURE__*/react.createElement("img", {

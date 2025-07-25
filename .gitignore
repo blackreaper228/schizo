@@ -1,6 +1,4 @@
 node_modules/
 dev_build/
-dist/
 # docs/
 .vscode/
-.github/workflows

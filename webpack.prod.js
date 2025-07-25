@@ -5,7 +5,8 @@ const path = require('path')
 module.exports = merge(common, {
   mode: 'production',
   output: {
-    path: path.resolve(__dirname, 'dist'), // Изменяем путь для продакшена
+    path: path.resolve(__dirname, 'dist'),
+    publicPath: '/', // Добавляем это
     clean: true
   }
 })

@@ -23,6 +23,7 @@ module.exports = {
   output: {
     filename: '[name].js',
     path: path.resolve(__dirname, 'docs'),
+    publicPath: '/', // Добавляем это
     clean: true // Очищает папку docs перед каждой сборкой
   },
   module: {

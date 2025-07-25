@@ -3,4 +3,4 @@ dev_build/
 dist/
 docs/
 .vscode/
-.github/
+.github/workflows

@@ -1,3 +1,4 @@
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const HtmlWebpackPartialsPlugin = require('html-webpack-partials-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
@@ -9,12 +10,21 @@ const path = require('path')
 module.exports = {
   entry: {
     index: './src/index.js',
-    page: './src/page.jsx'
+    soon: './src/index.js',
+    test: './src/javascript/test.js',
+    articles: './src/javascript/articles.js',
+    flatEarth: './src/javascript/flatEarth.js',
+    encryptor: './src/javascript/encryptor.js',
+    predictions: './src/javascript/predictions.js',
+    about: './src/javascript/about.js',
+    iceberg: './src/javascript/iceberg.js',
+    empty: './src/javascript/empty.js'
   },
   output: {
     filename: '[name].js',
-    path: path.resolve(__dirname, 'docs')
-    // clean: true
+    path: path.resolve(__dirname, 'docs'),
+    publicPath: '/', // Добавляем это
+    clean: true // Очищает папку docs перед каждой сборкой
   },
   module: {
     rules: [
@@ -66,6 +76,20 @@ module.exports = {
         options: {
           name: 'fonts/[name].[ext]'
         }
+      },
+      {
+        test: /\.(glb|gltf)$/i,
+        type: 'asset/resource',
+        generator: {
+          filename: 'models/[hash][ext][query]'
+        }
+      },
+      {
+        test: /\.(hdr)$/i, // ✅ Поддержка HDR
+        type: 'asset/resource',
+        generator: {
+          filename: 'assets/[hash][ext][query]'
+        }
       }
     ]
   },
@@ -88,9 +112,196 @@ module.exports = {
     new HtmlWebpackPlugin({
       hash: true,
       scriptLoading: 'blocking',
-      template: './src/pages/page.html',
-      filename: './pages/page.html',
-      chunks: ['page']
+      template: './src/pages/soon.html',
+      filename: './soon.html',
+      chunks: ['soon']
+    }),
+
+    new HtmlWebpackPlugin({
+      hash: true,
+      scriptLoading: 'blocking',
+      template: './src/pages/who.html',
+      filename: './who.html',
+      chunks: ['empty']
+    }),
+
+    new HtmlWebpackPlugin({
+      hash: true,
+      scriptLoading: 'blocking',
+      template: './src/pages/sickness.html',
+      filename: './sickness.html',
+      chunks: ['empty']
+    }),
+
+    new HtmlWebpackPlugin({
+      hash: true,
+      scriptLoading: 'blocking',
+      template: './src/pages/servant.html',
+      filename: './servant.html',
+      chunks: ['empty']
+    }),
+
+    new HtmlWebpackPlugin({
+      hash: true,
+      scriptLoading: 'blocking',
+      template: './src/pages/bruh.html',
+      filename: './bruh.html',
+      chunks: ['index']
+    }),
+
+    new HtmlWebpackPlugin({
+      hash: true,
+      scriptLoading: 'blocking',
+      template: './src/pages/test.html',
+      filename: './test.html',
+      chunks: ['test']
+    }),
+
+    // articles
+
+    new HtmlWebpackPlugin({
+      hash: true,
+      scriptLoading: 'blocking',
+      template: './src/pages/articlesBitie.html',
+      filename: './bitie.html',
+      chunks: ['articles']
+    }),
+
+    new HtmlWebpackPlugin({
+      hash: true,
+      scriptLoading: 'blocking',
+      template: './src/pages/articlesKosmos.html',
+      filename: './kosmos.html',
+      chunks: ['articles']
+    }),
+
+    new HtmlWebpackPlugin({
+      hash: true,
+      scriptLoading: 'blocking',
+      template: './src/pages/articlesProshloe.html',
+      filename: './proshloe.html',
+      chunks: ['articles']
+    }),
+
+    new HtmlWebpackPlugin({
+      hash: true,
+      scriptLoading: 'blocking',
+      template: './src/pages/articles/bitie/ten-predictions.html',
+      filename: './ten-predictions.html',
+      chunks: ['articles']
+    }),
+
+    new HtmlWebpackPlugin({
+      hash: true,
+      scriptLoading: 'blocking',
+      template: './src/pages/articles/bitie/adrenochrome.html',
+      filename: './adrenochrome.html',
+      chunks: ['articles']
+    }),
+
+    new HtmlWebpackPlugin({
+      hash: true,
+      scriptLoading: 'blocking',
+      template: './src/pages/articles/bitie/antarctica.html',
+      filename: './antarctica.html',
+      chunks: ['articles']
+    }),
+
+    new HtmlWebpackPlugin({
+      hash: true,
+      scriptLoading: 'blocking',
+      template: './src/pages/articles/bitie/vatican.html',
+      filename: './vatican.html',
+      chunks: ['articles']
+    }),
+
+    new HtmlWebpackPlugin({
+      hash: true,
+      scriptLoading: 'blocking',
+      template: './src/pages/articles/kosmos/fake-moon-landing.html',
+      filename: './fake-moon-landing.html',
+      chunks: ['articles']
+    }),
+
+    new HtmlWebpackPlugin({
+      hash: true,
+      scriptLoading: 'blocking',
+      template: './src/pages/articles/kosmos/ufo-on-video.html',
+      filename: './ufo-on-video.html',
+      chunks: ['articles']
+    }),
+
+    new HtmlWebpackPlugin({
+      hash: true,
+      scriptLoading: 'blocking',
+      template: './src/pages/articles/kosmos/water-is-door.html',
+      filename: './water-is-door.html',
+      chunks: ['articles']
+    }),
+
+    new HtmlWebpackPlugin({
+      hash: true,
+      scriptLoading: 'blocking',
+      template: './src/pages/articles/proshloe/chernobyl-hiv.html',
+      filename: './chernobyl-hiv.html',
+      chunks: ['articles']
+    }),
+
+    new HtmlWebpackPlugin({
+      hash: true,
+      scriptLoading: 'blocking',
+      template: './src/pages/articles/proshloe/bush-and-children.html',
+      filename: './bush-and-children.html',
+      chunks: ['articles']
+    }),
+
+    new HtmlWebpackPlugin({
+      hash: true,
+      scriptLoading: 'blocking',
+      template: './src/pages/articles/proshloe/dyatlov-pass.html',
+      filename: './dyatlov-pass.html',
+      chunks: ['articles']
+    }),
+
+    // unique pages
+    new HtmlWebpackPlugin({
+      hash: true,
+      scriptLoading: 'blocking',
+      template: './src/pages/flat-earth.html',
+      filename: './flat-earth.html',
+      chunks: ['flatEarth']
+    }),
+
+    new HtmlWebpackPlugin({
+      hash: true,
+      scriptLoading: 'blocking',
+      template: './src/pages/encryptor.html',
+      filename: './encryptor.html',
+      chunks: ['encryptor']
+    }),
+
+    new HtmlWebpackPlugin({
+      hash: true,
+      scriptLoading: 'blocking',
+      template: './src/pages/predictions.html',
+      filename: './predictions.html',
+      chunks: ['predictions']
+    }),
+
+    new HtmlWebpackPlugin({
+      hash: true,
+      scriptLoading: 'blocking',
+      template: './src/pages/iceberg.html',
+      filename: './iceberg.html',
+      chunks: ['iceberg']
+    }),
+
+    new HtmlWebpackPlugin({
+      hash: true,
+      scriptLoading: 'blocking',
+      template: './src/pages/about.html',
+      filename: './about.html',
+      chunks: ['about']
     }),
 
     // Partials
@@ -101,7 +312,12 @@ module.exports = {
         template_filename: '*',
         priority: 'replace'
       }
-    ])
+    ]),
+
+    // Копирование папки public
+    new CopyWebpackPlugin({
+      patterns: [{ from: 'public', to: '' }]
+    })
   ],
   optimization: {
     minimizer: [new CssMinimizerPlugin()]

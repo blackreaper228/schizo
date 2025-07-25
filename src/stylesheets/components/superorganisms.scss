@@ -1,0 +1,66 @@
+.S_Landing {
+  background-image: url('./images/backgrounds/bg01.jpg');
+  background-size: cover;
+  background-position: center top;
+  background-color: var(--schizo-red);
+
+  display: flex;
+  align-items: center;
+  width: auto;
+  flex-direction: column;
+
+  justify-content: space-between;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.S_Articles {
+  width: var(--center-container);
+  display: flex;
+  flex-direction: column;
+  margin-top: 240px;
+
+  filter: drop-shadow(var(--schizo-drop-shadow));
+}
+
+.S_ArticlePage {
+  margin-top: 240px;
+  width: var(--center-container);
+  display: flex;
+  flex-direction: column;
+  filter: drop-shadow(var(--schizo-drop-shadow));
+  align-items: center;
+}
+
+.S_Encryptor {
+  margin-top: 240px;
+  margin-bottom: 120px;
+  width: var(--center-container);
+  display: flex;
+  filter: drop-shadow(var(--schizo-drop-shadow));
+  flex-direction: column;
+  gap: 68px;
+}
+
+// iceberg
+
+.S_Iceberg {
+  width: var(--center-container);
+  background-color: var(--schizo-red);
+  border: var(--yellow-border);
+
+  position: relative;
+  display: flex;
+
+  gap: 40px;
+
+  margin-top: 198px;
+  margin-bottom: 132px;
+  padding: 58px 50px 16px 50px;
+
+  h2 {
+    position: absolute;
+    top: -30px;
+    left: 40px;
+  }
+}

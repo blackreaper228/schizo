@@ -1,20 +1,22 @@
 {
-  "name": "static-site-boilerplate",
+  "name": "schizofiles",
   "version": "1.0.0",
-  "author": "Zakhar Day",
+  "author": "Black Reaper",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https:///github.com/ZakharDay/static-site-boilerplate"
+    "url": "git+https:///github.com/blackreaper228/schizo"
   },
   "bugs": {
-    "url": "https://github.com/ZakharDay/static-site-boilerplate/issues"
+    "url": "https://github.com/blackreaper228/schizo/issues"
   },
-  "homepage": "https://github.com/ZakharDay/static-site-boilerplate#readme",
+  "homepage": "https://github.com/blackreaper228/schizo#readme",
   "scripts": {
-    "start": "webpack serve --open --config webpack.dev.js",
+    "start": "webpack serve --config webpack.dev.js",
+    "dev": "webpack serve --config webpack.dev.js",
     "watch": "webpack --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js"
+    "build": "webpack --config webpack.prod.js && echo 'schizofiles.ru' > docs/CNAME",
+    "deploy": "npm run build && gh-pages -d dist"
   },
   "devDependencies": {
     "@babel/core": "^7.17.5",
@@ -22,9 +24,11 @@
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-react": "^7.16.7",
     "babel-loader": "^8.2.3",
+    "copy-webpack-plugin": "^13.0.0",
     "css-loader": "^5.2.4",
     "css-minimizer-webpack-plugin": "^2.0.0",
     "file-loader": "^6.2.0",
+    "gh-pages": "^6.1.0",
     "html-loader": "^4.2.0",
     "html-webpack-partials-plugin": "^0.8.0",
     "html-webpack-plugin": "^5.6.0",
@@ -32,15 +36,18 @@
     "postcss": "^8.4.14",
     "postcss-loader": "^7.0.0",
     "postcss-preset-env": "^7.7.0",
+    "prettier": "^3.5.2",
     "sass": "^1.32.12",
     "sass-loader": "^11.0.1",
-    "webpack": "^5.94.0",
-    "webpack-cli": "^4.6.0",
-    "webpack-dev-server": "^4.11.0",
+    "webpack": "^5.99.7",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.1",
     "webpack-merge": "^5.7.3"
   },
   "dependencies": {
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "p5": "^1.11.3",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "three": "^0.173.0"
   }
 }

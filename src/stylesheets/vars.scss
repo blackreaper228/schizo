@@ -1,4 +1,109 @@
 :root {
+  // cursors
+  --cursor-hover: url('./images/cursor/cursor-hover.png'), auto;
+  --cursor-pressed: url('./images/cursor/cursor-pressed.png'), auto;
+
+  // colors
   --white: white;
   --black: black;
+  --schizo-yellow: #fff200;
+  --schizo-red: #d20000;
+  --schizo-red-hover: #951111;
+  --schizo-yellow-hover: #ccc200;
+
+  //effects
+  --schizo-shadow-text: 4px 10px 10px #000;
+  --schizo-shadow-text-small: 0px 7px 10px #000;
+  --schizo-shadow: 0px 20px 30px 0px #000;
+  --schizo-drop-shadow: 0px 20px 16px #000;
+  --yellow-border: var(--border-width) solid var(--schizo-yellow);
+  --red-border: var(--border-width) solid var(--schizo-red);
+
+  --border-width: 10px;
+
+  //typography
+  --h1-font-size: 82px;
+  --h1-stroke-size: 14px;
+  --h1-word-spacing: 10px;
+
+  --h2-font-size: 46px;
+  --h2-stroke-size: 10px;
+  --h2-word-spacing: 10px;
+
+  --h3-font-size: var(--h4-font-size);
+  --h3-stroke-size: 5px;
+  --h3-word-spacing: 10px;
+
+  --h4-font-size: 26px;
+
+  --h5-font-size: 18px;
+  --h5-stroke-size: 3px;
+
+  --h6-font-size: 12px;
+
+  --tag-font-size: 30px;
+
+  //sizes
+  --A_Header-Height: 76px;
+  --header-footer-height: 76px;
+
+  --render-height: 300px;
+
+  --Fixed-Button-Size: 72px;
+
+  --center-container: 1176px;
+
+  --A_LandingTitle-Height: 56px;
+  --A_LandingTitleSec03-Height: 100px;
+
+  --Q_LandingSecContentPic: 354px;
+  --W_LandingSecContent-Gap: 60px;
+
+  --M_LandingCardsItem-Width: 376px;
+
+  --O_LandingSec02-Height: 695px;
+
+  --W_FinalSecContentText-Width: 1016px;
+
+  --Q_TgIcon-Size: 100px;
+
+  --Q_ArticlesCardPic-Size: 324px;
+
+  --A_ArticleTitle-Height: 160px;
+  --A_ArticleTitle-Tall: 242px;
+
+  --Q_ArticleLeftSideItemPic-Size: 60px;
+
+  --Q_ArticleSidePicsImg-height: 276px;
+
+  --sidePics-width: 246px;
+
+  //gaps
+  --wrap-gap: 100px;
+  --W_LandingCardsItemContent-Gap: 44px;
+  --O_LandingCards-Gap: 24px;
+
+  //positions
+  --Fixed-Button-Bottom: 128px;
+  --Fixed-Button-Side: 72px;
+
+  --A_LandingCardsItemTitle-Top: 336px;
+  --A_LandingCardsItemTitle-Left: calc(
+    var(--border-width) + (calc(var(--border-width) / 2))
+  );
+
+  //margins&paddings
+  --wrap-padding: 100px;
+  --wrap-padding-top: 140px;
+
+  --O_LandingSec-sec03-MarginTop: 266px;
+
+  --tablet-margins: 32px;
 }
+
+//effects
+//typography
+//sizes
+//gaps
+//positions
+//margins&paddings

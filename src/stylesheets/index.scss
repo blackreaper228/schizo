@@ -19,3 +19,109 @@ body.index {
   filter: blur(1px);
   text-shadow: 0px 0 50px rgba(255, 255, 255, 0.25);
 }
+
+.tg-link {
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 700;
+  color: white;
+  font-size: 1.406vw;
+  filter: blur(1px);
+  text-shadow: 0px 0 50px rgba(255, 255, 255, 0.25);
+  text-decoration: underline;
+}
+
+.tg-link:hover {
+  color: gray;
+}
+
+p.soon {
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 700;
+  color: #070707;
+  font-size: 2.3vw;
+  filter: blur(1px);
+  text-shadow: 0px 0 50px rgba(255, 255, 255, 0.25);
+}
+
+body.soon {
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+
+  & > div,
+  & > a {
+    margin: 10px 0;
+  }
+}
+
+body.schizo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+
+  background-color: black;
+  gap: 30px;
+
+  & > div,
+  & > a {
+    margin: 10px 0;
+  }
+  padding-bottom: 62px;
+}
+
+p.schizo {
+  background-color: yellow;
+  color: red;
+  text-align: center;
+  -webkit-text-stroke-width: 1.5px;
+  -webkit-text-stroke-color: yellow;
+  font-family: 'InterVariable', sans-serif;
+  font-size: 2.539vw;
+  font-style: italic;
+  font-weight: 700;
+  text-shadow: 3px 4px 4px #000;
+  max-width: 50vw;
+}
+
+a.schizo {
+  background-color: yellow;
+  color: red;
+  text-align: center;
+  -webkit-text-stroke-width: 1.5px;
+  -webkit-text-stroke-color: yellow;
+  font-family: 'InterVariable', sans-serif;
+  font-size: 2.539vw;
+  font-style: italic;
+  font-weight: 700;
+  text-shadow: 3px 4px 4px #000;
+  max-width: 50vw;
+}
+
+.text {
+  overflow: hidden; /* Скрывает излишний текст */
+  max-height: 0; /* По умолчанию высота нулевая */
+}
+
+.text.expanded {
+  max-height: fit-content; /* Увеличиваем высоту, чтобы текст показался */
+}
+
+p.toggle-button {
+  text-align: center;
+  -webkit-text-stroke-width: 1.5px;
+  -webkit-text-stroke-color: yellow;
+  font-family: 'InterVariable', sans-serif;
+  font-size: 65px;
+  font-style: italic;
+  font-weight: 700;
+  text-shadow: 3px 4px 4px #000;
+  max-width: 50vw;
+  color: red;
+  text-decoration: underline;
+}
+
+p.toggle-button:hover {
+  color: blue;
+}

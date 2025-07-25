@@ -1,0 +1,18 @@
+body.test {
+  background-image: url('./images/bg-01.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  width: auto;
+  flex-direction: column;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateZ(0);
+  }
+  100% {
+    transform: translate3D(-100%, 0, 0);
+  }
+}

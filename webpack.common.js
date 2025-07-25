@@ -314,11 +314,9 @@ module.exports = {
       }
     ]),
 
+    // Копирование папки public
     new CopyWebpackPlugin({
-      patterns: [
-        { from: 'public', to: '' },
-        { from: 'CNAME', to: 'CNAME' }
-      ]
+      patterns: [{ from: 'public', to: '' }]
     })
   ],
   optimization: {

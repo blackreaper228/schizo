@@ -5,8 +5,8 @@ const path = require('path')
 module.exports = merge(common, {
   mode: 'production',
   output: {
-    path: path.resolve(__dirname, 'docs'),
-    publicPath: '/', // Добавляем это
+    path: path.resolve(__dirname, 'dist/docs'), // Собираем в dist/docs
+    publicPath: '/',
     clean: true
   }
 })

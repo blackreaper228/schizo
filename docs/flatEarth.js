@@ -16869,8 +16869,16 @@ document.addEventListener('DOMContentLoaded', function () {
       document.body.style.overflow = '';
     }
   };
+
+  // Добавляем поддержку touch событий
   burgerIcon.addEventListener('click', toggleMenu);
+  burgerIcon.addEventListener('touchstart', toggleMenu, {
+    passive: true
+  });
   burgerMenuBG.addEventListener('click', toggleMenu);
+  burgerMenuBG.addEventListener('touchstart', toggleMenu, {
+    passive: true
+  });
 });
 // EXTERNAL MODULE: ./src/javascript/searchbarMobile.js
 var searchbarMobile = __webpack_require__(7195);

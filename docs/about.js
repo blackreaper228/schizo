@@ -16758,7 +16758,6 @@ var Header = function Header() {
     id: "main_nav"
   }, /*#__PURE__*/react.createElement("img", {
     className: "Q_BurgerIcon",
-    id: "burger-icon-main",
     src: Q_BurgerIcon_namespaceObject,
     alt: "menu"
   }), /*#__PURE__*/react.createElement("a", {
@@ -16790,11 +16789,6 @@ var Header = function Header() {
   }, "\u041A\u0430\u0440\u0442\u0430 \u0438\u0441\u0442\u0438\u043D\u043D\u043E\u0439 \u0417\u0435\u043C\u043B\u0438")), /*#__PURE__*/react.createElement("div", {
     className: "M_HeaderNavbar invert"
   }, /*#__PURE__*/react.createElement("img", {
-    className: "Q_BurgerIcon",
-    id: "burger-icon-articles",
-    src: Q_BurgerIcon_namespaceObject,
-    alt: "menu"
-  }), /*#__PURE__*/react.createElement("img", {
     className: "Q_LogoMobile",
     src: Q_LogoMobile_namespaceObject,
     alt: "logo"
@@ -16821,11 +16815,6 @@ var Header = function Header() {
     className: "M_HeaderNavbar invert Gen",
     id: "gens"
   }, /*#__PURE__*/react.createElement("img", {
-    className: "Q_BurgerIcon",
-    id: "burger-icon-gens",
-    src: Q_BurgerIcon_namespaceObject,
-    alt: "menu"
-  }), /*#__PURE__*/react.createElement("img", {
     className: "Q_LogoMobile",
     src: Q_LogoMobile_namespaceObject,
     alt: "logo"

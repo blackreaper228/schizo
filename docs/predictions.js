@@ -17012,6 +17012,14 @@ var Header = function Header() {
     _useState2 = _slicedToArray(_useState, 2),
     isMenuOpen = _useState2[0],
     setIsMenuOpen = _useState2[1];
+  var _useState3 = (0,react.useState)(false),
+    _useState4 = _slicedToArray(_useState3, 2),
+    isArticlesOpen = _useState4[0],
+    setIsArticlesOpen = _useState4[1];
+  var _useState5 = (0,react.useState)(false),
+    _useState6 = _slicedToArray(_useState5, 2),
+    isGensOpen = _useState6[0],
+    setIsGensOpen = _useState6[1];
   var toggleMenu = function toggleMenu() {
     setIsMenuOpen(!isMenuOpen);
     if (!isMenuOpen) {
@@ -17019,6 +17027,14 @@ var Header = function Header() {
     } else {
       document.body.style.overflow = '';
     }
+  };
+  var toggleArticles = function toggleArticles() {
+    setIsArticlesOpen(!isArticlesOpen);
+    setIsGensOpen(false); // Закрываем другое меню
+  };
+  var toggleGens = function toggleGens() {
+    setIsGensOpen(!isGensOpen);
+    setIsArticlesOpen(false); // Закрываем другое меню
   };
   return /*#__PURE__*/react.createElement("div", {
     className: "O_Header"
@@ -17110,6 +17126,14 @@ var Header = function Header() {
     className: "M_HeaderNavbar invert Gen",
     id: "gens"
   }, /*#__PURE__*/react.createElement("img", {
+    className: "Q_BurgerIcon",
+    src: isMenuOpen ? Q_BurgerIconClose_namespaceObject : Q_BurgerIcon_namespaceObject,
+    alt: "menu",
+    onClick: toggleMenu,
+    style: {
+      cursor: 'pointer'
+    }
+  }), /*#__PURE__*/react.createElement("img", {
     className: "Q_LogoMobile",
     src: Q_LogoMobile_namespaceObject,
     alt: "logo"
@@ -17136,14 +17160,15 @@ var Header = function Header() {
     className: "A_HeaderNavbarBtn"
   }, "\u0413\u043B\u0430\u0432\u043D\u0430\u044F"), /*#__PURE__*/react.createElement("div", {
     className: "A_HeaderNavbarBtn",
+    id: "ArticleMobile",
+    onClick: toggleArticles,
     style: {
-      display: 'flex'
-    },
-    id: "ArticleMobile"
+      cursor: 'pointer'
+    }
   }, "\u0421\u0442\u0430\u0442\u044C\u0438"), /*#__PURE__*/react.createElement("div", {
     className: "W_ArticlesDropdown",
     style: {
-      display: 'none'
+      display: isArticlesOpen ? 'flex' : 'none'
     },
     id: "ArticlesDropdown"
   }, /*#__PURE__*/react.createElement("a", {
@@ -17160,11 +17185,15 @@ var Header = function Header() {
     className: "A_HeaderNavbarBtn"
   }, "\u041A\u0430\u0440\u0442\u0430 \u0438\u0441\u0442\u0438\u043D\u043D\u043E\u0439 \u0417\u0435\u043C\u043B\u0438"), /*#__PURE__*/react.createElement("div", {
     className: "A_HeaderNavbarBtn",
-    id: "GensMobile"
+    id: "GensMobile",
+    onClick: toggleGens,
+    style: {
+      cursor: 'pointer'
+    }
   }, "\u0413\u0435\u043D\u0435\u0440\u0430\u0442\u043E\u0440\u044B"), /*#__PURE__*/react.createElement("div", {
     className: "W_ArticlesDropdown",
     style: {
-      display: 'none'
+      display: isGensOpen ? 'flex' : 'none'
     },
     id: "GensDropdown"
   }, /*#__PURE__*/react.createElement("a", {

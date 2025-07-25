@@ -315,7 +315,10 @@ module.exports = {
     ]),
 
     new CopyWebpackPlugin({
-      patterns: [{ from: 'public', to: '' }]
+      patterns: [
+        { from: 'public', to: '' },
+        { from: 'CNAME', to: 'CNAME' }
+      ]
     })
   ],
   optimization: {

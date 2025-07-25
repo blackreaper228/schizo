@@ -16918,6 +16918,10 @@ const Q_BurgerIcon_namespaceObject = __webpack_require__.p + "images/bb20d8f2682
 console.log('Burger menu script loaded');
 
 
+function showSuccessModal() {
+  var message = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'Успешно!';
+  alert(message);
+}
 document.addEventListener('DOMContentLoaded', function () {
   var burgerIcon = document.querySelector('.Q_BurgerIcon');
   var burgerMenu = document.querySelector('.O_BurgerMenu');
@@ -16929,6 +16933,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // e.preventDefault()
     e.stopPropagation();
     burgerMenu.classList.toggle('active');
+    showSuccessModal('Операция выполнена успешно!');
     if (burgerMenu.classList.contains('active')) {
       burgerIcon.src = Q_BurgerIconClose_namespaceObject;
       document.body.style.overflow = 'hidden';

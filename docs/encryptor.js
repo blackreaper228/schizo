@@ -16934,15 +16934,12 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   };
 
-  // Добавляем поддержку touch событий
+  // Добавляем поддержку touch событий БЕЗ passive
   burgerIcon.addEventListener('click', toggleMenu);
-  burgerIcon.addEventListener('touchstart', toggleMenu, {
-    passive: true
-  });
+  burgerIcon.addEventListener('touchstart', toggleMenu); // Убрал { passive: true }
+
   burgerMenuBG.addEventListener('click', toggleMenu);
-  burgerMenuBG.addEventListener('touchstart', toggleMenu, {
-    passive: true
-  });
+  burgerMenuBG.addEventListener('touchstart', toggleMenu); // Убрал { passive: true }
 });
 // EXTERNAL MODULE: ./src/javascript/searchbarMobile.js
 var searchbarMobile = __webpack_require__(7195);

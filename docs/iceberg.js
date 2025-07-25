@@ -16913,7 +16913,9 @@ document.addEventListener('DOMContentLoaded', function () {
   var burgerIcon = document.querySelector('.Q_BurgerIcon');
   var burgerMenu = document.querySelector('.O_BurgerMenu');
   var burgerMenuBG = document.querySelector('#burgerMenuBG-01');
-  var toggleMenu = function toggleMenu() {
+  var toggleMenu = function toggleMenu(e) {
+    e.preventDefault();
+    e.stopPropagation();
     burgerMenu.classList.toggle('active');
     if (burgerMenu.classList.contains('active')) {
       burgerIcon.src = Q_BurgerIconClose_namespaceObject;

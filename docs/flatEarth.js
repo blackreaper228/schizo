@@ -16848,42 +16848,6 @@ var __webpack_exports__ = {};
 (() => {
 "use strict";
 
-;// ./src/svg/Q_BurgerIconClose.svg
-const Q_BurgerIconClose_namespaceObject = __webpack_require__.p + "images/f134e8cf6d1bac49cef2.svg";
-;// ./src/svg/Q_BurgerIcon.svg
-const Q_BurgerIcon_namespaceObject = __webpack_require__.p + "images/bb20d8f26829057e911d.svg";
-;// ./src/javascript/burgerMenu.js
-console.log('Burger menu script loaded');
-
-
-function showSuccessModal() {
-  var message = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'Успешно!';
-  alert(message);
-}
-document.addEventListener('DOMContentLoaded', function () {
-  // const burgerIcon = document.querySelector('.Q_BurgerIcon')
-  var burgerMenu = document.querySelector('.O_BurgerMenu');
-  var burgerIcon = document.querySelector('#burger-icon-main');
-  var burgerMenuBG = document.querySelector('#burgerMenuBG-01');
-  var toggleMenu = function toggleMenu(e) {
-    // Убираем preventDefault() - он блокируется браузером
-    // e.preventDefault()
-    e.stopPropagation();
-    burgerMenu.classList.toggle('active');
-    showSuccessModal('Операция выполнена успешно!');
-    if (burgerMenu.classList.contains('active')) {
-      burgerIcon.src = Q_BurgerIconClose_namespaceObject;
-      document.body.style.overflow = 'hidden';
-    } else {
-      burgerIcon.src = Q_BurgerIcon_namespaceObject;
-      document.body.style.overflow = '';
-    }
-  };
-
-  // Используем только click событие для мобильных
-  burgerIcon.addEventListener('click', toggleMenu);
-  burgerMenuBG.addEventListener('click', toggleMenu);
-});
 // EXTERNAL MODULE: ./src/javascript/searchbarMobile.js
 var searchbarMobile = __webpack_require__(7195);
 // EXTERNAL MODULE: ./src/javascript/navbarDropdown.js
@@ -80502,7 +80466,9 @@ var react = __webpack_require__(6540);
 // EXTERNAL MODULE: ./node_modules/react-dom/client.js
 var client = __webpack_require__(5338);
 ;// ./src/assets/svg/Q_BurgerIcon.svg
-const assets_svg_Q_BurgerIcon_namespaceObject = __webpack_require__.p + "images/bb20d8f26829057e911d.svg";
+const Q_BurgerIcon_namespaceObject = __webpack_require__.p + "images/bb20d8f26829057e911d.svg";
+;// ./src/assets/svg/Q_BurgerIconClose.svg
+const Q_BurgerIconClose_namespaceObject = __webpack_require__.p + "images/f134e8cf6d1bac49cef2.svg";
 ;// ./src/assets/svg/Q_SearchIconMobile.svg
 const Q_SearchIconMobile_namespaceObject = __webpack_require__.p + "images/c18eeff3ba926d30defa.svg";
 ;// ./src/assets/svg/Q_SearchIcon.svg
@@ -80512,10 +80478,15 @@ const Q_LogoMobile_namespaceObject = __webpack_require__.p + "images/e9c9b183788
 ;// ./src/react/header.jsx
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
 function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
 function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 
 
 
@@ -80539,6 +80510,18 @@ var newsItems = [{
   href: './chernobyl-hiv.html'
 }];
 var Header = function Header() {
+  var _useState = (0,react.useState)(false),
+    _useState2 = _slicedToArray(_useState, 2),
+    isMenuOpen = _useState2[0],
+    setIsMenuOpen = _useState2[1];
+  var toggleMenu = function toggleMenu() {
+    setIsMenuOpen(!isMenuOpen);
+    if (!isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+  };
   return /*#__PURE__*/react.createElement("div", {
     className: "O_Header"
   }, /*#__PURE__*/react.createElement("div", {
@@ -80558,9 +80541,15 @@ var Header = function Header() {
   }, /*#__PURE__*/react.createElement("div", {
     className: "M_HeaderNavbar",
     id: "main_nav"
-  }, /*#__PURE__*/react.createElement("div", {
-    id: "burger-icon-main"
-  }, "text"), /*#__PURE__*/react.createElement("a", {
+  }, /*#__PURE__*/react.createElement("img", {
+    className: "Q_BurgerIcon",
+    src: isMenuOpen ? Q_BurgerIconClose_namespaceObject : Q_BurgerIcon_namespaceObject,
+    alt: "menu",
+    onClick: toggleMenu,
+    style: {
+      cursor: 'pointer'
+    }
+  }), /*#__PURE__*/react.createElement("a", {
     href: "https://schizofiles.ru",
     className: "Q_LogoMobileLink"
   }, /*#__PURE__*/react.createElement("img", {
@@ -80589,6 +80578,14 @@ var Header = function Header() {
   }, "\u041A\u0430\u0440\u0442\u0430 \u0438\u0441\u0442\u0438\u043D\u043D\u043E\u0439 \u0417\u0435\u043C\u043B\u0438")), /*#__PURE__*/react.createElement("div", {
     className: "M_HeaderNavbar invert"
   }, /*#__PURE__*/react.createElement("img", {
+    className: "Q_BurgerIcon",
+    src: isMenuOpen ? Q_BurgerIconClose_namespaceObject : Q_BurgerIcon_namespaceObject,
+    alt: "menu",
+    onClick: toggleMenu,
+    style: {
+      cursor: 'pointer'
+    }
+  }), /*#__PURE__*/react.createElement("img", {
     className: "Q_LogoMobile",
     src: Q_LogoMobile_namespaceObject,
     alt: "logo"
@@ -80632,7 +80629,63 @@ var Header = function Header() {
   }, /*#__PURE__*/react.createElement("div", {
     className: "A_HeaderNavbarBtn",
     id: "articles_in"
-  }, "\u0410\u0439\u0441\u0431\u0435\u0440\u0433\u0438")))));
+  }, "\u0410\u0439\u0441\u0431\u0435\u0440\u0433\u0438")))), /*#__PURE__*/react.createElement("div", {
+    className: "O_BurgerMenu ".concat(isMenuOpen ? 'active' : '')
+  }, /*#__PURE__*/react.createElement("div", {
+    className: "W_BurgerMenuContent"
+  }, /*#__PURE__*/react.createElement("a", {
+    href: "./test.html",
+    className: "A_HeaderNavbarBtn"
+  }, "\u0413\u043B\u0430\u0432\u043D\u0430\u044F"), /*#__PURE__*/react.createElement("div", {
+    className: "A_HeaderNavbarBtn",
+    style: {
+      display: 'flex'
+    },
+    id: "ArticleMobile"
+  }, "\u0421\u0442\u0430\u0442\u044C\u0438"), /*#__PURE__*/react.createElement("div", {
+    className: "W_ArticlesDropdown",
+    style: {
+      display: 'none'
+    },
+    id: "ArticlesDropdown"
+  }, /*#__PURE__*/react.createElement("a", {
+    href: "./bitie.html",
+    className: "A_HeaderNavbarBtn"
+  }, "\u0411\u044B\u0442\u0438\u0435"), /*#__PURE__*/react.createElement("a", {
+    href: "./kosmos.html",
+    className: "A_HeaderNavbarBtn"
+  }, "\u041A\u043E\u0441\u043C\u043E\u0441"), /*#__PURE__*/react.createElement("a", {
+    href: "./proshloe.html",
+    className: "A_HeaderNavbarBtn"
+  }, "\u041F\u0440\u043E\u0448\u043B\u043E\u0435")), /*#__PURE__*/react.createElement("a", {
+    href: "./flat-earth.html",
+    className: "A_HeaderNavbarBtn"
+  }, "\u041A\u0430\u0440\u0442\u0430 \u0438\u0441\u0442\u0438\u043D\u043D\u043E\u0439 \u0417\u0435\u043C\u043B\u0438"), /*#__PURE__*/react.createElement("div", {
+    className: "A_HeaderNavbarBtn",
+    id: "GensMobile"
+  }, "\u0413\u0435\u043D\u0435\u0440\u0430\u0442\u043E\u0440\u044B"), /*#__PURE__*/react.createElement("div", {
+    className: "W_ArticlesDropdown",
+    style: {
+      display: 'none'
+    },
+    id: "GensDropdown"
+  }, /*#__PURE__*/react.createElement("a", {
+    href: "./encryptor.html",
+    className: "A_HeaderNavbarBtn"
+  }, "\u0428\u0438\u0444\u0440\u043E\u0432\u0449\u0438\u043A"), /*#__PURE__*/react.createElement("a", {
+    href: "./iceberg.html",
+    className: "A_HeaderNavbarBtn"
+  }, "\u0410\u0439\u0441\u0431\u0435\u0440\u0433\u0438")), /*#__PURE__*/react.createElement("a", {
+    href: "./predictions.html",
+    className: "A_HeaderNavbarBtn"
+  }, "\u041F\u0440\u0435\u0434\u0441\u043A\u0430\u0437\u0430\u043D\u0438\u0435 \u0434\u043D\u044F")), /*#__PURE__*/react.createElement("div", {
+    className: "Q_BurgerMenuBG",
+    id: "burgerMenuBG-01",
+    onClick: toggleMenu,
+    style: {
+      cursor: 'pointer'
+    }
+  })));
 };
 /* harmony default export */ const header = (Header);
 ;// ./src/javascript/initReact.js

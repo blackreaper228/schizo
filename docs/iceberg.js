@@ -17197,7 +17197,6 @@ function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" =
 
 
 
-
 var icebergImg, userImg;
 var input;
 var textGroups = {}; // Объект для хранения текстов по инпутам

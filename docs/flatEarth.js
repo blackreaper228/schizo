@@ -80739,7 +80739,6 @@ function mountHeader() {
 
 
 
-
  // Импортируем RGBELoader
  // Импортируем OrbitControls
  // Импортируем OrbitControls

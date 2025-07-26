@@ -17239,7 +17239,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 
 
-
 // import goUp from './LandingGoUp.js'
 
 // Картинки предсказания

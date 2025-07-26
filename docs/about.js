@@ -16964,7 +16964,6 @@ function mountHeader() {
 }
 ;// ./src/javascript/about.js
 
-// import burgerMenu from './burgerMenu.js'
 // import searchbarMobile from './searchbarMobile.js'
 // import navBtn from './navbarDropdown.js'
 // import goUp from './LandingGoUp.js'
